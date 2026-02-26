@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal Vault - Firearms Inventory Management</title>
+    <meta name="description" content="Professional firearms inventory management software. Track your collection, ammunition, accessories, and maintenance with complete privacy through self-hosting.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- HubSpot Forms -->
+    <script src="https://js-na2.hsforms.net/forms/embed/245057554.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'av-gold': '#D4AF37',
+                        'av-gold-light': '#CFB53B',
+                        'av-gold-dark': '#B8962E',
+                        'av-dark': '#1A1A1A',
+                        'av-dark-light': '#2C2C2C',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37, #CFB53B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        /* Modal styles */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: #1A1A1A; border: 1px solid rgba(212,175,55,0.3); border-radius: 1rem; max-width: 28rem; width: 90%; padding: 2rem; position: relative; animation: modalSlideIn 0.3s ease; }
+        @keyframes modalSlideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* HubSpot Form Styling - Dark Theme */
+        .hs-form-dark .hs-form-field label { color: #E5E7EB !important; font-family: 'Source Sans 3', sans-serif !important; font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
+        .hs-form-dark .hs-input { width: 100% !important; padding: 0.75rem 1rem !important; background: #2C2C2C !important; border: 1px solid rgba(212,175,55,0.3) !important; border-radius: 0.5rem !important; color: white !important; font-size: 1rem !important; font-family: 'Source Sans 3', sans-serif !important; }
+        .hs-form-dark .hs-input:focus { outline: none !important; border-color: #D4AF37 !important; }
+        .hs-form-dark .hs-input::placeholder { color: #9CA3AF !important; }
+        .hs-form-dark .hs-button { width: 100% !important; padding: 0.875rem 2rem !important; background: linear-gradient(135deg, #D4AF37, #CFB53B) !important; color: #1A1A1A !important; font-weight: 600 !important; border-radius: 0.5rem !important; cursor: pointer !important; border: none !important; font-size: 1rem !important; font-family: 'Source Sans 3', sans-serif !important; transition: opacity 0.2s !important; }
+        .hs-form-dark .hs-button:hover { opacity: 0.9 !important; }
+        .hs-form-dark .hs-error-msgs { color: #FCA5A5 !important; font-size: 0.875rem !important; margin-top: 0.25rem !important; }
+        .hs-form-dark .hs-form-required { color: #D4AF37 !important; }
+        .hs-form-dark .submitted-message { color: #D4AF37 !important; text-align: center !important; font-size: 1.125rem !important; }
+        .hs-form-dark .hs-richtext { color: #9CA3AF !important; font-size: 0.75rem !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-10 w-10">
+                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
+            <div class="px-4 py-3 space-y-2">
+                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+                <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+                <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+                <a href="pricing.html" class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-100 to-gray-50 hero-pattern py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-6">
+                        <span class="w-2 h-2 bg-av-gold rounded-full animate-pulse"></span>
+                        <span class="text-av-gold text-sm font-medium">Coming Soon - Cloud Platform</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
+                        Professional <span class="text-gradient-gold">Firearms Inventory</span> Management
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
+                        Track your entire collection with precision. Manage firearms, ammunition, accessories, parts, and maintenance records with our secure cloud platform accessible from any device.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openSignupModal()" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold text-center hover:opacity-90 transition text-lg shadow-lg shadow-av-gold/25 flex items-center justify-center gap-2">
+                            <i class="bi bi-bell"></i> Get Notified at Launch
+                        </button>
+                        <a href="features.html" class="border-2 border-av-gold text-av-gold px-8 py-3.5 rounded-lg font-semibold text-center hover:bg-av-gold hover:text-av-dark transition text-lg">
+                            See Features
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-4 border border-gray-200">
+                        <div class="bg-av-dark rounded-xl p-6 aspect-video flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="bi bi-play-circle text-av-gold text-6xl mb-4"></i>
+                                <p class="text-gray-400">Product Demo Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-av-dark rounded-xl p-4 shadow-xl border border-av-gold/20 hidden lg:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 gradient-gold rounded-full flex items-center justify-center"><i class="bi bi-shield-check text-av-dark"></i></div>
+                            <div><p class="text-white font-semibold text-sm">Secure Cloud Storage</p><p class="text-gray-400 text-xs">Access anywhere</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Everything You Need to Manage Your Collection</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">From individual firearms to complete arsenals, Arsenal Vault gives you professional-grade tools with secure cloud access.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-crosshair text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Firearms Tracking</h3>
+                    <p class="text-gray-600">Complete records for every firearm: make, model, serial numbers, caliber, purchase info, and custom fields.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-box-seam text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Ammunition Inventory</h3>
+                    <p class="text-gray-600">Track rounds by caliber, brand, and quantity. Know exactly what you have and when to restock.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-puzzle text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Parts & Accessories</h3>
+                    <p class="text-gray-600">Organize optics, magazines, grips, and components. Link parts to specific firearms.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-tools text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Maintenance Logs</h3>
+                    <p class="text-gray-600">Record cleanings, repairs, and round counts. Set reminders for scheduled maintenance.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-file-earmark-pdf text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">PDF Reports</h3>
+                    <p class="text-gray-600">Generate professional reports for insurance, compliance, or personal records.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-cloud-check text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Cloud Access</h3>
+                    <p class="text-gray-600">Access your inventory from any device. Automatic backups keep your data safe and secure.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="features.html" class="inline-flex items-center gap-2 text-av-gold font-semibold hover:underline">
+                    See All Features <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-gray-600 text-lg">Choose the plan that fits your needs. Simple monthly pricing, cancel any time.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
+                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Basic</h3><p class="text-gray-500 text-sm">For casual collectors</p></div>
+                    <div class="text-center mb-2">
+                        <span class="text-5xl font-display font-bold text-gray-900">$3.99</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to 25 firearms</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Basic reports</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Email support</span></li>
+                    </ul>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Get Notified</button>
+                </div>
+                
+                <!-- Pro - Most Popular -->
+                <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
+                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-white mb-2">Pro</h3><p class="text-gray-400 text-sm">For serious collectors</p></div>
+                    <div class="text-center mb-2">
+                        <span class="text-5xl font-display font-bold text-av-gold">$5.99</span><span class="text-gray-400">/mo</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-sm text-av-gold font-medium">or $61.10/year</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to 100 firearms</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Full inventory tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Advanced reports & PDF export</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Priority support</span></li>
+                    </ul>
+                    <button onclick="openSignupModal()" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Get Notified</button>
+                </div>
+                
+                <!-- Ultimate -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
+                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Ultimate</h3><p class="text-gray-500 text-sm">For dealers & large collections</p></div>
+                    <div class="text-center mb-2">
+                        <span class="text-5xl font-display font-bold text-gray-900">$9.99</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited firearms</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>All Pro features</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Multi-user access</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Premium support</span></li>
+                    </ul>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Get Notified</button>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 text-sm mt-10">All plans include automatic backups and access from any device.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section with HubSpot Form -->
+    <section id="signup" class="py-20 gradient-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-av-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-20 w-96 h-96 bg-av-gold/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">Be First to Know When We Launch</h2>
+            <p class="text-gray-300 mb-10 text-lg">Sign up for early access and exclusive launch pricing. No spam, just updates.</p>
+            
+            <!-- HubSpot Form -->
+            <div class="max-w-md mx-auto hs-form-dark">
+                <div class="hs-form-frame" data-region="na2" data-form-id="aaaf32eb-8d35-461e-a051-634cdaf0ac8e" data-portal-id="245057554"></div>
+            </div>
+            <p class="text-gray-500 text-sm mt-6"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-5"><img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-10 w-10"><span class="text-av-gold font-display font-bold text-lg">Arsenal Vault</span></div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Professional firearms inventory management with secure cloud access.</p>
+                </div>
+                <div><h4 class="text-white font-semibold mb-5">Product</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="features.html" class="hover:text-av-gold transition">Features</a></li><li><a href="pricing.html" class="hover:text-av-gold transition">Pricing</a></li><li><a href="download.html" class="hover:text-av-gold transition">Download</a></li><li><a href="#" class="hover:text-av-gold transition">Documentation</a></li></ul></div>
+                <div><h4 class="text-white font-semibold mb-5">Support</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="support.html" class="hover:text-av-gold transition">FAQ</a></li><li><a href="support.html#contact" class="hover:text-av-gold transition">Contact Us</a></li><li><a href="#" class="hover:text-av-gold transition">Release Notes</a></li></ul></div>
+                <div><h4 class="text-white font-semibold mb-5">Legal</h4><ul class="space-y-3 text-gray-400 text-sm"><li><a href="legal.html#pp" class="hover:text-av-gold transition">Privacy Policy</a></li><li><a href="legal.html#tos" class="hover:text-av-gold transition">Terms of Service</a></li><li><a href="#" class="hover:text-av-gold transition">Refund Policy</a></li></ul></div>
+            </div>
+            <div class="border-t border-gray-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+                <div class="flex gap-5 mt-4 md:mt-0"><a href="#" class="text-gray-400 hover:text-av-gold transition"><i class="bi bi-github text-xl"></i></a><a href="#" class="text-gray-400 hover:text-av-gold transition"><i class="bi bi-twitter-x text-xl"></i></a><a href="#" class="text-gray-400 hover:text-av-gold transition"><i class="bi bi-youtube text-xl"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+
+    <!-- Signup Modal with HubSpot Form -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-bell text-av-gold text-2xl"></i>
+                </div>
+                <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
+                <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
+            </div>
+            
+            <!-- HubSpot Form in Modal -->
+            <div class="hs-form-dark">
+                <div class="hs-form-frame" data-region="na2" data-form-id="aaaf32eb-8d35-461e-a051-634cdaf0ac8e" data-portal-id="245057554"></div>
+            </div>
+            
+            <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openSignupModal() {
+            document.getElementById('signup-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal on overlay click
+        document.getElementById('signup-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeSignupModal();
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeSignupModal();
+        });
+    </script>
+</body>
+</html>

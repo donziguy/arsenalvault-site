@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal | Arsenal Vault</title>
+    <meta name="description" content="Arsenal Vault Terms of Service and Privacy Policy.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'av-gold':       '#D4AF37',
+                        'av-gold-light': '#CFB53B',
+                        'av-gold-dark':  '#B8962E',
+                        'av-dark':       '#1A1A1A',
+                        'av-dark-light': '#2C2C2C',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body':    ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37, #CFB53B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Legal content typography */
+        .legal-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+        }
+        .legal-body h2:first-of-type { margin-top: 0; }
+
+        .legal-body p {
+            color: #D1D5DB;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+        .legal-body ul li {
+            color: #D1D5DB;
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        .legal-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 6px;
+            height: 6px;
+            background: #D4AF37;
+            border-radius: 50%;
+        }
+
+        .legal-body strong { color: #F3F4F6; font-weight: 600; }
+
+        .legal-body a { color: #D4AF37; text-decoration: underline; }
+        .legal-body a:hover { color: #CFB53B; }
+
+        /* Tab active state */
+        .tab-btn.active {
+            background: linear-gradient(135deg, #D4AF37, #CFB53B);
+            color: #1A1A1A;
+        }
+        .tab-btn:not(.active) {
+            background: transparent;
+            color: #9CA3AF;
+            border: 1px solid rgba(212,175,55,0.25);
+        }
+        .tab-btn:not(.active):hover { color: #D4AF37; border-color: rgba(212,175,55,0.5); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1A1A1A; }
+        ::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="bg-av-dark min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-10 w-10">
+                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="features.html"  class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html"  class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="pricing.html"   class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
+            <div class="px-4 py-3 space-y-2">
+                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+                <a href="pricing.html"  class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+                <a href="support.html"  class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+                <a href="pricing.html"  class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="border-b border-av-gold/10 py-14"
+             style="background: radial-gradient(ellipse at 20% 0%, rgba(212,175,55,0.07) 0%, transparent 55%),
+                                radial-gradient(ellipse at 80% 0%, rgba(212,175,55,0.04) 0%, transparent 40%),
+                                #1A1A1A;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-5">
+                <i class="bi bi-shield-lock text-av-gold text-sm"></i>
+                <span class="text-av-gold text-sm font-medium">Legal</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">
+                Terms &amp; <span class="text-gradient-gold">Privacy</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                We keep it plain and honest. Your data is yours — read on for the details.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Switcher + Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Tabs -->
+        <div class="flex gap-3 mb-10">
+            <button id="tab-tos" onclick="switchTab('tos')"
+                    class="tab-btn active flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold transition text-sm">
+                <i class="bi bi-file-earmark-text"></i> Terms of Service
+            </button>
+            <button id="tab-pp" onclick="switchTab('pp')"
+                    class="tab-btn flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold transition text-sm">
+                <i class="bi bi-shield-check"></i> Privacy Policy
+            </button>
+        </div>
+
+        <!-- Terms of Service Panel -->
+        <div id="panel-tos" class="bg-av-dark-light border border-av-gold/15 rounded-2xl p-8 lg:p-12">
+
+            <div class="flex items-start gap-4 mb-8 pb-8 border-b border-av-gold/15">
+                <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-av-gold/20">
+                    <i class="bi bi-file-earmark-text text-av-dark text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-display font-bold text-white">Terms of Service</h1>
+                    <p class="text-gray-500 text-sm mt-1"><i class="bi bi-calendar3 mr-1"></i>Last Updated: February 20, 2026</p>
+                </div>
+            </div>
+
+            <div class="legal-body">
+                <p>Welcome to Arsenal Vault, a web-based service for managing your firearms and ammunition inventory. By using our service, you agree to these Terms of Service ("Terms"). Please read them carefully. If you do not agree with these Terms, you should not use Arsenal Vault.</p>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing or using Arsenal Vault, you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all users of our service, whether you are a registered user or a visitor.</p>
+
+                <h2>2. Account Registration and Responsibilities</h2>
+                <p>To use Arsenal Vault, you must create an account with accurate and complete information. You are responsible for:</p>
+                <ul>
+                    <li>Keeping your login credentials secure and confidential.</li>
+                    <li>All activities that occur under your account.</li>
+                    <li>Notifying us immediately if you suspect unauthorized access to your account.</li>
+                </ul>
+                <p>You must be at least 18 years old to register for an account. By creating an account, you confirm that you meet this age requirement.</p>
+
+                <h2>3. Acceptable Use</h2>
+                <p>Arsenal Vault is intended for lawful use only. You agree to:</p>
+                <ul>
+                    <li>Use the service solely to track your personal firearms, ammunition, and accessories inventory.</li>
+                    <li>Comply with all applicable local, state, and federal laws regarding firearms ownership and possession.</li>
+                    <li>Not use the service for any illegal or unauthorized purpose.</li>
+                </ul>
+                <p>We reserve the right to suspend or terminate your account if we believe you are using the service in violation of these Terms or applicable law.</p>
+
+                <h2>4. Not a Firearms Dealer</h2>
+                <p>Arsenal Vault is a software tool for inventory management. We are <strong>not</strong> a firearms dealer, manufacturer, or broker. We do not sell, transfer, or facilitate the sale of firearms or ammunition. Our service is strictly for tracking purposes, and any transactions or transfers of firearms are your sole responsibility and must comply with all applicable laws.</p>
+
+                <h2>5. Data Privacy and Security</h2>
+                <p>We take your privacy and data security seriously. Your data is stored in per-tenant databases, meaning your information is isolated from other users. We use encryption to protect your data both in transit and at rest. For more details, please refer to our <a href="#" onclick="switchTab('pp'); return false;">Privacy Policy</a>.</p>
+
+                <h2>6. Intellectual Property</h2>
+                <p>All content, software, and materials provided through Arsenal Vault, including but not limited to text, graphics, logos, and code, are the property of Arsenal Vault or its licensors and are protected by copyright, trademark, and other laws. You may not copy, modify, distribute, or create derivative works from our content without prior written permission.</p>
+
+                <h2>7. Limitation of Liability</h2>
+                <p>Arsenal Vault is provided "as is" without warranties of any kind, whether express or implied. We do not guarantee that the service will be uninterrupted, error-free, or secure. To the fullest extent permitted by law, we are not liable for any indirect, incidental, special, or consequential damages arising from your use of the service, even if we have been advised of the possibility of such damages.</p>
+
+                <h2>8. Termination</h2>
+                <p>We may suspend or terminate your account at any time, with or without notice, if we believe you have violated these Terms or for any other reason at our sole discretion. You may also terminate your account at any time by contacting us. Upon termination, your access to the service will cease, and we may delete your data in accordance with our Privacy Policy.</p>
+
+                <h2>9. Governing Law</h2>
+                <p>These Terms are governed by the laws of the State of Texas, without regard to its conflict of law principles. Any disputes arising from these Terms or your use of Arsenal Vault will be resolved in the state or federal courts located in Texas.</p>
+
+                <h2>10. Age Requirement</h2>
+                <p>You must be at least 18 years old to use Arsenal Vault. By using the service, you confirm that you meet this age requirement.</p>
+
+                <h2>11. Modifications to Terms</h2>
+                <p>We may update these Terms from time to time to reflect changes in our service or legal requirements. We will notify you of significant changes by posting the updated Terms on our website with a new "Last Updated" date. Your continued use of the service after such changes constitutes your acceptance of the updated Terms.</p>
+
+                <h2>12. Contact Information</h2>
+                <p>If you have questions or concerns about these Terms or our service, please contact us at:</p>
+                <div class="bg-av-dark rounded-xl border border-av-gold/15 p-5 mt-2">
+                    <p class="mb-1"><i class="bi bi-envelope text-av-gold mr-2"></i><strong>Email:</strong> <a href="mailto:legal@arsenalvault.com">legal@arsenalvault.com</a></p>
+                    <p class="mb-0"><i class="bi bi-geo-alt text-av-gold mr-2"></i><strong>Address:</strong> [Placeholder — Company Address]</p>
+                </div>
+                <p class="mt-6 text-gray-500 text-sm">Thank you for using Arsenal Vault. We are committed to providing a secure and reliable tool for managing your inventory.</p>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Panel -->
+        <div id="panel-pp" class="hidden bg-av-dark-light border border-av-gold/15 rounded-2xl p-8 lg:p-12">
+
+            <div class="flex items-start gap-4 mb-8 pb-8 border-b border-av-gold/15">
+                <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-av-gold/20">
+                    <i class="bi bi-shield-check text-av-dark text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-display font-bold text-white">Privacy Policy</h1>
+                    <p class="text-gray-500 text-sm mt-1"><i class="bi bi-calendar3 mr-1"></i>Last Updated: February 20, 2026</p>
+                </div>
+            </div>
+
+            <div class="legal-body">
+                <p>At Arsenal Vault, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use our web-based firearms and ammunition inventory management service.</p>
+
+                <h2>1. Data Collection</h2>
+                <p>We collect the following information when you use Arsenal Vault:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> Your name, email address, and other details you provide during registration.</li>
+                    <li><strong>Inventory Data:</strong> Information about your firearms, ammunition, and accessories that you input into the service for tracking purposes.</li>
+                    <li><strong>Usage Data:</strong> Technical information such as IP addresses, browser type, and usage patterns to help us improve the service.</li>
+                </ul>
+
+                <h2>2. Data Storage and Encryption</h2>
+                <p>Your data is stored in per-tenant databases, ensuring that your information is isolated from other users. We use industry-standard encryption to protect your data both in transit (while it's being sent to and from our servers) and at rest (while it's stored on our servers).</p>
+
+                <h2>3. No Selling of Data</h2>
+                <p>We do not sell, rent, or share your personal information with third parties for marketing or other purposes, except as required by law or to protect the safety and security of our service and users.</p>
+
+                <h2>4. Data Retention</h2>
+                <p>We retain your data for as long as your account is active or as needed to provide the service. If you terminate your account, we will delete your data within a reasonable timeframe, except where retention is required by law.</p>
+
+                <h2>5. User Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access and review the personal information we hold about you.</li>
+                    <li>Request corrections to inaccurate or incomplete data.</li>
+                    <li>Request deletion of your data, subject to legal retention requirements.</li>
+                    <li>Contact us to exercise these rights or if you have any concerns about how your data is handled.</li>
+                </ul>
+
+                <h2>6. Contact Information</h2>
+                <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+                <div class="bg-av-dark rounded-xl border border-av-gold/15 p-5 mt-2">
+                    <p class="mb-1"><i class="bi bi-envelope text-av-gold mr-2"></i><strong>Email:</strong> <a href="mailto:legal@arsenalvault.com">legal@arsenalvault.com</a></p>
+                    <p class="mb-0"><i class="bi bi-geo-alt text-av-gold mr-2"></i><strong>Address:</strong> [Placeholder — Company Address]</p>
+                </div>
+
+                <p class="mt-6 text-gray-400 text-sm border-t border-av-gold/10 pt-6">We may update this Privacy Policy from time to time. Significant changes will be communicated by posting the updated policy on our website with a new "Last Updated" date. Your continued use of Arsenal Vault after such changes constitutes your acceptance of the updated policy.</p>
+
+                <p class="text-gray-500 text-sm">Thank you for trusting Arsenal Vault with your data.</p>
+            </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-8 text-center">
+            <a href="index.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-av-gold transition text-sm">
+                <i class="bi bi-arrow-left"></i> Back to Arsenal Vault
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-av-gold/10 mt-16 py-10 bg-av-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-8 w-8 opacity-80">
+                    <span class="text-gray-400 font-display font-semibold">Arsenal Vault</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="legal.html#tos" class="text-av-gold hover:text-av-gold-light transition">Terms of Service</a>
+                    <a href="legal.html#pp"  class="text-gray-400 hover:text-av-gold transition">Privacy Policy</a>
+                    <a href="support.html"   class="text-gray-400 hover:text-av-gold transition">Support</a>
+                </div>
+                <p class="text-gray-600 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Tab switching
+        function switchTab(tab) {
+            const panels = { tos: 'panel-tos', pp: 'panel-pp' };
+            const btns   = { tos: 'tab-tos',   pp: 'tab-pp'   };
+
+            Object.keys(panels).forEach(function (key) {
+                const panel = document.getElementById(panels[key]);
+                const btn   = document.getElementById(btns[key]);
+                if (key === tab) {
+                    panel.classList.remove('hidden');
+                    btn.classList.add('active');
+                } else {
+                    panel.classList.add('hidden');
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update hash for deep-linking
+            window.location.hash = tab;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Deep link via hash on load
+        window.addEventListener('DOMContentLoaded', function () {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'pp') switchTab('pp');
+        });
+    </script>
+</body>
+</html>
