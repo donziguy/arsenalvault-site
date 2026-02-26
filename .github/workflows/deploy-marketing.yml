@@ -1,0 +1,20 @@
+name: Deploy Marketing Site
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Deploy to Hostinger
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 46.202.198.30
+          port: 65002
+          username: u421117894
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          script: bash ~/deploy.sh

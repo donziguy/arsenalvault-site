@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Arsenal Vault</title>
+    <meta name="description" content="Get help with Arsenal Vault. FAQ, documentation, and contact support.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><a href="index.html" class="flex items-center gap-3"><img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-10 w-10"><span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span></a></div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html" class="nav-link text-av-gold font-medium">Support</a>
+                    <a href="pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="support.html" class="block text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">How Can We <span class="text-gradient-gold">Help</span>?</h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">Find answers to common questions or get in touch with our support team.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-12 bg-white border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="#faq" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-question-circle text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">FAQ</h3><p class="text-sm text-gray-500">Common questions answered</p></div>
+                </a>
+                <a href="#" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-book text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">Documentation</h3><p class="text-sm text-gray-500">Guides and tutorials</p></div>
+                </a>
+                <a href="#contact" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-envelope text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">Contact Us</h3><p class="text-sm text-gray-500">Get personalized help</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Getting Started</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I install Arsenal Vault?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Download the installer from our download page, run it, and follow the on-screen instructions. The installation takes less than a minute and requires no special configuration.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">When will Arsenal Vault be available?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">We're currently in final development and planning to launch in 2026. Visit our download page to sign up for launch notifications and early access pricing.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I import data from other software?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes, Arsenal Vault supports CSV import for easy data migration. We have guides for migrating from popular alternatives including spreadsheets and other inventory apps.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Features & Usage</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I add photos to my inventory?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">When viewing or editing any item, click the "Photos" tab and use the upload button. You can add multiple photos per item, and they'll be automatically resized for optimal storage.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I generate reports for insurance?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes! Go to Reports > Collection Overview to generate a comprehensive PDF report with photos, serial numbers, and values. This is perfect for insurance documentation.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What are the 15 parts categories?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Arsenal Vault includes categories for: Barrels, Triggers, Stocks & Grips, Optics & Sights, Magazines, Muzzle Devices, Handguards & Rails, Bolts & Carriers, Lowers & Receivers, Uppers, Springs & Pins, Lights & Lasers, Furniture, Suppressors, and Other Parts.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Security & Privacy</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Is my data secure?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Absolutely. For desktop users, all data stays on your local machine. Cloud users benefit from end-to-end encryption, with sensitive fields like serial numbers using additional encryption layers.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Do you share or sell my data?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Never. Your inventory data is yours alone. We don't share, sell, or analyze your collection data for any purpose. See our Privacy Policy for complete details.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I backup my data?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">For desktop users, go to Admin > Backup to create a complete backup file. Cloud users have automatic daily backups with the ability to download their data at any time.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Billing & Account</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What's your refund policy?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">We offer a 30-day money-back guarantee on all purchases. If you're not satisfied for any reason, contact us for a full refund, no questions asked.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I upgrade from desktop to cloud?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes! You can export your data from the desktop version and import it to a cloud account at any time. We also offer upgrade pricing for existing desktop customers.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What payment methods do you accept?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">We accept all major credit cards (Visa, Mastercard, American Express, Discover) and PayPal through our secure payment processor.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Contact Support</h2>
+                <p class="text-gray-600">Can't find what you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition bg-white">
+                        <option>General Question</option>
+                        <option>Technical Support</option>
+                        <option>Billing Inquiry</option>
+                        <option>Feature Request</option>
+                        <option>Bug Report</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="How can we help?"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">
+                        <i class="bi bi-send me-2"></i> Send Message
+                    </button>
+                </div>
+            </form>
+            
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                <p class="text-gray-600 mb-4">Or reach us directly:</p>
+                <a href="mailto:support@arsenalvault.com" class="text-av-gold font-semibold hover:underline">support@arsenalvault.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0"><img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-8 w-8"><span class="text-av-gold font-display font-bold">Arsenal Vault</span></div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+</body>
+</html>

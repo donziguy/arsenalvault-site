@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Arsenal Vault</title>
+    <meta name="description" content="Explore Arsenal Vault's comprehensive features: firearms tracking, ammunition inventory, parts management, maintenance logging, and PDF reports.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        /* Modal styles */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: #1A1A1A; border: 1px solid rgba(212,175,55,0.3); border-radius: 1rem; max-width: 28rem; width: 90%; padding: 2rem; position: relative; animation: modalSlideIn 0.3s ease; }
+        @keyframes modalSlideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .form-input { width: 100%; padding: 0.75rem 1rem; background: #2C2C2C; border: 1px solid rgba(212,175,55,0.3); border-radius: 0.5rem; color: white; font-size: 1rem; transition: border-color 0.2s; }
+        .form-input:focus { outline: none; border-color: #D4AF37; }
+        .form-input::placeholder { color: #9CA3AF; }
+        .btn-submit { width: 100%; padding: 0.875rem; background: linear-gradient(135deg, #D4AF37, #CFB53B); color: #1A1A1A; font-weight: 600; border-radius: 0.5rem; cursor: pointer; transition: opacity 0.2s; border: none; font-size: 1rem; }
+        .btn-submit:hover { opacity: 0.9; }
+        .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><a href="index.html" class="flex items-center gap-3"><img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-10 w-10"><span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span></a></div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="features.html" class="nav-link text-av-gold font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="features.html" class="block text-av-gold py-2">Features</a>
+            <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">Powerful <span class="text-gradient-gold">Features</span></h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">Everything you need to manage your firearms collection, from basic tracking to advanced parts inventory.</p>
+        </div>
+    </section>
+
+    <!-- Main Features -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Firearms Tracking -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-av-gold/10 text-av-gold rounded-full px-4 py-1 text-sm font-medium mb-4">
+                        <i class="bi bi-crosshair"></i> Core Feature
+                    </div>
+                    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Firearms Tracking</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Complete inventory management for your entire collection. Track every detail from acquisition to current value.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Make, model, manufacturer, and caliber</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Serial numbers with encrypted storage</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Purchase date, price, and dealer info</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Current value and condition tracking</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Multi-image photo galleries</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Notes and custom fields</span></li>
+                    </ul>
+                </div>
+                <div class="bg-av-dark rounded-2xl p-8 border border-av-gold/20">
+                    <div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center"><i class="bi bi-crosshair text-av-dark text-xl"></i></div><span class="text-av-gold font-semibold text-lg">Smart Inventory</span></div>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between py-3 border-b border-gray-700"><span class="text-gray-400">Total Firearms</span><span class="text-white font-semibold">47</span></div>
+                        <div class="flex justify-between py-3 border-b border-gray-700"><span class="text-gray-400">Collection Value</span><span class="text-av-gold font-semibold">$52,340</span></div>
+                        <div class="flex justify-between py-3 border-b border-gray-700"><span class="text-gray-400">Unique Calibers</span><span class="text-white font-semibold">12</span></div>
+                        <div class="flex justify-between py-3"><span class="text-gray-400">With Photos</span><span class="text-white font-semibold">43</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ammunition -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+                <div class="order-2 lg:order-1 bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 rounded-xl p-4 text-center"><div class="text-2xl font-display font-bold text-av-gold">5,240</div><div class="text-gray-500 text-sm">9mm Luger</div></div>
+                        <div class="bg-gray-50 rounded-xl p-4 text-center"><div class="text-2xl font-display font-bold text-av-gold">2,100</div><div class="text-gray-500 text-sm">.223 Rem</div></div>
+                        <div class="bg-gray-50 rounded-xl p-4 text-center"><div class="text-2xl font-display font-bold text-av-gold">800</div><div class="text-gray-500 text-sm">.45 ACP</div></div>
+                        <div class="bg-gray-50 rounded-xl p-4 text-center"><div class="text-2xl font-display font-bold text-av-gold">1,500</div><div class="text-gray-500 text-sm">12 Gauge</div></div>
+                    </div>
+                    <div class="mt-6 p-4 bg-av-gold/10 rounded-xl"><div class="flex items-center gap-2 text-av-gold-dark"><i class="bi bi-bell"></i><span class="text-sm font-medium">Low stock alert: .308 Win (150 remaining)</span></div></div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 bg-av-gold/10 text-av-gold rounded-full px-4 py-1 text-sm font-medium mb-4"><i class="bi bi-box-seam"></i> Inventory</div>
+                    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Ammunition Management</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Never run low at the range. Track your ammunition inventory by caliber, brand, and storage location.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Track by caliber, brand, and grain weight</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Storage location management</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Low stock alerts</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill text-av-gold mt-1"></i><span class="text-gray-700">Cost per round calculations</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Parts Management -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-av-gold/10 text-av-gold rounded-full px-4 py-1 text-sm font-medium mb-4"><i class="bi bi-gear"></i> Exclusive Feature</div>
+                    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Parts Inventory</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">The feature competitors don't have. Track every component, spare part, and upgrade in your collection.</p>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Barrels</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Triggers</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Optics & Sights</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Stocks & Grips</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Magazines</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Springs & Pins</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Muzzle Devices</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Handguards</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Bolts & Carriers</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Lowers & Uppers</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> Lights & Lasers</div>
+                        <div class="flex items-center gap-2 text-gray-700"><i class="bi bi-check text-av-gold"></i> + 3 More Categories</div>
+                    </div>
+                </div>
+                <div class="bg-av-dark rounded-2xl p-8 border border-av-gold/20">
+                    <h3 class="text-av-gold font-semibold mb-6">15 Part Categories</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-av-gold rounded-full"></div><span class="text-gray-300">Track compatibility with firearms</span></div>
+                        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-av-gold rounded-full"></div><span class="text-gray-300">Link parts to specific guns</span></div>
+                        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-av-gold rounded-full"></div><span class="text-gray-300">Purchase history & pricing</span></div>
+                        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-av-gold rounded-full"></div><span class="text-gray-300">Photo documentation</span></div>
+                        <div class="flex items-center gap-3"><div class="w-2 h-2 bg-av-gold rounded-full"></div><span class="text-gray-300">Notes and specifications</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Features Grid -->
+            <div class="mt-20">
+                <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Even More Features</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-tools text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Maintenance Logging</h3>
+                        <p class="text-gray-600 text-sm">Track cleaning, repairs, modifications, and rounds fired for each firearm.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-file-earmark-pdf text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">PDF Reports</h3>
+                        <p class="text-gray-600 text-sm">Generate professional reports for insurance, inventory overview, and acquisition records.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-images text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Photo Galleries</h3>
+                        <p class="text-gray-600 text-sm">Add multiple photos to each item with automatic thumbnail generation.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-shield-lock text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Encrypted Data</h3>
+                        <p class="text-gray-600 text-sm">Serial numbers and storage locations are encrypted for your security.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-people text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Multi-User Support</h3>
+                        <p class="text-gray-600 text-sm">Create accounts for family members or staff with role-based permissions.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-cloud-download text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Backup & Restore</h3>
+                        <p class="text-gray-600 text-sm">Complete database backup and restore functionality to keep your data safe.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-filetype-csv text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Import/Export</h3>
+                        <p class="text-gray-600 text-sm">CSV import and export for easy data migration and spreadsheet integration.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-moon-stars text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Dark Mode</h3>
+                        <p class="text-gray-600 text-sm">Easy on the eyes with full dark mode support throughout the application.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 hover-lift">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-4"><i class="bi bi-activity text-av-dark text-xl"></i></div>
+                        <h3 class="font-display font-bold text-gray-900 mb-2">Activity Logging</h3>
+                        <p class="text-gray-600 text-sm">Track all changes with comprehensive activity logs for accountability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 gradient-dark">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to Get Started?</h2>
+            <p class="text-gray-300 mb-8">Arsenal Vault is coming soon. Be the first to know when we launch.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openSignupModal()" class="gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition flex items-center justify-center gap-2"><i class="bi bi-bell"></i> Get Notified</button>
+                <a href="pricing.html" class="border-2 border-av-gold text-av-gold px-8 py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0"><img src="img/av-shield-192.png" alt="Arsenal Vault" class="h-8 w-8"><span class="text-av-gold font-display font-bold">Arsenal Vault</span></div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <div id="modal-form-container">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-bell text-av-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
+                    <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
+                </div>
+                <form id="modal-signup-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-300 text-sm mb-2">Name (optional)</label>
+                            <input type="text" name="name" placeholder="John Smith" class="form-input">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 text-sm mb-2">Email <span class="text-av-gold">*</span></label>
+                            <input type="email" name="email" required placeholder="john@example.com" class="form-input">
+                        </div>
+                        <button type="submit" class="btn-submit flex items-center justify-center gap-2">
+                            <i class="bi bi-send"></i> <span>Notify Me at Launch</span>
+                        </button>
+                    </div>
+                    <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
+                </form>
+            </div>
+            <div id="modal-success" class="hidden text-center py-4">
+                <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-check-lg text-green-400 text-4xl"></i>
+                </div>
+                <h3 class="text-white text-2xl font-display font-bold mb-2">You're on the list!</h3>
+                <p class="text-gray-400 mb-6">We'll send you an email when Arsenal Vault is ready.</p>
+                <button onclick="closeSignupModal()" class="btn-submit">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
+        
+        function openSignupModal() {
+            document.getElementById('signup-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                document.getElementById('modal-form-container').classList.remove('hidden');
+                document.getElementById('modal-success').classList.add('hidden');
+                document.getElementById('modal-signup-form').reset();
+            }, 300);
+        }
+        
+        document.getElementById('signup-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeSignupModal();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeSignupModal();
+        });
+        
+        document.getElementById('modal-signup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = { email: formData.get('email'), name: formData.get('name') || '', source: 'features-page', timestamp: new Date().toISOString() };
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+            try {
+                if (WEBHOOK_URL === 'YOUR_N8N_WEBHOOK_URL_HERE') {
+                    console.log('Demo mode - Form data:', data);
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                } else {
+                    const response = await fetch(WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                    if (!response.ok) throw new Error('Network error');
+                }
+                document.getElementById('modal-form-container').classList.add('hidden');
+                document.getElementById('modal-success').classList.remove('hidden');
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+    </script>
+</body>
+</html>
