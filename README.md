@@ -13,3 +13,4 @@ Auto-deploys to Hostinger on every push to `main`.
 Push to `main` → GitHub Actions → SSH deploy to Hostinger webroot.
 
 Requires `HOSTINGER_SSH_KEY` secret in repo settings.
+<!-- deployed Fri Feb 27 02:33:53 AM UTC 2026 -->
