@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Arsenal Vault</title>
+    <meta name="description" content="Arsenal Vault pricing plans. Basic, Pro, and Ultimate options for every collector. Start free for 14 days.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="img/av-logo-new.png" alt="Arsenal Vault" class="h-10">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-av-gold font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Start Free Trial</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="pricing.html" class="block text-av-gold py-2">Pricing</a>
+            <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+            <a href="https://app.arsenalvault.com/register" class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-2">Start Free Trial</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">Simple, <span class="text-gradient-gold">Transparent</span> Pricing</h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">Choose the plan that fits your collection. All plans include a 14-day free trial — no credit card required.</p>
+            <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 text-av-gold px-4 py-2 rounded-full text-sm font-medium">
+                <i class="bi bi-shield-check"></i> 14-day free trial &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Cancel anytime
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Plans -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-display font-bold text-gray-900 text-center mb-2">Cloud Plans</h2>
+            <p class="text-gray-500 text-center mb-12">Access your vault from any device. We handle the hosting.</p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <!-- Basic -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="bi bi-person text-av-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Basic</h3>
+                        <p class="text-gray-500 text-sm">For the everyday collector</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-gray-900">$4.99</span>
+                        <span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>2 vault members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                </div>
+
+                <!-- Pro - Most Popular -->
+                <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-av-dark-light rounded-2xl flex items-center justify-center mx-auto mb-4 border border-av-gold/30">
+                            <i class="bi bi-star text-av-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Pro</h3>
+                        <p class="text-gray-400 text-sm">For serious collectors</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-av-gold">$9.99</span>
+                        <span class="text-gray-400">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">20 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 vault members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+                </div>
+
+                <!-- Ultimate -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="bi bi-gem text-av-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Ultimate</h3>
+                        <p class="text-gray-500 text-sm">For large collections</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-gray-900">$19.99</span>
+                        <span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 vault members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Plans -->
+    <section class="py-20 bg-av-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 text-av-gold px-4 py-2 rounded-full text-sm font-medium mb-4">
+                    <i class="bi bi-windows"></i> Windows Desktop App
+                </div>
+                <h2 class="text-2xl font-display font-bold text-white mb-2">Own It. No Subscription.</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Runs entirely on your machine. Your data never leaves your computer. Annual license, one-time payment per year.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <!-- Desktop Basic -->
+                <div class="bg-av-dark-light rounded-2xl p-8 border border-av-gold/20 hover-lift">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Desktop Basic</h3>
+                        <p class="text-gray-400 text-sm">Single user, local storage</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-white">$44.99</span>
+                        <span class="text-gray-400">/yr</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">10 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-600 text-xl"></i><span>Reloading tracker</span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition">Get Desktop Basic</a>
+                </div>
+
+                <!-- Desktop Pro -->
+                <div class="bg-av-dark-light rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Desktop Pro</h3>
+                        <p class="text-gray-400 text-sm">Single user, local storage</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-av-gold">$89.99</span>
+                        <span class="text-gray-400">/yr</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">20 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition">Get Desktop Pro</a>
+                </div>
+
+                <!-- Desktop Ultimate -->
+                <div class="bg-av-dark-light rounded-2xl p-8 border border-av-gold/20 hover-lift">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Desktop Ultimate</h3>
+                        <p class="text-gray-400 text-sm">Single user, local storage</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-white">$179.99</span>
+                        <span class="text-gray-400">/yr</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Unlimited firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition">Get Desktop Ultimate</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 text-sm mt-10">Desktop app requires Windows 10 or later. <a href="download.html" class="text-av-gold hover:underline">Download free trial →</a></p>
+        </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Cloud Plan Comparison</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="text-left py-4 px-4 font-semibold text-gray-900">Feature</th>
+                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Basic<br><span class="font-normal text-gray-500">$4.99/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-av-gold">Pro<br><span class="font-normal text-gray-400">$9.99/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Ultimate<br><span class="font-normal text-gray-500">$19.99/mo</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600">
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Firearms</td>
+                            <td class="text-center py-4 px-4">10</td>
+                            <td class="text-center py-4 px-4 font-semibold text-av-gold">20</td>
+                            <td class="text-center py-4 px-4">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Vault Members</td>
+                            <td class="text-center py-4 px-4">2</td>
+                            <td class="text-center py-4 px-4 font-semibold text-av-gold">5</td>
+                            <td class="text-center py-4 px-4">10</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Ammunition Tracking</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Maintenance Logs</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Photo Uploads</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Reloading Tracker</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-x-lg text-gray-300 text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Cloud Backup</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="py-4 px-4">Encrypted Storage</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4">14-Day Free Trial</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">Do I need a credit card to start the free trial?</h3>
+                    <p class="text-gray-600">No. Sign up and get 14 days free with no credit card required. You'll only be asked for payment if you choose to continue after the trial.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">Can I upgrade or downgrade my plan?</h3>
+                    <p class="text-gray-600">Yes, at any time. Upgrades take effect immediately. Downgrades take effect at your next billing cycle.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">What are Vault Members?</h3>
+                    <p class="text-gray-600">Vault Members are trusted people you invite to view or help manage your collection — a co-owner, spouse, or trusted family member. The owner's plan covers all members.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">Is my data secure?</h3>
+                    <p class="text-gray-600">Yes. All data is encrypted at rest using per-user encryption keys and in transit via TLS. We never share your information with third parties. Your data. Your control. Your vault.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">What's the difference between Cloud and Desktop?</h3>
+                    <p class="text-gray-600">Cloud plans are subscription-based and accessible from any browser on any device. Desktop is a Windows app that runs entirely on your machine — no internet required, data never leaves your computer.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">What payment methods do you accept?</h3>
+                    <p class="text-gray-600">All major credit and debit cards via Stripe Secure Checkout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 gradient-dark">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to get organized?</h2>
+            <p class="text-gray-400 mb-8">Start your free 14-day trial today. No credit card required.</p>
+            <a href="https://app.arsenalvault.com/register" class="inline-block gradient-gold text-av-dark px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <img src="img/av-logo-new.png" alt="Arsenal Vault" class="h-8">
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
