@@ -1,0 +1,10 @@
+# Arsenal Vault - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://arsenalvault.com/sitemap.xml
+
+# Disallow admin/app paths (if any)
+Disallow: /api/
+Disallow: /admin/
