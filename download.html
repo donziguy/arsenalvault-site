@@ -43,6 +43,16 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
+        /* Modal Styles */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: #1A1A1A; border: 1px solid rgba(212,175,55,0.3); border-radius: 1rem; padding: 2rem; max-width: 28rem; width: 100%; position: relative; }
+        /* HubSpot Form Styling - Dark (Modal) */
+        .hs-form-dark .hs-form-field label { color: #E5E7EB !important; font-family: 'Source Sans 3', sans-serif !important; font-size: 0.875rem !important; }
+        .hs-form-dark .hs-input { width: 100% !important; padding: 0.75rem 1rem !important; background: #2C2C2C !important; border: 1px solid rgba(212,175,55,0.3) !important; border-radius: 0.5rem !important; color: white !important; }
+        .hs-form-dark .hs-input:focus { outline: none !important; border-color: #D4AF37 !important; }
+        .hs-form-dark .hs-button { width: 100% !important; padding: 0.875rem 2rem !important; background: linear-gradient(135deg, #D4AF37, #CFB53B) !important; color: #1A1A1A !important; font-weight: 600 !important; border-radius: 0.5rem !important; cursor: pointer !important; border: none !important; }
+        .hs-form-dark .submitted-message { color: #D4AF37 !important; text-align: center !important; }
         
         /* HubSpot Form Styling - Light Theme */
         .hs-form-light .hs-form-field label { color: #374151 !important; font-family: 'Source Sans 3', sans-serif !important; font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
@@ -225,5 +235,40 @@
         </div>
     </footer>
     <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-bell text-av-gold text-2xl"></i>
+                </div>
+                <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
+                <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
+            </div>
+            <div class="hs-form-dark">
+                <div class="hs-form-frame" data-region="na2" data-form-id="aaaf32eb-8d35-461e-a051-634cdaf0ac8e" data-portal-id="245057554"></div>
+            </div>
+            <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <script>
+        function openSignupModal() {
+            document.getElementById('signup-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('signup-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeSignupModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeSignupModal();
+        });
+    </script>
 </body>
 </html>

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- HubSpot Forms -->
+    <script src="https://js-na2.hsforms.net/forms/embed/245057554.js" defer></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
@@ -41,6 +43,17 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
+        /* Modal Styles */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: #1A1A1A; border: 1px solid rgba(212,175,55,0.3); border-radius: 1rem; padding: 2rem; max-width: 28rem; width: 100%; position: relative; }
+        /* HubSpot Form Styling */
+        .hs-form-dark .hs-form-field label { color: #E5E7EB !important; font-family: 'Source Sans 3', sans-serif !important; font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
+        .hs-form-dark .hs-input { width: 100% !important; padding: 0.75rem 1rem !important; background: #2C2C2C !important; border: 1px solid rgba(212,175,55,0.3) !important; border-radius: 0.5rem !important; color: white !important; font-size: 1rem !important; }
+        .hs-form-dark .hs-input:focus { outline: none !important; border-color: #D4AF37 !important; }
+        .hs-form-dark .hs-button { width: 100% !important; padding: 0.875rem 2rem !important; background: linear-gradient(135deg, #D4AF37, #CFB53B) !important; color: #1A1A1A !important; font-weight: 600 !important; border-radius: 0.5rem !important; cursor: pointer !important; border: none !important; }
+        .hs-form-dark .hs-button:hover { opacity: 0.9 !important; }
+        .hs-form-dark .submitted-message { color: #D4AF37 !important; text-align: center !important; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -59,7 +72,7 @@
                     <a href="pricing.html" class="nav-link text-av-gold font-medium">Pricing</a>
                     <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
                     <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Start Free Trial</a>
+                    <button onclick="openSignupModal()" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer">Join Waitlist</button>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
@@ -72,7 +85,7 @@
             <a href="pricing.html" class="block text-av-gold py-2">Pricing</a>
             <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
             <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
-            <a href="https://app.arsenalvault.com/register" class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-2">Start Free Trial</a>
+            <button onclick="openSignupModal()" class="block w-full gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-2 cursor-pointer">Join Waitlist</button>
         </div>
     </nav>
 
@@ -116,7 +129,7 @@
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition cursor-pointer">Join Waitlist</button>
                 </div>
 
                 <!-- Pro - Most Popular -->
@@ -142,7 +155,7 @@
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25 cursor-pointer">Join Waitlist</button>
                 </div>
 
                 <!-- Ultimate -->
@@ -167,7 +180,7 @@
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition cursor-pointer">Join Waitlist</button>
                 </div>
             </div>
         </div>
@@ -202,7 +215,7 @@
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
                         <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-600 text-xl"></i><span>Reloading tracker</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition">Get Desktop Basic</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition cursor-pointer">Get Notified</button>
                 </div>
 
                 <!-- Desktop Pro -->
@@ -223,7 +236,7 @@
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition">Get Desktop Pro</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition cursor-pointer">Get Notified</button>
                 </div>
 
                 <!-- Desktop Ultimate -->
@@ -243,7 +256,7 @@
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Fully offline — data stays local</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition">Get Desktop Ultimate</a>
+                    <button onclick="openSignupModal()" class="block w-full text-center border-2 border-av-gold/50 text-av-gold py-3 rounded-xl font-semibold hover:border-av-gold hover:bg-av-gold/10 transition cursor-pointer">Get Notified</button>
                 </div>
             </div>
             <p class="text-center text-gray-500 text-sm mt-10">Desktop app requires Windows 10 or later. <a href="download.html" class="text-av-gold hover:underline">Download free trial →</a></p>
@@ -363,7 +376,7 @@
         <div class="max-w-3xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to get organized?</h2>
             <p class="text-gray-400 mb-8">Start your free 14-day trial today. No credit card required.</p>
-            <a href="https://app.arsenalvault.com/register" class="inline-block gradient-gold text-av-dark px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+            <button onclick="openSignupModal()" class="inline-block gradient-gold text-av-dark px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg shadow-av-gold/25 cursor-pointer">Join Waitlist</button>
         </div>
     </section>
 
@@ -382,6 +395,41 @@
     <script>
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-bell text-av-gold text-2xl"></i>
+                </div>
+                <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
+                <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
+            </div>
+            <div class="hs-form-dark">
+                <div class="hs-form-frame" data-region="na2" data-form-id="aaaf32eb-8d35-461e-a051-634cdaf0ac8e" data-portal-id="245057554"></div>
+            </div>
+            <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <script>
+        function openSignupModal() {
+            document.getElementById('signup-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSignupModal() {
+            document.getElementById('signup-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('signup-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeSignupModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeSignupModal();
         });
     </script>
 </body>
