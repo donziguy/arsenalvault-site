@@ -10,6 +10,9 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Deploy to Hostinger
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -18,3 +21,14 @@ jobs:
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           script: bash ~/deploy.sh
+
+      - name: Upload marketing files directly
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 46.202.198.30
+          port: 65002
+          username: u421117894
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          source: "index.html,features.html,pricing.html,download.html,support.html,upgrade.html,legal.html,sitemap.xml,robots.txt,.htaccess,blog/*,support/*"
+          target: "~/domains/arsenalvault.com/public_html/"
+          overwrite: true
