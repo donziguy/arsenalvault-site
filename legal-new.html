@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Review Draft | Arsenal Vault</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Review draft of Arsenal Vault Terms of Service and Privacy Policy.">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsenalvault.com/legal-new.html">
+    <meta property="og:title" content="Terms & Privacy Review Draft - Arsenal Vault">
+    <meta property="og:description" content="Review draft of Arsenal Vault Terms of Service and Privacy Policy.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'av-gold':       '#D4AF37',
+                        'av-gold-light': '#CFB53B',
+                        'av-gold-dark':  '#B8962E',
+                        'av-dark':       '#1A1A1A',
+                        'av-dark-light': '#2C2C2C',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body':    ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37, #CFB53B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Legal content typography */
+        .legal-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+        }
+        .legal-body h2:first-of-type { margin-top: 0; }
+
+        .legal-body p {
+            color: #D1D5DB;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+        .legal-body ul li {
+            color: #D1D5DB;
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        .legal-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 6px;
+            height: 6px;
+            background: #D4AF37;
+            border-radius: 50%;
+        }
+
+        .legal-body strong { color: #F3F4F6; font-weight: 600; }
+
+        .legal-body a { color: #D4AF37; text-decoration: underline; }
+        .legal-body a:hover { color: #CFB53B; }
+
+        /* Tab active state */
+        .tab-btn.active {
+            background: linear-gradient(135deg, #D4AF37, #CFB53B);
+            color: #1A1A1A;
+        }
+        .tab-btn:not(.active) {
+            background: transparent;
+            color: #9CA3AF;
+            border: 1px solid rgba(212,175,55,0.25);
+        }
+        .tab-btn:not(.active):hover { color: #D4AF37; border-color: rgba(212,175,55,0.5); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1A1A1A; }
+        ::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="bg-av-dark min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="img/av-logo.png" alt="Arsenal Vault" class="h-10">
+                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html"  class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="pricing.html"   class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
+            <div class="px-4 py-3 space-y-2">
+                <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+                <a href="pricing.html"  class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+                <a href="support.html"  class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+                <a href="pricing.html"  class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="border-b border-av-gold/10 py-14"
+             style="background: radial-gradient(ellipse at 20% 0%, rgba(212,175,55,0.07) 0%, transparent 55%),
+                                radial-gradient(ellipse at 80% 0%, rgba(212,175,55,0.04) 0%, transparent 40%),
+                                #1A1A1A;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-5">
+                <i class="bi bi-shield-lock text-av-gold text-sm"></i>
+                <span class="text-av-gold text-sm font-medium">Legal Review Draft</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">
+                Terms &amp; <span class="text-gradient-gold">Privacy</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Draft for review before publishing. Built around a strong privacy stance: your data is yours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Switcher + Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Tabs -->
+        <div class="flex gap-3 mb-10">
+            <button id="tab-tos" onclick="switchTab('tos')"
+                    class="tab-btn active flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold transition text-sm">
+                <i class="bi bi-file-earmark-text"></i> Terms of Service
+            </button>
+            <button id="tab-pp" onclick="switchTab('pp')"
+                    class="tab-btn flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold transition text-sm">
+                <i class="bi bi-shield-check"></i> Privacy Policy
+            </button>
+        </div>
+
+        <!-- Terms of Service Panel -->
+        <div id="panel-tos" class="bg-av-dark-light border border-av-gold/15 rounded-2xl p-8 lg:p-12">
+
+            <div class="flex items-start gap-4 mb-8 pb-8 border-b border-av-gold/15">
+                <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-av-gold/20">
+                    <i class="bi bi-file-earmark-text text-av-dark text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-display font-bold text-white">Terms of Service</h1>
+                    <p class="text-gray-500 text-sm mt-1"><i class="bi bi-calendar3 mr-1"></i>Last Updated: May 12, 2026</p>
+                </div>
+            </div>
+
+            <div class="legal-body">
+                <p><strong>Important:</strong> These Terms of Service ("Terms") are a legal agreement between you and <strong>Subnet Ventures LLC, DBA Arsenal Vault</strong> ("Arsenal Vault," "we," "us," or "our"). By accessing or using Arsenal Vault, you agree to these Terms. If you do not agree, do not use the service.</p>
+                <p>We wrote these Terms in plain English where possible, but they still matter. Arsenal Vault is a sensitive inventory tool, and users are responsible for using it lawfully and responsibly.</p>
+
+                <h2>1. Who We Are</h2>
+                <p>Arsenal Vault is operated by <strong>Subnet Ventures LLC, DBA Arsenal Vault</strong>.</p>
+                <div class="bg-av-dark rounded-xl border border-av-gold/15 p-5 mt-2 mb-4">
+                    <p class="mb-1"><i class="bi bi-building text-av-gold mr-2"></i><strong>Company:</strong> Subnet Ventures LLC, DBA Arsenal Vault</p>
+                    <p class="mb-1"><i class="bi bi-geo-alt text-av-gold mr-2"></i><strong>Address:</strong> 686 Road 660, Dayton, Texas 77535</p>
+                    <p class="mb-0"><i class="bi bi-envelope text-av-gold mr-2"></i><strong>Email:</strong> <a href="mailto:legal@arsenalvault.com">legal@arsenalvault.com</a></p>
+                </div>
+
+                <h2>2. Eligibility and Age Requirement</h2>
+                <p>You must be at least 18 years old to create an account or use Arsenal Vault. By using the service, you represent that you are at least 18 and legally able to enter into these Terms.</p>
+                <p>You are responsible for complying with all applicable local, state, federal, and international laws that apply to your ownership, possession, storage, transport, transfer, purchase, sale, or use of firearms, ammunition, accessories, and related items.</p>
+
+                <h2>3. What Arsenal Vault Is — and Is Not</h2>
+                <p>Arsenal Vault is software for organizing and documenting firearm, ammunition, accessory, maintenance, insurance, and collection records.</p>
+                <p>Arsenal Vault is <strong>not</strong>:</p>
+                <ul>
+                    <li>A firearms dealer, broker, manufacturer, importer, marketplace, or transfer service.</li>
+                    <li>A system for buying, selling, trading, shipping, or transferring firearms or ammunition.</li>
+                    <li>A source of legal, tax, insurance, law enforcement, compliance, or firearms safety advice.</li>
+                    <li>An official firearm registry, proof of legal ownership, government record, or substitute for required documentation.</li>
+                </ul>
+                <p>Any information you enter is user-provided. You are responsible for its accuracy, legality, and use.</p>
+
+                <h2>4. Your Account Responsibilities</h2>
+                <p>To use Arsenal Vault, you may need to create an account and provide accurate registration information. You are responsible for:</p>
+                <ul>
+                    <li>Keeping your password, authentication methods, and account credentials secure.</li>
+                    <li>Using a unique password and enabling multi-factor authentication when available.</li>
+                    <li>All activity that occurs under your account.</li>
+                    <li>Promptly notifying us if you believe your account has been accessed without authorization.</li>
+                    <li>Keeping your email address current so we can send important account, billing, security, or legal notices.</li>
+                </ul>
+
+                <h2>5. Lawful and Acceptable Use</h2>
+                <p>You agree to use Arsenal Vault only for lawful purposes and in a way that does not harm the service, other users, or third parties. You agree not to:</p>
+                <ul>
+                    <li>Use Arsenal Vault to facilitate illegal firearm, ammunition, or accessory transactions.</li>
+                    <li>Use the service to evade legal obligations, background checks, reporting requirements, court orders, or law enforcement restrictions.</li>
+                    <li>Upload malicious code, attempt unauthorized access, probe, scan, or test the vulnerability of our systems without written permission.</li>
+                    <li>Interfere with, overload, reverse engineer, scrape, abuse, or disrupt the service.</li>
+                    <li>Misrepresent your identity, impersonate another person, or create accounts using false information.</li>
+                    <li>Store content that is unlawful, threatening, abusive, defamatory, invasive of privacy, or otherwise harmful.</li>
+                </ul>
+                <p>We may suspend or terminate accounts that we believe violate these Terms, create risk, or expose Arsenal Vault or others to legal or security concerns.</p>
+
+                <h2>6. Your Data and Content</h2>
+                <p>You own the inventory records, photos, notes, documents, and other content you enter into Arsenal Vault ("Your Content"). We do not claim ownership of Your Content.</p>
+                <p>You give Arsenal Vault a limited permission to process, store, transmit, back up, display, and otherwise handle Your Content only as needed to provide, secure, support, maintain, and improve the service; comply with law; enforce these Terms; and protect users and the service.</p>
+                <p>Our privacy commitments are described in the <a href="#" onclick="switchTab('pp'); return false;">Privacy Policy</a>. In short: we do not sell your data, we do not use your inventory for advertising, and we take a privacy-first approach to sensitive collection records.</p>
+
+                <h2>7. Security</h2>
+                <p>Arsenal Vault is designed with security in mind. Cloud vault data is separated by customer and protected with encryption in transit and at rest. We use account protections such as strong password requirements, email verification, rate limiting, and multi-factor authentication where available.</p>
+                <p>No service can guarantee perfect security. You are responsible for protecting your devices, email account, password manager, authentication apps, recovery codes, and anyone you choose to share access with.</p>
+
+                <h2>8. Plans, Free Trials, Billing, and Payment Processing</h2>
+                <p>Arsenal Vault may offer free trials, paid cloud subscriptions, desktop licenses, or other paid features. Plan details, prices, limits, and features are shown on the pricing page or during checkout.</p>
+                <ul>
+                    <li><strong>Free trials:</strong> Unless otherwise stated, free trials last 14 days and do not require a credit card.</li>
+                    <li><strong>Cloud subscriptions:</strong> Cloud plans may bill monthly or on another billing period shown at checkout.</li>
+                    <li><strong>Desktop licenses:</strong> Desktop plans may be sold as annual licenses or another term shown at checkout.</li>
+                    <li><strong>Payment processor:</strong> Payments are processed by Stripe or another third-party payment processor. Arsenal Vault does not store full credit card numbers.</li>
+                    <li><strong>Taxes:</strong> Prices may not include applicable taxes, fees, or governmental charges unless stated otherwise.</li>
+                </ul>
+                <p>By purchasing a paid plan, you authorize the payment processor to charge your selected payment method for the applicable fees, taxes, and renewals shown at checkout.</p>
+
+                <h2>9. Cancellations, Downgrades, and Refunds</h2>
+                <p>You may cancel a cloud subscription according to the cancellation process available in the app, billing portal, or by contacting support. Unless otherwise stated, cancellation stops future renewal charges but does not automatically refund charges already paid.</p>
+                <p>If you downgrade your plan, the downgrade may take effect immediately or at the next billing cycle depending on the billing system and plan rules. You are responsible for exporting or deleting data if your new plan has lower limits.</p>
+                <p>Arsenal Vault offers a 30-day money-back guarantee on purchases unless a different refund rule is stated at checkout or required by law. To request a refund, contact us at <a href="mailto:support@arsenalvault.com">support@arsenalvault.com</a>.</p>
+
+                <h2>10. Service Changes, Availability, and Backups</h2>
+                <p>We may modify, improve, suspend, discontinue, or limit parts of Arsenal Vault over time. We try to provide a reliable service, but we do not guarantee uninterrupted availability, error-free operation, or that every feature will remain available forever.</p>
+                <p>We may create backups for operational resilience and disaster recovery. Backups are not a substitute for your own exports or records. You are encouraged to keep your own secure copies of important records where appropriate.</p>
+
+                <h2>11. Intellectual Property</h2>
+                <p>Arsenal Vault, including its software, design, branding, logos, text, graphics, code, documentation, and other materials, is owned by Subnet Ventures LLC or its licensors and is protected by intellectual property laws.</p>
+                <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable right to use Arsenal Vault for your personal or internal lawful inventory management purposes. You may not copy, modify, distribute, resell, lease, sublicense, reverse engineer, or create derivative works from Arsenal Vault except as permitted by law or written permission.</p>
+
+                <h2>12. Third-Party Services</h2>
+                <p>Arsenal Vault may integrate with or rely on third-party services such as hosting providers, analytics providers, email delivery services, payment processors, and app distribution platforms. Those services may have their own terms and privacy policies. We are not responsible for third-party services outside our control.</p>
+
+                <h2>13. Termination</h2>
+                <p>You may stop using Arsenal Vault at any time. We may suspend or terminate your account or access if we believe you violated these Terms, created risk, failed to pay required fees, used the service unlawfully, or if we are required to do so by law.</p>
+                <p>After termination, your access may cease immediately. Data deletion and retention are handled according to the Privacy Policy and applicable law.</p>
+
+                <h2>14. Disclaimers</h2>
+                <p>Arsenal Vault is provided on an "as is" and "as available" basis. To the fullest extent permitted by law, we disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, accuracy, availability, and security.</p>
+                <p>We do not warrant that Arsenal Vault will prevent loss, theft, misuse, inaccurate records, unlawful activity, compliance failures, insurance disputes, or any other harm. You remain responsible for firearm safety, legal compliance, physical security, insurance documentation, and the accuracy of your records.</p>
+
+                <h2>15. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Arsenal Vault and Subnet Ventures LLC will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages; lost profits; lost data; loss of goodwill; security incidents caused by your credentials, devices, or third-party services; or damages related to firearm ownership, possession, transfer, storage, or use.</p>
+                <p>To the fullest extent permitted by law, our total liability for any claim related to Arsenal Vault will not exceed the amount you paid to Arsenal Vault in the 12 months before the event giving rise to the claim, or $100 if you did not pay for the service.</p>
+
+                <h2>16. Indemnification</h2>
+                <p>You agree to defend, indemnify, and hold harmless Subnet Ventures LLC, Arsenal Vault, and their owners, employees, contractors, and affiliates from claims, losses, liabilities, damages, costs, and expenses arising from your use of Arsenal Vault, Your Content, your violation of these Terms, your violation of law, or your firearm-related activities.</p>
+
+                <h2>17. Governing Law and Venue</h2>
+                <p>These Terms are governed by the laws of the State of Texas, without regard to conflict of law rules. Any dispute arising from these Terms or Arsenal Vault will be resolved in the state or federal courts located in Texas, unless applicable law requires otherwise.</p>
+
+                <h2>18. Changes to These Terms</h2>
+                <p>We may update these Terms from time to time. If changes are material, we will provide notice by posting the updated Terms, updating the "Last Updated" date, sending an email, showing an in-app notice, or using another reasonable method. Your continued use of Arsenal Vault after changes take effect means you accept the updated Terms.</p>
+
+                <h2>19. Contact</h2>
+                <p>Questions about these Terms can be sent to:</p>
+                <div class="bg-av-dark rounded-xl border border-av-gold/15 p-5 mt-2">
+                    <p class="mb-1"><i class="bi bi-envelope text-av-gold mr-2"></i><strong>Email:</strong> <a href="mailto:legal@arsenalvault.com">legal@arsenalvault.com</a></p>
+                    <p class="mb-1"><i class="bi bi-building text-av-gold mr-2"></i><strong>Company:</strong> Subnet Ventures LLC, DBA Arsenal Vault</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt text-av-gold mr-2"></i><strong>Address:</strong> 686 Road 660, Dayton, Texas 77535</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Panel -->
+        <div id="panel-pp" class="hidden bg-av-dark-light border border-av-gold/15 rounded-2xl p-8 lg:p-12">
+
+            <div class="flex items-start gap-4 mb-8 pb-8 border-b border-av-gold/15">
+                <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-av-gold/20">
+                    <i class="bi bi-shield-check text-av-dark text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-display font-bold text-white">Privacy Policy</h1>
+                    <p class="text-gray-500 text-sm mt-1"><i class="bi bi-calendar3 mr-1"></i>Last Updated: May 12, 2026</p>
+                </div>
+            </div>
+
+            <div class="legal-body">
+                <p>This Privacy Policy explains how <strong>Subnet Ventures LLC, DBA Arsenal Vault</strong> ("Arsenal Vault," "we," "us," or "our") collects, uses, stores, protects, and discloses information when you use Arsenal Vault websites, applications, and related services.</p>
+                <p><strong>Our privacy stance is simple:</strong> your firearms inventory is sensitive. We do not sell your data. We do not use your inventory for advertising. We do not make your collection public. We collect only what we need to operate, secure, support, and improve Arsenal Vault.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>Depending on how you use Arsenal Vault, we may collect the following categories of information:</p>
+                <ul>
+                    <li><strong>Account information:</strong> name, email address, password hash, account settings, email verification status, authentication factors, and related account details.</li>
+                    <li><strong>Vault and inventory data:</strong> firearm, ammunition, accessory, maintenance, reloading, photo, document, note, serial number, valuation, insurance, and collection records that you choose to enter.</li>
+                    <li><strong>Billing information:</strong> plan selection, subscription status, purchase history, billing email, payment status, and limited payment metadata. Full payment card numbers are handled by Stripe or another payment processor and are not stored by Arsenal Vault.</li>
+                    <li><strong>Support communications:</strong> messages you send to us, attachments you provide, troubleshooting details, and our responses.</li>
+                    <li><strong>Security and technical data:</strong> IP address, device and browser information, log-in events, session information, error logs, audit logs, and security events needed to protect the service.</li>
+                    <li><strong>Website usage data:</strong> pages visited, referring pages, approximate location derived from IP address, browser type, device type, and similar analytics information.</li>
+                    <li><strong>Cookies and local storage:</strong> information stored in your browser to keep you signed in, remember preferences, protect sessions, measure website performance, and prevent abuse.</li>
+                </ul>
+
+                <h2>2. Information You Choose to Put in Your Vault</h2>
+                <p>You control what inventory information you enter into Arsenal Vault. Because firearms inventory records can be sensitive, you should only enter information you are comfortable storing in the service and should protect your account with strong security practices.</p>
+                <p>We do not review, mine, sell, rent, or use your inventory records for advertising or profiling. Access to vault data is limited to what is necessary to operate, secure, debug, support, or comply with valid legal obligations.</p>
+
+                <h2>3. How We Use Information</h2>
+                <p>We use information to:</p>
+                <ul>
+                    <li>Create, authenticate, secure, and maintain your account.</li>
+                    <li>Provide Arsenal Vault features, including storage, search, exports, backups, subscription limits, and member access controls.</li>
+                    <li>Process payments, manage subscriptions, prevent fraud, and handle refunds.</li>
+                    <li>Provide support, troubleshoot issues, respond to requests, and communicate important service notices.</li>
+                    <li>Monitor reliability, detect abuse, prevent unauthorized access, investigate security events, and protect users.</li>
+                    <li>Improve the website and product using aggregated, de-identified, or limited analytics where possible.</li>
+                    <li>Comply with legal obligations and enforce our Terms of Service.</li>
+                </ul>
+
+                <h2>4. What We Do Not Do</h2>
+                <p>Because Arsenal Vault stores sensitive collection records, we take a strong privacy position:</p>
+                <ul>
+                    <li>We do <strong>not</strong> sell your personal information or inventory data.</li>
+                    <li>We do <strong>not</strong> rent your data.</li>
+                    <li>We do <strong>not</strong> use your firearm, ammunition, accessory, or collection records for advertising.</li>
+                    <li>We do <strong>not</strong> sell or share your inventory with data brokers, advertisers, or marketing lists.</li>
+                    <li>We do <strong>not</strong> make your collection public or searchable by other users.</li>
+                    <li>We do <strong>not</strong> voluntarily provide inventory data to law enforcement, government agencies, or private parties without valid legal process or your consent.</li>
+                </ul>
+
+                <h2>5. Analytics and Cookies</h2>
+                <p>Our marketing website may use analytics tools, including Google Analytics/Google Tag and Arsenal Vault-hosted analytics, to understand traffic, page performance, referrals, and general website usage. These tools may collect technical information such as IP address, browser type, device type, pages visited, referring site, and approximate location.</p>
+                <p>We use analytics to improve the website and understand whether our marketing pages are working. We do not use analytics to inspect your private vault inventory, and we do not use your inventory records for advertising.</p>
+                <p>You can limit cookies or analytics through browser settings, privacy extensions, device settings, or available opt-out tools. Blocking some cookies may affect login sessions or site functionality.</p>
+
+                <h2>6. Payment Processing</h2>
+                <p>Payments are processed by Stripe or another payment processor. When you make a purchase, the payment processor may collect payment method details, billing information, fraud prevention signals, and transaction information according to its own terms and privacy policy.</p>
+                <p>Arsenal Vault receives limited payment information such as payment status, subscription status, plan, amount, billing email, transaction identifiers, and limited card metadata such as brand and last four digits when provided by the processor. We do not store full credit card numbers.</p>
+
+                <h2>7. Service Providers</h2>
+                <p>We may share limited information with trusted service providers that help us operate Arsenal Vault, such as hosting providers, database/storage providers, analytics providers, email delivery services, payment processors, monitoring/security tools, customer support tools, and app distribution platforms.</p>
+                <p>Service providers are allowed to use information only to provide services to Arsenal Vault or as otherwise required by law. We choose providers with privacy and security in mind and limit what we share to what is reasonably necessary.</p>
+
+                <h2>8. Security and Encryption</h2>
+                <p>Arsenal Vault uses technical, administrative, and organizational safeguards designed to protect your information. These may include encryption in transit, encryption at rest, customer vault separation, access controls, logging, rate limiting, email verification, password hashing, and multi-factor authentication where available.</p>
+                <p>Security is a shared responsibility. You should use a unique password, enable multi-factor authentication when available, protect your email account, secure your devices, and avoid sharing your login credentials.</p>
+                <p>No online service can guarantee absolute security. If we discover a security incident affecting your information, we will investigate and notify affected users or regulators when required by law and appropriate under the circumstances.</p>
+
+                <h2>9. Data Retention</h2>
+                <p>We keep information for as long as reasonably needed to provide the service, maintain your account, comply with legal obligations, resolve disputes, enforce agreements, prevent abuse, maintain security, and support business records.</p>
+                <ul>
+                    <li><strong>Active account data:</strong> retained while your account is active.</li>
+                    <li><strong>Deleted account or vault data:</strong> deleted or de-identified within a reasonable period after a verified deletion request, unless retention is required for legal, security, billing, backup, or fraud-prevention reasons.</li>
+                    <li><strong>Backups:</strong> backup copies may persist for a limited period until they are overwritten or deleted through normal backup rotation.</li>
+                    <li><strong>Billing records:</strong> retained as needed for accounting, tax, chargeback, fraud prevention, and legal compliance.</li>
+                    <li><strong>Security logs:</strong> retained as needed to protect the service, investigate abuse, and maintain auditability.</li>
+                </ul>
+
+                <h2>10. Deletion and Export Requests</h2>
+                <p>You may request access to, correction of, export of, or deletion of your personal information or vault data by using available in-app tools or contacting us. We may need to verify your identity before completing a request.</p>
+                <p>Deletion may not be immediate in all systems, including backups, logs, billing records, and legally required records. We will not keep deleted vault data longer than reasonably necessary for legitimate operational, security, legal, or backup purposes.</p>
+
+                <h2>11. Legal Requests and Law Enforcement</h2>
+                <p>We take a strong privacy stance with legal requests. We do not voluntarily provide private inventory data to law enforcement, government agencies, civil litigants, private investigators, data brokers, or other third parties.</p>
+                <p>We may disclose information if we believe in good faith that disclosure is required to comply with valid legal process, such as a subpoena, warrant, court order, or other lawful request. Where legally permitted and reasonably practical, we will attempt to notify affected users before disclosing their information so they have an opportunity to object or seek protection.</p>
+                <p>We reserve the right to challenge, narrow, or reject requests that we believe are unlawful, overbroad, vague, abusive, or inconsistent with user privacy.</p>
+
+                <h2>12. Emergency and Safety Disclosures</h2>
+                <p>We may disclose limited information if we believe in good faith that it is necessary to prevent imminent harm, protect the security of Arsenal Vault, prevent fraud or abuse, or protect the rights, safety, and property of users, Arsenal Vault, or others. We will limit such disclosures to what we believe is necessary under the circumstances.</p>
+
+                <h2>13. Business Transfers</h2>
+                <p>If Arsenal Vault or Subnet Ventures LLC is involved in a merger, acquisition, financing, reorganization, bankruptcy, sale of assets, or similar transaction, information may be transferred as part of that transaction. If that happens, we will seek to protect your information and provide notice if your information becomes subject to a materially different privacy policy.</p>
+
+                <h2>14. Children's Privacy</h2>
+                <p>Arsenal Vault is not intended for children or minors. You must be at least 18 years old to use the service. We do not knowingly collect personal information from anyone under 18. If we learn that we collected information from a minor, we will take appropriate steps to delete it.</p>
+
+                <h2>15. State, Federal, and International Privacy Rights</h2>
+                <p>Depending on where you live, you may have rights to access, correct, delete, export, restrict, or object to certain processing of your personal information. You may also have the right to appeal a decision or lodge a complaint with a privacy regulator.</p>
+                <p>We will honor applicable privacy rights requests as required by law. We will not discriminate against you for exercising privacy rights.</p>
+
+                <h2>16. International Users</h2>
+                <p>Arsenal Vault is operated from the United States. If you access the service from outside the United States, you understand that your information may be processed and stored in the United States or other locations where our service providers operate.</p>
+
+                <h2>17. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. If changes are material, we will provide notice by posting the updated policy, updating the "Last Updated" date, sending an email, showing an in-app notice, or using another reasonable method. Your continued use of Arsenal Vault after changes take effect means you accept the updated policy.</p>
+
+                <h2>18. Contact</h2>
+                <p>Questions, privacy requests, or legal notices can be sent to:</p>
+                <div class="bg-av-dark rounded-xl border border-av-gold/15 p-5 mt-2">
+                    <p class="mb-1"><i class="bi bi-envelope text-av-gold mr-2"></i><strong>Email:</strong> <a href="mailto:legal@arsenalvault.com">legal@arsenalvault.com</a></p>
+                    <p class="mb-1"><i class="bi bi-building text-av-gold mr-2"></i><strong>Company:</strong> Subnet Ventures LLC, DBA Arsenal Vault</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt text-av-gold mr-2"></i><strong>Address:</strong> 686 Road 660, Dayton, Texas 77535</p>
+                </div>
+
+                <p class="mt-6 text-gray-500 text-sm border-t border-av-gold/10 pt-6">Your data. Your control. Your vault.</p>
+            </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-8 text-center">
+            <a href="index.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-av-gold transition text-sm">
+                <i class="bi bi-arrow-left"></i> Back to Arsenal Vault
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-5"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-10"><span class="text-av-gold font-display font-bold text-lg">Arsenal Vault</span></div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Professional firearms inventory management with secure cloud access.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-5">Product</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="features.html" class="hover:text-av-gold transition">Features</a></li>
+                        <li><a href="pricing.html" class="hover:text-av-gold transition">Pricing</a></li>
+                        <li><a href="download.html" class="hover:text-av-gold transition">Download</a></li>
+                        <li><a href="security.html" class="hover:text-av-gold transition">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-5">Support</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="support.html" class="hover:text-av-gold transition">FAQ</a></li>
+                        <li><a href="support.html#contact" class="hover:text-av-gold transition">Contact Us</a></li>
+                        <li><a href="blog/" class="hover:text-av-gold transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-5">Legal</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="legal.html#pp" class="hover:text-av-gold transition">Privacy Policy</a></li>
+                        <li><a href="legal.html#tos" class="hover:text-av-gold transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Tab switching
+        function switchTab(tab) {
+            const panels = { tos: 'panel-tos', pp: 'panel-pp' };
+            const btns   = { tos: 'tab-tos',   pp: 'tab-pp'   };
+
+            Object.keys(panels).forEach(function (key) {
+                const panel = document.getElementById(panels[key]);
+                const btn   = document.getElementById(btns[key]);
+                if (key === tab) {
+                    panel.classList.remove('hidden');
+                    btn.classList.add('active');
+                } else {
+                    panel.classList.add('hidden');
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update hash for deep-linking
+            window.location.hash = tab;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Deep link via hash on load
+        window.addEventListener('DOMContentLoaded', function () {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'pp') switchTab('pp');
+            if (hash === 'tos') switchTab('tos');
+        });
+    </script>
+</body>
+</html>
