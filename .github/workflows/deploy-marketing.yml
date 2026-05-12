@@ -29,6 +29,6 @@ jobs:
           port: 65002
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          source: "index.html,features.html,pricing.html,download.html,support.html,upgrade.html,legal.html,sitemap.xml,robots.txt,.htaccess,img/*,img/screenshots/*,static/img/*,blog/*,support/*"
+          source: "index.html,about.html,features.html,pricing.html,download.html,support.html,upgrade.html,security.html,legal.html,legal-new.html,sitemap.xml,robots.txt,.htaccess,img/*,img/screenshots/*,static/img/*,blog/*,support/*"
           target: "~/domains/arsenalvault.com/public_html/"
           overwrite: true
