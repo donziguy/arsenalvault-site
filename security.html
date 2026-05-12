@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://arsenalvault.com/security.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security - Arsenal Vault</title>
+    <meta name="description" content="Plain-English security overview for Arsenal Vault: encrypted vaults, isolated customer data, MFA, backups, privacy, and what we do to protect your firearms inventory.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsenalvault.com/security.html">
+    <meta property="og:title" content="Security - Arsenal Vault">
+    <meta property="og:description" content="A plain-English explanation of how Arsenal Vault protects your firearms inventory data.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Security - Arsenal Vault">
+    <meta name="twitter:description" content="How Arsenal Vault protects your firearms inventory data, explained without the jargon.">
+    <meta name="twitter:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><a href="index.html" class="flex items-center gap-3"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-10"><span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span></a></div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
+                    <a href="security.html" class="nav-link text-av-gold font-medium">Security</a>
+                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                    <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+            <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="blog/" class="block text-gray-300 hover:text-av-gold py-2">Blog</a>
+            <a href="security.html" class="block text-av-gold py-2">Security</a>
+            <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-dark py-16 lg:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-6">
+                <i class="bi bi-shield-lock text-av-gold"></i>
+                <span class="text-av-gold text-sm font-medium">Plain-English Security</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-5">How Arsenal Vault <span class="text-gradient-gold">Protects Your Data</span></h1>
+            <p class="text-gray-300 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">Your firearms inventory is personal. Arsenal Vault is built so your records are separated, encrypted, and protected without making you become a cybersecurity expert.</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="py-14 bg-white border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-50 rounded-2xl border border-gray-200 p-8 lg:p-10 shadow-sm">
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">The short version</h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">Arsenal Vault keeps each customer in their own encrypted vault, protects sign-ins with modern account security, and limits what we collect to what the service needs to work. In plain terms: you get your own encrypted vault for your collection. We do not sell your data, we do not use your inventory for ads, and your collection stays yours.</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-xl p-5 border border-gray-200"><i class="bi bi-safe2 text-av-gold text-2xl"></i><h3 class="font-semibold text-gray-900 mt-3 mb-1">Separate vault</h3><p class="text-gray-600 text-sm">Your records live in your own isolated database, not mixed into one giant shared pile.</p></div>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200"><i class="bi bi-lock text-av-gold text-2xl"></i><h3 class="font-semibold text-gray-900 mt-3 mb-1">Encrypted records</h3><p class="text-gray-600 text-sm">Sensitive inventory data is protected with SQLCipher and a unique 256-bit key.</p></div>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200"><i class="bi bi-person-lock text-av-gold text-2xl"></i><h3 class="font-semibold text-gray-900 mt-3 mb-1">Safer sign-in</h3><p class="text-gray-600 text-sm">Email verification, strong passwords, rate limits, and multi-factor authentication help keep strangers out.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section class="py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-5"><i class="bi bi-database-lock text-av-dark text-xl"></i></div>
+                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">Your own encrypted vault</h2>
+                    <p class="text-gray-600 leading-relaxed">Think of it like a safe deposit box. Your inventory is stored separately from other customers, and the vault itself is encrypted. If someone cannot open that vault, the contents are not readable in a useful way.</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-5"><i class="bi bi-key text-av-dark text-xl"></i></div>
+                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">A unique 256-bit key</h2>
+                    <p class="text-gray-600 leading-relaxed">Each vault is protected with its own strong encryption key. That means one account's protection is not reused for everyone else. It is the digital version of changing the lock for every customer.</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-5"><i class="bi bi-shield-check text-av-dark text-xl"></i></div>
+                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">Account protections that matter</h2>
+                    <p class="text-gray-600 leading-relaxed">New accounts verify their email address. Passwords must be strong and are stored as one-way hashes, not plain text. Sign-in attempts are rate-limited, and multi-factor authentication gives you another layer of defense.</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center mb-5"><i class="bi bi-cloud-check text-av-dark text-xl"></i></div>
+                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-3">Backups without being careless</h2>
+                    <p class="text-gray-600 leading-relaxed">Backups are there so a technical problem does not become a personal disaster. They are handled with the same security mindset as the live vault instead of being treated like disposable files.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="py-16 bg-av-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-display font-bold text-white mb-4">What we do not do</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">Security is not only locks and encryption. It is also respecting the fact that your collection data is private.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4 bg-white/5 border border-av-gold/20 rounded-xl p-5"><i class="bi bi-x-circle text-av-gold text-xl flex-shrink-0"></i><p class="text-gray-200"><strong>We do not sell your data</strong> to advertisers, brokers, or third parties.</p></div>
+                    <div class="flex gap-4 bg-white/5 border border-av-gold/20 rounded-xl p-5"><i class="bi bi-x-circle text-av-gold text-xl flex-shrink-0"></i><p class="text-gray-200"><strong>We do not use your inventory for ads</strong> or profiling.</p></div>
+                    <div class="flex gap-4 bg-white/5 border border-av-gold/20 rounded-xl p-5"><i class="bi bi-x-circle text-av-gold text-xl flex-shrink-0"></i><p class="text-gray-200"><strong>We do not make your collection public</strong> or searchable by other users.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limits -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 mb-6 text-center">A real-world note about security</h2>
+            <div class="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+                <p class="text-gray-700 leading-relaxed mb-4">No app can honestly promise that nothing bad could ever happen. What Arsenal Vault can promise is that we build with security in mind, use sensible modern protections, and keep improving as the product grows.</p>
+                <p class="text-gray-700 leading-relaxed">You can help too: use a unique password, turn on multi-factor authentication, keep your email account secure, and avoid sharing your login with anyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Ready to create your private vault?</h2>
+            <p class="text-gray-600 text-lg mb-8">Start with a 15-day free trial. No credit card required.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25"><i class="bi bi-rocket-takeoff"></i> Start Free Trial</a>
+                <a href="features.html" class="border-2 border-av-gold text-av-gold px-8 py-3.5 rounded-lg font-semibold hover:bg-av-gold hover:text-av-dark transition">See Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-8"></div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+</body>
+</html>
