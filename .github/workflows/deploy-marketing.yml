@@ -22,6 +22,15 @@ jobs:
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           script: bash ~/deploy.sh
 
+      - name: Remove obsolete review draft
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 46.202.198.30
+          port: 65002
+          username: u421117894
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          script: rm -f ~/domains/arsenalvault.com/public_html/legal-new.html
+
       - name: Upload marketing files directly
         uses: appleboy/scp-action@v0.1.7
         with:
