@@ -99,7 +99,7 @@
                 <div class="grid lg:grid-cols-2 gap-10 items-start">
                     <div>
                         <h2 class="text-3xl font-display font-bold text-av-dark mb-4">Download the PDF Checklist</h2>
-                        <p class="text-gray-600 mb-6">Enter your email to unlock the PDF. After submission, the download button appears instantly on this page.</p>
+                        <p class="text-gray-600 mb-6">No email required right now. Download the printable PDF checklist instantly and keep a copy somewhere secure.</p>
                         <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-6">
                             <h3 class="font-display font-bold text-lg text-av-dark mb-3">What the PDF includes</h3>
                             <ul class="space-y-2 text-gray-700">
@@ -115,23 +115,15 @@
                             <p class="text-gray-700">If the safe is stolen or damaged, your documentation may disappear with the collection. Keep a secure off-site copy or use an encrypted inventory system.</p>
                         </div>
                     </div>
-                    <div class="bg-av-dark rounded-2xl p-8 border border-av-gold/30 shadow-xl">
-                        <h3 class="text-2xl font-display font-bold text-white mb-2">Send me the checklist</h3>
-                        <p class="text-gray-400 mb-6">One quick email field. No credit card. No app signup required.</p>
-                        <form id="checklist-email-form" class="space-y-4">
-                            <div>
-                                <label for="checklist-email" class="block text-sm font-semibold text-gray-300 mb-2">Email address</label>
-                                <input id="checklist-email" name="email" type="email" required placeholder="you@example.com" class="w-full bg-av-dark-light border border-av-gold/50 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-av-gold">
-                            </div>
-                            <button id="checklist-submit" type="submit" class="w-full gradient-gold text-av-dark px-6 py-3 rounded-xl font-bold hover:opacity-90 transition"><i class="bi bi-download mr-2"></i>Get the PDF</button>
-                            <p id="checklist-form-message" class="text-sm text-gray-400"></p>
-                        </form>
-                        <div id="download-ready" class="hidden mt-6 p-5 bg-white rounded-xl border border-av-gold/40 text-center">
+                    <div class="bg-av-dark rounded-2xl p-8 border border-av-gold/30 shadow-xl text-center">
+                        <h3 class="text-2xl font-display font-bold text-white mb-2">Get the checklist instantly</h3>
+                        <p class="text-gray-400 mb-6">No email, no credit card, no app signup required.</p>
+                        <div class="p-5 bg-white rounded-xl border border-av-gold/40 text-center">
                             <h4 class="font-display font-bold text-xl text-av-dark mb-2">Your checklist is ready.</h4>
                             <p class="text-gray-600 mb-4">Download the PDF now and save a copy somewhere secure.</p>
                             <a id="checklist-pdf-link" href="../static/firearm-inventory-checklist.pdf" download class="inline-block gradient-gold text-av-dark px-6 py-3 rounded-xl font-bold hover:opacity-90 transition"><i class="bi bi-file-earmark-pdf mr-2"></i>Download PDF</a>
                         </div>
-                        <p class="text-xs text-gray-500 mt-5">By submitting, you agree to receive Arsenal Vault emails. You can unsubscribe anytime.</p>
+                        <p class="text-xs text-gray-500 mt-5">Want the full secure vault instead? Start a free Arsenal Vault trial when you are ready.</p>
                     </div>
                 </div>
             </div>
@@ -168,53 +160,9 @@
     </footer>
 
     <script>
-        function showChecklistDownload() {
-            var box = document.getElementById('download-ready');
-            if (box) {
-                box.classList.remove('hidden');
-                box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+        document.getElementById('checklist-pdf-link')?.addEventListener('click', function() {
             if (window.gtag) {
-                gtag('event', 'generate_lead', { event_category: 'checklist', event_label: 'firearm_inventory_pdf' });
-            }
-        }
-        document.getElementById('checklist-email-form')?.addEventListener('submit', async function(event) {
-            event.preventDefault();
-            var form = event.currentTarget;
-            var email = document.getElementById('checklist-email').value.trim();
-            var button = document.getElementById('checklist-submit');
-            var message = document.getElementById('checklist-form-message');
-            if (!email) return;
-            button.disabled = true;
-            button.textContent = 'Sending...';
-            message.textContent = '';
-            var payload = {
-                submittedAt: Date.now().toString(),
-                fields: [
-                    { name: 'email', value: email }
-                ],
-                context: {
-                    pageUri: window.location.href,
-                    pageName: 'Free Firearm Inventory Checklist'
-                }
-            };
-            try {
-                var response = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/245057554/aaaf32eb-8d35-461e-a051-634cdaf0ac8e', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!response.ok) throw new Error('HubSpot submission failed');
-                message.textContent = 'Thanks — your download is ready below.';
-                message.className = 'text-sm text-green-300';
-                form.reset();
-                showChecklistDownload();
-            } catch (error) {
-                message.textContent = 'The form had trouble submitting. Please try again in a moment.';
-                message.className = 'text-sm text-red-300';
-            } finally {
-                button.disabled = false;
-                button.innerHTML = '<i class="bi bi-download mr-2"></i>Get the PDF';
+                gtag('event', 'file_download', { event_category: 'checklist', event_label: 'firearm_inventory_pdf' });
             }
         });
     </script>
