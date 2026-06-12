@@ -1,416 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-652RBNGMD2');
-    </script>
-    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
-    <meta charset="UTF-8">
-    <link rel="canonical" href="https://arsenalvault.com/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsenal Vault - Firearms Inventory Management</title>
-    <meta name="description" content="Professional firearms inventory management software. Track your collection, ammunition, accessories, and maintenance with complete privacy through self-hosting.">
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://arsenalvault.com/">
-    <meta property="og:title" content="Arsenal Vault - Firearms Inventory Management">
-    <meta property="og:description" content="Track your firearms collection with precision. Manage inventory, ammunition, accessories, and maintenance records securely.">
-    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arsenal Vault - Firearms Inventory Management">
-    <meta name="twitter:description" content="Track your firearms collection with precision. Manage inventory, ammunition, accessories, and maintenance records securely.">
-    <meta name="twitter:image" content="https://arsenalvault.com/img/av-shield-512.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'av-gold': '#D4AF37',
-                        'av-gold-light': '#CFB53B',
-                        'av-gold-dark': '#B8962E',
-                        'av-dark': '#1A1A1A',
-                        'av-dark-light': '#2C2C2C',
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Source Sans 3', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Source Sans 3', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
-        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #D4AF37, #CFB53B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
-        .hero-pattern {
-            background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
-        }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Arsenal Vault",
-      "description": "Professional firearms inventory management software for collectors",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Windows, macOS, Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "4.99",
-        "priceCurrency": "USD"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Arsenal Vault",
-        "url": "https://arsenalvault.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "686 RD 660",
-          "addressLocality": "Dayton",
-          "addressRegion": "TX",
-          "postalCode": "77535",
-          "addressCountry": "US"
-        }
-      }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsenal Vault — Every collection gets its own encrypted vault</title>
+<meta name="description" content="Firearms inventory built on a separate encrypted database for every owner. Track guns, ammo, parts, and maintenance, protected with a unique 256-bit key. 14-day free trial, no card.">
+<link rel="canonical" href="https://arsenalvault.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arsenalvault.com/">
+<meta property="og:title" content="Arsenal Vault — Every collection gets its own encrypted vault">
+<meta property="og:description" content="Firearms inventory built on a separate encrypted database for every owner. Track guns, ammo, parts, and maintenance, protected with a unique 256-bit key. 14-day free trial, no card.">
+<meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arsenal Vault — Every collection gets its own encrypted vault">
+<meta name="twitter:description" content="Firearms inventory built on a separate encrypted database for every owner. Track guns, ammo, parts, and maintenance, protected with a unique 256-bit key. 14-day free trial, no card.">
+<meta name="twitter:image" content="https://arsenalvault.com/img/av-shield-512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="shortcut icon" href="img/favicon.ico">
+<meta name="theme-color" content="#0E0E10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<!-- NOTE: cdn.tailwindcss.com is the dev build. Before production, precompile
+     Tailwind to a static stylesheet in the deploy workflow for faster paint. -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      'av-gold':'#D4AF37','av-gold-bright':'#E6C658','av-gold-deep':'#9A7B22',
+      'av-ink':'#0E0E10','av-gun':'#16161A','av-gun2':'#1E1E24','av-line':'#2A2A31',
+      'av-paper':'#ECEAE3','av-dim':'#A7A39A','av-faint':'#6E6B64','av-ok':'#6FB36F'
+    },
+    fontFamily: {
+      display:['"Barlow Condensed"','sans-serif'],
+      sans:['Barlow','system-ui','sans-serif'],
+      mono:['"JetBrains Mono"','monospace']
     }
-    </script>
+  }}
+};
+</script>
+<style>
+  body{background:#0E0E10}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(1200px 600px at 70% -10%,rgba(212,175,55,.06),transparent 60%),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);}
+  .stamp{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#D4AF37}
+  .plate-sheen{position:relative;overflow:hidden}
+  .plate-sheen::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(115deg,transparent 40%,rgba(212,175,55,.06) 50%,transparent 60%)}
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+  .btn-primary{background:linear-gradient(180deg,#E6C658,#D4AF37);color:#1A1500;
+    box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 24px rgba(212,175,55,.18);transition:transform .15s,box-shadow .2s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 12px 30px rgba(212,175,55,.28)}
+  /* check icon with SVG fallback if the icon font fails to load */
+  .chk i{display:inline-block}
+  .chk svg{display:none}
+  .no-bi .chk i{display:none}
+  .no-bi .chk svg{display:inline-block}
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <img src="img/av-logo.png" alt="Arsenal Vault" class="h-10">
-                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
-                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
-                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
-                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
-                    <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
-                    <a href="about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
-                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_nav&utm_campaign=free_trial" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
-                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
-                <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
-                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
-                <a href="blog/" class="block text-gray-300 hover:text-av-gold py-2">Blog</a>
-            <a href="about.html" class="block text-gray-300 hover:text-av-gold py-2">About</a>
-                <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
-                <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_mobile_nav&utm_campaign=free_trial" class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
-            </div>
-        </div>
+<body class="font-sans text-av-paper antialiased">
+<script>
+// detect Bootstrap Icons load; if absent, flip to SVG fallbacks (protects the
+// pricing checkmarks from silently vanishing if the CDN/CSP blocks the font)
+addEventListener('DOMContentLoaded',function(){
+  try{
+    var t=document.createElement('i');t.className='bi bi-check-lg';t.style.position='absolute';t.style.opacity=0;
+    document.body.appendChild(t);
+    var f=getComputedStyle(t,'::before').fontFamily||'';
+    if(f.indexOf('bootstrap-icons')===-1){document.body.classList.add('no-bi');}
+    document.body.removeChild(t);
+  }catch(e){document.body.classList.add('no-bi');}
+});
+</script>
+<header class="sticky top-0 z-50 backdrop-blur-md bg-av-ink/80 border-b border-av-line">
+  <div class="max-w-6xl mx-auto px-6 h-[70px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-display font-bold text-xl tracking-wide">
+      <img src="img/av-logo.png" alt="Arsenal Vault" class="h-8 drop-shadow-[0_2px_6px_rgba(212,175,55,.25)]">
+      Arsenal<span class="text-av-gold">Vault</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7">
+      <a href="features.html" class="text-sm text-av-dim hover:text-av-paper transition">Features</a><a href="pricing.html" class="text-sm text-av-dim hover:text-av-paper transition">Pricing</a><a href="security.html" class="text-sm text-av-dim hover:text-av-paper transition">Security</a><a href="download.html" class="text-sm text-av-dim hover:text-av-paper transition">Download</a><a href="blog/" class="text-sm text-av-dim hover:text-av-paper transition">Blog</a><a href="about.html" class="text-sm text-av-dim hover:text-av-paper transition">About</a><a href="support.html" class="text-sm text-av-dim hover:text-av-paper transition">Support</a>
+      <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=free_trial" class="btn-primary font-display font-semibold uppercase tracking-wide text-sm px-5 py-2.5 rounded">Start Free Trial</a>
     </nav>
+    <button class="lg:hidden border border-av-line rounded px-3 py-2" onclick="document.getElementById('mnav').classList.toggle('hidden')" aria-label="Menu">
+      <i class="bi bi-list text-xl"></i>
+    </button>
+  </div>
+  <div id="mnav" class="hidden lg:hidden border-t border-av-line bg-av-gun px-6 py-3">
+    <a href="features.html" class="block py-2 text-av-dim hover:text-av-paper">Features</a><a href="pricing.html" class="block py-2 text-av-dim hover:text-av-paper">Pricing</a><a href="security.html" class="block py-2 text-av-dim hover:text-av-paper">Security</a><a href="download.html" class="block py-2 text-av-dim hover:text-av-paper">Download</a><a href="blog/" class="block py-2 text-av-dim hover:text-av-paper">Blog</a><a href="about.html" class="block py-2 text-av-dim hover:text-av-paper">About</a><a href="support.html" class="block py-2 text-av-dim hover:text-av-paper">Support</a>
+    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=free_trial" class="block mt-2 btn-primary text-center font-display font-semibold uppercase tracking-wide px-5 py-2.5 rounded">Start Free Trial</a>
+  </div>
+</header>
+<!-- HERO -->
+<section class="relative pt-20 pb-16">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.05fr_.95fr] gap-14 items-center">
+    <div class="rv in">
+      <div class="inline-flex items-center gap-2.5 mb-5">
+        <span class="w-2 h-2 rounded-full bg-av-ok shadow-[0_0_10px_#6FB36F]"></span>
+        <span class="stamp">Now available · Cloud &amp; Windows desktop</span>
+      </div>
+      <h1 class="font-display font-bold uppercase leading-[1.02] tracking-tight text-[clamp(2.6rem,6vw,4.4rem)] mb-5">
+        Every collection gets<span class="block text-av-gold">its own encrypted vault</span></h1>
+      <p class="text-av-dim text-[1.18rem] max-w-[60ch] mb-3">Most "secure" apps drop every user into one shared database. Arsenal Vault gives every owner a <strong class="text-av-paper">physically separate, encrypted database</strong> — locked at rest with a unique 256-bit key. Track firearms, ammo, parts, and maintenance from any device, without handing your serial numbers to a shared table.</p>
+      <p class="text-av-faint text-[.95rem] mb-7">If one user's key is ever compromised, zero other accounts are touched. That is not a setting. It is the architecture.</p>
+      <div class="flex flex-wrap gap-4 mb-5">
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=hero&utm_campaign=free_trial" class="btn-primary font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded">Start Free Trial</a>
+        <a href="#moat" class="font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded border border-av-line hover:border-av-gold hover:text-av-gold transition">How the vault works</a>
+      </div>
+      <div class="flex items-center gap-2 text-av-dim text-sm mt-3"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> 14-day free trial · No credit card · Cancel anytime</div>
+    </div>
+    <div class="relative rv in">
+      <div class="rounded-xl border border-av-line overflow-hidden bg-av-gun shadow-[0_30px_70px_rgba(0,0,0,.55)]">
+        <div class="flex items-center gap-2 px-3 py-2.5 border-b border-av-line bg-av-gun2">
+          <span class="flex gap-1.5"><i class="w-2.5 h-2.5 rounded-full bg-[#3A3A44] block"></i><i class="w-2.5 h-2.5 rounded-full bg-[#3A3A44] block"></i><i class="w-2.5 h-2.5 rounded-full bg-[#3A3A44] block"></i></span>
+          <span class="ml-auto font-mono text-[.66rem] tracking-[.2em] text-av-gold flex items-center gap-1.5"><i class="bi bi-lock-fill"></i> VAULT · ENCRYPTED</span>
+        </div>
+        <img src="img/screenshots/dashboard-hero.png" alt="Arsenal Vault dashboard with collection stats, ammunition tracking, and investment value" class="w-full"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none" class="px-8 py-12 text-center text-av-faint font-mono text-sm tracking-wide">[ DASHBOARD PREVIEW ]</div>
+      </div>
+      <div class="hidden md:block absolute -right-3.5 bottom-7 bg-av-ink border border-av-gold-deep rounded px-3 py-2.5 font-mono text-[.66rem] tracking-[.12em] text-av-gold shadow-[0_10px_30px_rgba(0,0,0,.5)]">KEY: AES-256 · SQLCIPHER</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-gray-100 to-gray-50 hero-pattern py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-6">
-                        <span class="w-2 h-2 bg-av-gold rounded-full animate-pulse"></span>
-                        <span class="text-av-gold text-sm font-medium">Now Available</span>
-                    </div>
-                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
-                        Professional <span class="text-gradient-gold">Firearms Inventory</span> Management
-                    </h1>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed max-w-xl">
-                        Track your firearms, ammunition, accessories, documents, and maintenance records in your own isolated encrypted vault — accessible from any device, protected with a unique 256-bit key.
-                    </p>
-                    <div class="grid sm:grid-cols-2 gap-3 mb-8 max-w-xl">
-                        <div class="flex items-center gap-2 text-sm text-gray-700 bg-white/80 border border-av-gold/20 rounded-lg px-3 py-2 shadow-sm">
-                            <i class="bi bi-safe2 text-av-gold"></i>
-                            <span>Separate encrypted vault per user</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700 bg-white/80 border border-av-gold/20 rounded-lg px-3 py-2 shadow-sm">
-                            <i class="bi bi-lock text-av-gold"></i>
-                            <span>SQLCipher + unique 256-bit key</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700 bg-white/80 border border-av-gold/20 rounded-lg px-3 py-2 shadow-sm">
-                            <i class="bi bi-shield-check text-av-gold"></i>
-                            <span>MFA and email verification</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-gray-700 bg-white/80 border border-av-gold/20 rounded-lg px-3 py-2 shadow-sm">
-                            <i class="bi bi-eye-slash text-av-gold"></i>
-                            <span>Your data is never sold for ads</span>
-                        </div>
-                    </div>
-                    <div class="space-y-4 max-w-xl">
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_hero&utm_campaign=free_trial" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold text-center hover:opacity-90 transition text-lg shadow-lg shadow-av-gold/25 flex items-center justify-center gap-2 sm:flex-1">
-                                <i class="bi bi-rocket"></i> Get Started Free
-                            </a>
-                            <a href="features.html" class="border-2 border-av-gold text-av-gold px-8 py-3.5 rounded-lg font-semibold text-center hover:bg-av-gold hover:text-av-dark transition text-lg sm:flex-1">
-                                See Features
-                            </a>
-                        </div>
-                        <a href="checklist/" class="border-2 border-av-gold/70 text-av-gold bg-white/70 px-8 py-3.5 rounded-lg font-semibold text-center hover:bg-av-gold hover:text-av-dark transition text-lg flex items-center justify-center gap-2">
-                            <i class="bi bi-clipboard-check"></i> Free Checklist
-                        </a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="bg-white rounded-2xl shadow-2xl p-3 border border-gray-200">
-                        <img src="img/screenshots/dashboard-hero.png" alt="Arsenal Vault firearms inventory dashboard showing collection stats, ammunition tracking, and investment value" class="rounded-xl w-full">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 bg-av-dark rounded-xl p-4 shadow-xl border border-av-gold/20 hidden lg:block">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 gradient-gold rounded-full flex items-center justify-center"><i class="bi bi-shield-check text-av-dark"></i></div>
-                            <div><p class="text-white font-semibold text-sm">Private Encrypted Vault</p><p class="text-gray-400 text-xs">Your own database</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- TRUST STRIP -->
+<div class="border-y border-av-line bg-av-gun">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap gap-x-9 gap-y-4 justify-center text-sm text-av-dim">
+    <span class="flex items-center gap-2"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> Separate encrypted DB per owner</span>
+    <span class="flex items-center gap-2"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> SQLCipher + unique 256-bit key</span>
+    <span class="flex items-center gap-2"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> MFA &amp; email verification</span>
+    <span class="flex items-center gap-2"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span> Never sold for ads</span>
+  </div>
+</div>
 
-    <!-- Features Grid -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Everything You Need to Manage Your Collection</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">From individual firearms to complete arsenals, Arsenal Vault gives you professional-grade tools with secure cloud access.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-crosshair text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Firearms Tracking</h3>
-                    <p class="text-gray-600">Complete records for every firearm: make, model, serial numbers, caliber, purchase info, and custom fields.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-box-seam text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Ammunition Inventory</h3>
-                    <p class="text-gray-600">Track rounds by caliber, brand, and quantity. Know exactly what you have and when to restock.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-puzzle text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Parts & Accessories</h3>
-                    <p class="text-gray-600">Organize optics, magazines, grips, and components. Link parts to specific firearms.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-tools text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Maintenance Logs</h3>
-                    <p class="text-gray-600">Record cleanings, repairs, and round counts. Set reminders for scheduled maintenance.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-file-earmark-pdf text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">PDF Reports</h3>
-                    <p class="text-gray-600">Generate professional reports for insurance, compliance, or personal records.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-cloud-check text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Cloud Access</h3>
-                    <p class="text-gray-600">Access your inventory from any device. Automatic backups keep your data safe and secure.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="features.html" class="inline-flex items-center gap-2 text-av-gold font-semibold hover:underline">
-                    See All Features <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
+<!-- MOAT -->
+<section id="moat" class="py-20 border-t border-av-line" style="background:linear-gradient(180deg,#0E0E10,#16161A 60%,#0E0E10)">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="rv mb-12"><span class="stamp">The difference · Read the data plate</span></div>
+    <div class="grid lg:grid-cols-2 gap-12 gap-y-9 items-center">
+      <div class="rv">
+        <h2 class="font-display font-bold uppercase text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.02] mb-4">Not cloud storage.<br><span class="text-av-gold">A vault with your name stamped on it.</span></h2>
+        <p class="text-av-dim text-[1.075rem] max-w-[60ch]">Every firearm carries a data plate — model, caliber, serial — stamped into the metal. Your vault works the same way: the facts that matter aren't a marketing promise, they're built into how it's machined.</p>
+        <div class="mt-5 border-l-2 border-av-gold pl-4.5 py-1.5">
+          <p class="text-av-dim text-[.98rem]"><strong class="text-av-paper">Typical app:</strong> one database, everyone's rows mixed together, "encryption" as a checkbox.</p>
+          <p class="text-av-dim text-[.98rem] mt-2"><strong class="text-av-paper">Arsenal Vault:</strong> a separate encrypted database file per owner, with its own key. Isolation you can point to, not just trust.</p>
         </div>
-    </section>
+      </div>
+      <div class="rv">
+    <div class="plate-sheen rounded-md border border-av-gold-deep shadow-[0_24px_60px_rgba(0,0,0,.5)]"
+         style="background:linear-gradient(180deg,#20201C,#171714)">
+      <div class="flex items-center justify-between px-5 py-3.5 border-b border-av-gold/20" style="background:rgba(212,175,55,.05)">
+        <span class="font-mono text-[.72rem] tracking-[.28em] uppercase text-av-gold">Vault Specification</span>
+        <span class="font-mono text-[.66rem] tracking-[.1em] text-av-faint">SN · YOUR-KEY-ONLY</span>
+      </div>
 
-    <!-- Security Section -->
-    <section class="py-20 gradient-dark relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-20 left-10 w-64 h-64 bg-av-gold rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-av-gold rounded-full filter blur-3xl"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-6">
-                    <i class="bi bi-shield-lock text-av-gold"></i>
-                    <span class="text-av-gold text-sm font-medium">Security First</span>
-                </div>
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">Not Just Cloud Storage. <span class="text-gradient-gold">Your Own Encrypted Vault.</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Arsenal Vault creates a separate SQLCipher-encrypted database for each vault owner. Your collection data is isolated from other users and protected at rest with a unique 256-bit encryption key.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Per-User Vaults -->
-                <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="bi bi-safe2 text-av-dark text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Per-User Encrypted Vaults</h3>
-                    <p class="text-gray-400 text-sm">Your data lives in its own isolated, encrypted database file. Never mixed with other users. Ever.</p>
-                </div>
-                
-                <!-- AES-256 -->
-                <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="bi bi-lock text-av-dark text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">SQLCipher + 256-Bit Keys</h3>
-                    <p class="text-gray-400 text-sm">Each vault uses a unique 256-bit random key. Vault keys are encrypted before storage using envelope encryption.</p>
-                </div>
-                
-                <!-- Zero Access -->
-                <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="bi bi-eye-slash text-av-dark text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Your Data, Protected</h3>
-                    <p class="text-gray-400 text-sm">Every vault is encrypted at rest. Your data is never sold, shared, or used for advertising.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <p class="text-gray-500 text-sm max-w-2xl mx-auto">
-                    <i class="bi bi-info-circle mr-1"></i>
-                    Unlike apps that encrypt one database for all users, Arsenal Vault creates physically separate encrypted vaults. If one key is compromised, zero other accounts are affected.
-                </p>
-            </div>
-        </div>
-    </section>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Isolation</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">One database per owner</b><span class="text-av-faint text-sm">Your data never shares a table with anyone else's. Ever.</span></div>
+      </div>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Encryption</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">SQLCipher · AES-256 at rest</b><span class="text-av-faint text-sm">Full-file encryption on every vault, cloud and desktop.</span></div>
+      </div>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Key</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">Unique 256-bit, envelope-wrapped</b><span class="text-av-faint text-sm">Your vault key is itself encrypted before it is ever stored.</span></div>
+      </div>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Fields</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">Fernet on serials &amp; locations</b><span class="text-av-faint text-sm">Sensitive fields get a second layer on top of the vault.</span></div>
+      </div>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Transit</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">TLS 1.3 via Cloudflare</b><span class="text-av-faint text-sm">Encrypted end to end between your device and your vault.</span></div>
+      </div>
+      <div class="grid grid-cols-[120px_1fr] gap-2 px-5 py-4 border-b border-white/5 last:border-0">
+        <div class="font-mono text-[.66rem] tracking-[.18em] uppercase text-av-gold-deep pt-1">Blast radius</div>
+        <div><b class="font-display font-bold text-[1.05rem] block">Zero cross-account exposure</b><span class="text-av-faint text-sm">One key compromised affects exactly one vault — that one.</span></div>
+      </div>
+    </div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Pricing Preview -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-gray-600 text-lg">Choose the plan that fits your needs. Simple monthly pricing, cancel any time.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Basic -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
-                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Basic</h3><p class="text-gray-500 text-sm">For the everyday collector</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$4.99</span><span class="text-gray-500">/mo</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>2 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
-                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
-                    </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_basic_plan&utm_campaign=free_trial" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
-                </div>
-                
-                <!-- Pro - Most Popular -->
-                <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
-                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-white mb-2">Pro</h3><p class="text-gray-400 text-sm">For serious collectors</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-av-gold">$9.99</span><span class="text-gray-400">/mo</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">20 firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
-                    </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pro_plan&utm_campaign=free_trial" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
-                </div>
-                
-                <!-- Ultimate -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
-                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Ultimate</h3><p class="text-gray-500 text-sm">For large collections</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$19.99</span><span class="text-gray-500">/mo</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
-                    </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_ultimate_plan&utm_campaign=free_trial" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
-                </div>
-            </div>
-            <p class="text-center text-gray-500 text-sm mt-10">All plans include a 14-day free trial. No credit card required.</p>
-        </div>
-    </section>
+<!-- FOUNDER STORY (surfaced from About) -->
+<section class="py-20 border-t border-av-line">
+  <div class="max-w-4xl mx-auto px-6 text-center rv">
+    <span class="stamp">Why this exists</span>
+    <h2 class="font-display font-bold uppercase text-[clamp(1.9rem,4vw,3rem)] leading-[1.05] mt-3 mb-6">Built after a collection was stolen</h2>
+    <p class="text-av-dim text-[1.075rem] leading-relaxed mb-4">Arsenal Vault wasn't designed in a boardroom. When my dad's collection was stolen, I learned firsthand how valuable proper documentation is. Providing accurate information to the authorities and insurance companies without detailed records was a nightmare — serial numbers, purchase dates, photos, values. All the things you don't think about until you need them.</p>
+    <p class="text-av-dim text-[1.075rem] leading-relaxed mb-7">It's the system I wished I'd had. After building it for myself, I realized other collectors might find it useful too. So here we are.</p>
+    <a href="about.html" class="font-display font-semibold uppercase tracking-wide px-6 py-2.5 rounded border border-av-line hover:border-av-gold hover:text-av-gold transition">Read the full story →</a>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-av-dark-light border-t border-av-gold/20 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-10">
-                <div>
-                    <div class="flex items-center gap-3 mb-5"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-10"><span class="text-av-gold font-display font-bold text-lg">Arsenal Vault</span></div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Professional firearms inventory management with secure cloud access.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5">Product</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="features.html" class="hover:text-av-gold transition">Features</a></li>
-                        <li><a href="pricing.html" class="hover:text-av-gold transition">Pricing</a></li>
-                        <li><a href="download.html" class="hover:text-av-gold transition">Download</a></li>
-                        <li><a href="security.html" class="hover:text-av-gold transition">Security</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5">Support</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="support.html" class="hover:text-av-gold transition">FAQ</a></li>
-                        <li><a href="support.html#contact" class="hover:text-av-gold transition">Contact Us</a></li>
-                        <li><a href="blog/" class="hover:text-av-gold transition">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5">Legal</h4>
-                    <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="legal.html#pp" class="hover:text-av-gold transition">Privacy Policy</a></li>
-                        <li><a href="legal.html#tos" class="hover:text-av-gold transition">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
-</body>
-</html>
-<!-- Auto-deploy test 2026-03-07_18:46:28 -->
+<!-- FEATURES -->
+<section class="py-20 border-t border-av-line">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="rv mb-12 max-w-[64ch]">
+      <span class="stamp block mb-3.5">Built for the whole collection</span>
+      <h2 class="font-display font-bold uppercase text-[clamp(2rem,4.5vw,3.25rem)] mb-4">Everything in one place</h2>
+      <p class="text-av-dim text-[1.075rem]">From a first handgun to a full safe — guns, ammo, the parts bin competitors ignore, and the maintenance history that keeps it all running.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-graph-up-arrow text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">Firearms Tracking</h3>
+        <p class="text-av-dim text-[.94rem]">Make, model, serial, caliber, purchase info, condition, and current value — with multi-photo galleries on every entry.</p>
+
+      </div>
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-box-seam text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">Ammunition Inventory</h3>
+        <p class="text-av-dim text-[.94rem]">Track by caliber, brand, grain, and storage location. Low-stock alerts and cost-per-round so you never reach the range empty.</p>
+
+      </div>
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-wrench-adjustable text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">Parts &amp; Accessories</h3>
+        <p class="text-av-dim text-[.94rem]">Optics, magazines, springs, handguards — 15 categories. Link any part to a specific firearm with its own history.</p>
+        <span class="inline-block mt-3 font-mono text-[.62rem] tracking-[.16em] uppercase text-av-gold border border-av-gold-deep rounded px-2 py-0.5">Competitors don't have this</span>
+      </div>
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-clock-history text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">Maintenance Logs</h3>
+        <p class="text-av-dim text-[.94rem]">Cleanings, repairs, modifications, and round counts per firearm — with reminders so scheduled maintenance never slips.</p>
+
+      </div>
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-file-earmark-text text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">PDF Reports</h3>
+        <p class="text-av-dim text-[.94rem]">Clean, professional reports for insurance, an estate, or your own records — including a dedicated insurance schedule.</p>
+
+      </div>
+      <div class="rv bg-av-gun border border-av-line rounded-lg p-6 hover:border-av-gold-deep hover:-translate-y-1 transition">
+        <div class="w-10 h-10 border border-av-gold-deep rounded-md flex items-center justify-center mb-4" style="background:rgba(212,175,55,.05)">
+          <i class="bi bi-laptop text-av-gold text-lg"></i></div>
+        <h3 class="font-display font-bold text-xl uppercase mb-2">Cloud or Fully Offline</h3>
+        <p class="text-av-dim text-[.94rem]">Use the encrypted cloud from any browser, or run the Windows desktop app offline where your data never leaves your machine.</p>
+
+      </div></div>
+    <div class="mt-8 rv"><a href="features.html" class="font-display font-semibold uppercase tracking-wide px-6 py-2.5 rounded border border-av-line hover:border-av-gold hover:text-av-gold transition">See all features →</a></div>
+  </div>
+</section>
+
+<!-- OWN IT -->
+<section class="py-20 border-y border-av-line bg-av-gun">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
+    <div class="rv">
+      <span class="stamp">Windows desktop</span>
+      <h2 class="font-display font-bold uppercase text-[clamp(1.9rem,4vw,3rem)] leading-[1.05] mt-3 mb-4">Prefer offline?<br><span class="text-av-gold">Own it outright.</span></h2>
+      <p class="text-av-dim text-[1.075rem] max-w-[58ch]">For collectors who want nothing in the cloud at all. The desktop app runs entirely on your machine with the same encryption — your data simply never leaves the building.</p>
+      <ul class="my-6 space-y-1.5">
+        <li class="flex gap-2.5 text-av-dim"><span class="text-av-gold"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span> Fully offline — data stays local, always</li>
+        <li class="flex gap-2.5 text-av-dim"><span class="text-av-gold"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span> Same SQLCipher encryption as the cloud vault</li>
+        <li class="flex gap-2.5 text-av-dim"><span class="text-av-gold"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span> Annual license — pay once a year, no monthly bill</li>
+      </ul>
+      <a href="download.html" class="font-display font-semibold uppercase tracking-wide px-6 py-2.5 rounded border border-av-line hover:border-av-gold hover:text-av-gold transition">View desktop options →</a>
+    </div>
+    <div class="rv border border-av-line rounded-xl bg-av-ink p-7 text-center">
+      <span class="stamp block mb-2.5">From</span>
+      <div class="font-display font-bold text-[2.6rem] leading-none"><sup class="text-[1.1rem] text-av-dim align-super">$</sup>44<span class="text-[1.3rem]">.99</span></div>
+      <div class="text-av-faint text-sm mb-5">per year · Windows 10+</div>
+      <a href="download.html" class="btn-primary block font-display font-semibold uppercase tracking-wide px-6 py-3 rounded">Download free trial</a>
+      <p class="text-av-faint text-xs mt-3">14-day trial · no card</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="text-center py-24 border-t border-av-line" style="background:radial-gradient(700px 360px at 50% 0%,rgba(212,175,55,.08),transparent 70%)">
+  <div class="max-w-6xl mx-auto px-6 rv">
+    <span class="stamp">Ready when you are</span>
+    <h2 class="font-display font-bold uppercase text-[clamp(2.2rem,5vw,3.6rem)] mt-4 mb-4">Lock down your collection</h2>
+    <p class="text-av-dim max-w-[52ch] mx-auto mb-7">Start a free 14-day trial and give your collection its own encrypted vault. No credit card. Nothing to lose but the spreadsheet.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=final_cta&utm_campaign=free_trial" class="btn-primary font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded">Start Free Trial</a>
+      <a href="features.html" class="font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded border border-av-line hover:border-av-gold hover:text-av-gold transition">Explore features</a>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-av-line bg-av-gun pt-14 pb-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-9">
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg mb-3">
+          <img src="img/av-logo.png" alt="Arsenal Vault" class="h-9"> Arsenal<span class="text-av-gold">Vault</span></a>
+        <p class="text-av-faint text-sm max-w-[34ch]">Firearms inventory built on real per-owner encryption. Your data. Your key. Your vault.</p>
+      </div>
+      <div>
+        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Product</h4>
+        <a href="features.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Features</a>
+        <a href="pricing.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Pricing</a>
+        <a href="download.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Download</a>
+        <a href="security.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Security</a>
+      </div>
+      <div>
+        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Company</h4>
+        <a href="about.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">About</a>
+        <a href="blog/" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Blog</a>
+        <a href="support.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Support</a>
+        <a href="support.html#contact" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Contact</a>
+      </div>
+      <div>
+        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Legal</h4>
+        <a href="legal.html#pp" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Privacy Policy</a>
+        <a href="legal.html#tos" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Terms of Service</a>
+      </div>
+    </div>
+    <div class="border-t border-av-line pt-5 flex flex-wrap justify-between gap-2 text-av-faint text-xs">
+      <span>© 2026 Arsenal Vault. All rights reserved.</span>
+      <span>Cloud &amp; Windows desktop · SQLCipher AES-256</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});})();
+</script>
+</body></html>
