@@ -122,7 +122,7 @@
                         <div class="p-5 bg-white rounded-xl border border-av-gold/40 text-center">
                             <h4 class="font-display font-bold text-xl text-av-dark mb-2">Your checklist is ready.</h4>
                             <p class="text-gray-600 mb-4">Download the PDF now and save a copy somewhere secure.</p>
-                            <a id="checklist-pdf-link" href="../static/firearm-inventory-checklist.pdf" download class="inline-block gradient-gold text-av-dark px-6 py-3 rounded-xl font-bold hover:opacity-90 transition"><i class="bi bi-file-earmark-pdf mr-2"></i>Download PDF</a>
+                            <a id="checklist-pdf-link" href="../static/firearm-inventory-checklist.pdf?utm_source=checklist&utm_medium=pdf_download&utm_campaign=firearm_inventory_checklist" download data-umami-event="Checklist PDF Download" data-umami-event-source="checklist" data-umami-event-file="firearm-inventory-checklist.pdf" class="inline-block gradient-gold text-av-dark px-6 py-3 rounded-xl font-bold hover:opacity-90 transition"><i class="bi bi-file-earmark-pdf mr-2"></i>Download PDF</a>
                         </div>
                         <p class="text-xs text-gray-500 mt-5">Want the full secure vault instead? Start a free Arsenal Vault trial when you are ready.</p>
                     </div>
@@ -163,7 +163,11 @@
     <script>
         document.getElementById('checklist-pdf-link')?.addEventListener('click', function() {
             if (window.gtag) {
-                gtag('event', 'file_download', { event_category: 'checklist', event_label: 'firearm_inventory_pdf' });
+                gtag('event', 'file_download', {
+                    event_category: 'checklist',
+                    event_label: 'firearm_inventory_pdf',
+                    link_url: '../static/firearm-inventory-checklist.pdf?utm_source=checklist&utm_medium=pdf_download&utm_campaign=firearm_inventory_checklist'
+                });
             }
         });
     </script>
