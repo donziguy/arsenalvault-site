@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
@@ -21,6 +21,7 @@ jobs:
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           timeout: 120s
+          command_timeout: 8m
           script: |
             set -e
             WEBROOT="$HOME/domains/arsenalvault.com/public_html"
