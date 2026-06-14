@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://js-na2.hsforms.net/forms/embed/245057554.js" defer></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
@@ -58,6 +57,7 @@
                     <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
                     <a href="about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
                     <a href="support.html" class="nav-link text-av-gold font-medium">Support</a>
+                    <a href="contact.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Contact</a>
                     <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
                 </div>
                 <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
@@ -71,6 +71,7 @@
             <a href="blog/" class="block text-gray-300 hover:text-av-gold py-2">Blog</a>
             <a href="about.html" class="block text-gray-300 hover:text-av-gold py-2">About</a>
             <a href="support.html" class="block text-av-gold py-2">Support</a>
+            <a href="contact.html" class="block text-gray-300 hover:text-av-gold py-2">Contact</a>
         </div>
     </nav>
 
@@ -94,7 +95,7 @@
                     <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-book text-av-dark text-xl"></i></div>
                     <div><h3 class="font-semibold text-gray-900">Documentation</h3><p class="text-sm text-gray-500">Guides and tutorials</p></div>
                 </a>
-                <a href="#contact" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                <a href="contact.html" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
                     <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-envelope text-av-dark text-xl"></i></div>
                     <div><h3 class="font-semibold text-gray-900">Contact Us</h3><p class="text-sm text-gray-500">Get personalized help</p></div>
                 </a>
@@ -213,22 +214,13 @@
         </div>
     </section>
 
-    <!-- Contact Form -->
-    <section id="contact" class="py-16 bg-gray-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Contact Support</h2>
-                <p class="text-gray-600">Can't find what you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
-                <div class="hs-form-frame" data-region="na2" data-form-id="ce8c57a3-2f13-457d-97ed-1d273ffc1019" data-portal-id="245057554"></div>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-gray-200 text-center">
-                <p class="text-gray-600 mb-4">Or reach us directly:</p>
-                <a href="mailto:support@arsenalvault.com" class="text-av-gold font-semibold hover:underline">support@arsenalvault.com</a>
-            </div>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Need More Help?</h2>
+            <p class="text-gray-600 mb-8">Use the contact page for product questions, billing help, desktop licensing, or support.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">
+                <i class="bi bi-envelope"></i> Contact Us
+            </a>
         </div>
     </section>
 
