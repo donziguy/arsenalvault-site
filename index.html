@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://arsenalvault.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arsenal Vault - Firearms Inventory Management</title>
-    <meta name="description" content="Professional firearms inventory management software. Track your collection, ammunition, accessories, and maintenance with complete privacy through self-hosting.">
+    <meta name="description" content="Professional firearms inventory management software. Track firearms, ammunition, accessories, documents, and maintenance in a private encrypted vault. All plans include a 15-day free trial.">
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arsenalvault.com/">
@@ -100,50 +100,18 @@
       }
     }
     </script>
+<link rel="stylesheet" href="css/av-site-fix.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <img src="img/av-logo.png" alt="Arsenal Vault" class="h-10">
-                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
-                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
-                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
-                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
-                    <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
-                    <a href="about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
-                    <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="contact.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Contact</a>
-                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></a>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
-                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
-                <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
-                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
-                <a href="blog/" class="block text-gray-300 hover:text-av-gold py-2">Blog</a>
-            <a href="about.html" class="block text-gray-300 hover:text-av-gold py-2">About</a>
-                <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
-            <a href="contact.html" class="block text-gray-300 hover:text-av-gold py-2">Contact</a>
-                <a href="pricing.html" class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
+<body class="bg-gray-50 av-unified">
+<nav class="av-topnav" aria-label="Primary navigation">
+  <div class="av-topnav-inner">
+    <a href="index.html" class="av-brand"><img src="img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
+    <div class="av-navlinks"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
+  </div>
+  <div id="av-mobile-menu" class="av-mobile"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+</nav>
+<!-- Hero Section -->
     <section class="bg-gradient-to-b from-gray-100 to-gray-50 hero-pattern py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -179,7 +147,7 @@
                     <div class="space-y-4 max-w-xl">
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold text-center hover:opacity-90 transition text-lg shadow-lg shadow-av-gold/25 flex items-center justify-center gap-2 sm:flex-1">
-                                <i class="bi bi-rocket"></i> Get Started Free
+                                <i class="bi bi-rocket"></i> Start 15-Day Trial
                             </a>
                             <a href="features.html" class="border-2 border-av-gold text-av-gold px-8 py-3.5 rounded-lg font-semibold text-center hover:bg-av-gold hover:text-av-dark transition text-lg sm:flex-1">
                                 See Features
@@ -267,7 +235,7 @@
                 <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">Not Just Cloud Storage. <span class="text-gradient-gold">Your Own Encrypted Vault.</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Arsenal Vault creates a separate SQLCipher-encrypted database for each vault owner. Your collection data is isolated from other users and protected at rest with a unique 256-bit encryption key.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Per-User Vaults -->
                 <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
@@ -277,7 +245,7 @@
                     <h3 class="text-xl font-display font-bold text-white mb-3">Per-User Encrypted Vaults</h3>
                     <p class="text-gray-400 text-sm">Your data lives in its own isolated, encrypted database file. Never mixed with other users. Ever.</p>
                 </div>
-                
+
                 <!-- AES-256 -->
                 <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
                     <div class="w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -286,7 +254,7 @@
                     <h3 class="text-xl font-display font-bold text-white mb-3">SQLCipher + 256-Bit Keys</h3>
                     <p class="text-gray-400 text-sm">Each vault uses a unique 256-bit random key. Vault keys are encrypted before storage using envelope encryption.</p>
                 </div>
-                
+
                 <!-- Zero Access -->
                 <div class="bg-av-dark-light border border-av-gold/20 rounded-2xl p-8 text-center">
                     <div class="w-16 h-16 gradient-gold rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -296,7 +264,7 @@
                     <p class="text-gray-400 text-sm">Every vault is encrypted at rest. Your data is never sold, shared, or used for advertising.</p>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
                 <p class="text-gray-500 text-sm max-w-2xl mx-auto">
                     <i class="bi bi-info-circle mr-1"></i>
@@ -329,9 +297,9 @@
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
                     </ul>
-                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start 15-Day Trial</a>
                 </div>
-                
+
                 <!-- Pro - Most Popular -->
                 <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
@@ -348,9 +316,9 @@
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start 15-Day Trial</a>
                 </div>
-                
+
                 <!-- Ultimate -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Ultimate</h3><p class="text-gray-500 text-sm">For large collections</p></div>
@@ -366,7 +334,7 @@
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
                     </ul>
-                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <a onclick="umami.track('get_started_clicked')" href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start 15-Day Trial</a>
                 </div>
             </div>
             <p class="text-center text-gray-500 text-sm mt-10">All plans include a 15-day free trial. No credit card required.</p>
@@ -411,7 +379,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
 </body>
 </html>

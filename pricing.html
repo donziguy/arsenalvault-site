@@ -30,7 +30,7 @@
 <meta name="theme-color" content="#0E0E10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 <!-- NOTE: cdn.tailwindcss.com is the dev build. Before production, precompile
      Tailwind to a static stylesheet in the deploy workflow for faster paint. -->
@@ -44,8 +44,8 @@ tailwind.config = {
       'av-paper':'#ECEAE3','av-dim':'#A7A39A','av-faint':'#6E6B64','av-ok':'#6FB36F'
     },
     fontFamily: {
-      display:['"Barlow Condensed"','sans-serif'],
-      sans:['Barlow','system-ui','sans-serif'],
+      display:['Playfair Display','serif'],
+      sans:['Source Sans 3','system-ui','sans-serif'],
       mono:['"JetBrains Mono"','monospace']
     }
   }}
@@ -72,8 +72,9 @@ tailwind.config = {
   .no-bi .chk i{display:none}
   .no-bi .chk svg{display:inline-block}
 </style>
+<link rel="stylesheet" href="css/av-site-fix.css">
 </head>
-<body class="font-sans text-av-paper antialiased">
+<body class="font-sans text-av-paper antialiased av-unified">
 <script>
 // detect Bootstrap Icons load; if absent, flip to SVG fallbacks (protects the
 // pricing checkmarks from silently vanishing if the CDN/CSP blocks the font)
@@ -87,25 +88,14 @@ addEventListener('DOMContentLoaded',function(){
   }catch(e){document.body.classList.add('no-bi');}
 });
 </script>
-<header class="sticky top-0 z-50 backdrop-blur-md bg-av-ink/80 border-b border-av-line">
-  <div class="max-w-6xl mx-auto px-6 h-[70px] flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2 font-display font-bold text-xl tracking-wide">
-      <img src="img/av-logo.png" alt="Arsenal Vault" class="h-8 drop-shadow-[0_2px_6px_rgba(212,175,55,.25)]">
-      Arsenal<span class="text-av-gold">Vault</span>
-    </a>
-    <nav class="hidden lg:flex items-center gap-7">
-      <a href="features.html" class="text-sm text-av-dim hover:text-av-paper transition">Features</a><a href="pricing.html" class="text-sm text-av-paper transition">Pricing</a><a href="security.html" class="text-sm text-av-dim hover:text-av-paper transition">Security</a><a href="download.html" class="text-sm text-av-dim hover:text-av-paper transition">Download</a><a href="blog/" class="text-sm text-av-dim hover:text-av-paper transition">Blog</a><a href="about.html" class="text-sm text-av-dim hover:text-av-paper transition">About</a><a href="support.html" class="text-sm text-av-dim hover:text-av-paper transition">Support</a>
-      <a href="pricing.html" class="btn-primary font-display font-semibold uppercase tracking-wide text-sm px-5 py-2.5 rounded">Start Free Trial</a>
-    </nav>
-    <button class="lg:hidden border border-av-line rounded px-3 py-2" onclick="document.getElementById('mnav').classList.toggle('hidden')" aria-label="Menu">
-      <i class="bi bi-list text-xl"></i>
-    </button>
+<nav class="av-topnav" aria-label="Primary navigation">
+  <div class="av-topnav-inner">
+    <a href="index.html" class="av-brand"><img src="img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
+    <div class="av-navlinks"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
   </div>
-  <div id="mnav" class="hidden lg:hidden border-t border-av-line bg-av-gun px-6 py-3">
-    <a href="features.html" class="block py-2 text-av-dim hover:text-av-paper">Features</a><a href="pricing.html" class="block py-2 text-av-dim hover:text-av-paper">Pricing</a><a href="security.html" class="block py-2 text-av-dim hover:text-av-paper">Security</a><a href="download.html" class="block py-2 text-av-dim hover:text-av-paper">Download</a><a href="blog/" class="block py-2 text-av-dim hover:text-av-paper">Blog</a><a href="about.html" class="block py-2 text-av-dim hover:text-av-paper">About</a><a href="support.html" class="block py-2 text-av-dim hover:text-av-paper">Support</a>
-    <a href="pricing.html" class="block mt-2 btn-primary text-center font-display font-semibold uppercase tracking-wide px-5 py-2.5 rounded">Start Free Trial</a>
-  </div>
-</header>
+  <div id="av-mobile-menu" class="av-mobile"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+</nav>
 <section class="pt-16 pb-12 border-b border-av-line text-center" style="background:radial-gradient(700px 300px at 50% -20%,rgba(212,175,55,.07),transparent 70%)">
   <div class="max-w-3xl mx-auto px-6 rv in">
     <span class="stamp">Pricing</span>
@@ -130,7 +120,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">For the everyday collector</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>4.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/mo</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>10 firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Ammunition tracking</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Maintenance logs &amp; photos</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Reloading tracker</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>2 vault members</b></span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_basic&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_basic&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
 
       <div class="relative rv bg-av-gun border border-av-gold shadow-[0_0_0_1px_#D4AF37_inset,0_20px_50px_rgba(212,175,55,.1)] rounded-xl p-8 flex flex-col hover:-translate-y-1 transition">
@@ -139,7 +129,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">For serious collectors</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>9.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/mo</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>20 firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Everything in Basic</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span><b class='text-av-paper'>Reloading tracker</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>5 vault members</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Priority support</span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_pro&utm_campaign=free_trial" class="btn-primary text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_pro&utm_campaign=free_trial" class="btn-primary text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
 
       <div class="relative rv bg-av-gun border border-av-line rounded-xl p-8 flex flex-col hover:-translate-y-1 transition">
@@ -148,7 +138,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">For large collections</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>19.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/mo</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span><b class='text-av-paper'>Unlimited firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Everything in Pro</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>10 vault members</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Cloud backup &amp; restore</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Priority support</span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_ultimate&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=plan_ultimate&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
     </div>
 
@@ -180,7 +170,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">Single user · local storage</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>44.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/yr</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>10 firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Ammunition tracking</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Maintenance logs</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Fully offline — data stays local</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Reloading tracker</span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_basic&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_basic&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
 
       <div class="relative rv bg-av-gun border border-av-gold shadow-[0_0_0_1px_#D4AF37_inset,0_20px_50px_rgba(212,175,55,.1)] rounded-xl p-8 flex flex-col hover:-translate-y-1 transition">
@@ -189,7 +179,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">Single user · local storage</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>89.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/yr</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Up to <b class='text-av-paper'>20 firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Ammunition tracking</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Maintenance logs</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Fully offline — data stays local</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span><b class='text-av-paper'>Reloading tracker</b></span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_pro&utm_campaign=free_trial" class="btn-primary text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_pro&utm_campaign=free_trial" class="btn-primary text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
 
       <div class="relative rv bg-av-gun border border-av-line rounded-xl p-8 flex flex-col hover:-translate-y-1 transition">
@@ -198,7 +188,7 @@ addEventListener('DOMContentLoaded',function(){
         <div class="text-av-faint text-sm mb-5">Single user · local storage</div>
         <div class="font-display font-bold text-[2.8rem] leading-none"><sup class="text-[1.2rem] text-av-dim align-super">$</sup>179.99<span class="text-[.95rem] text-av-faint font-sans font-normal">/yr</span></div>
         <ul class="mt-5 mb-6 flex-1"><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span><b class='text-av-paper'>Unlimited firearms</b></span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Ammunition tracking</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Maintenance logs</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span>Fully offline — data stays local</span></li><li class="flex gap-2.5 items-start py-1.5 text-av-dim text-[.93rem]"><span class="mt-0.5"><span class="chk text-av-ok"><i class="bi bi-check-lg text-xl"></i><svg class="w-[18px] h-[18px] inline text-av-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></span></span><span><b class='text-av-paper'>Reloading tracker</b></span></li></ul>
-        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_ultimate&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start Free Trial</a>
+        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=desktop_ultimate&utm_campaign=free_trial" class="border border-av-line hover:border-av-gold hover:text-av-gold text-center font-display font-semibold uppercase tracking-wide px-6 py-3 rounded transition">Start 15-Day Trial</a>
       </div>
     </div>
     <p class="text-center text-av-faint text-sm mt-6">Requires Windows 10 or later. <a href="download.html" class="text-av-gold hover:underline">Download a free trial →</a></p>
@@ -234,7 +224,7 @@ addEventListener('DOMContentLoaded',function(){
   <div class="max-w-6xl mx-auto px-6 rv">
     <h2 class="font-display font-bold uppercase text-[clamp(2rem,5vw,3.2rem)] mb-4">Ready to document it right?</h2>
     <p class="text-av-dim max-w-[50ch] mx-auto mb-7">Start your free 15-day trial and build proof-ready records before they are urgent.</p>
-    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=pricing_footer&utm_campaign=free_trial" class="btn-primary font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded">Start Free Trial</a>
+    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=pricing_footer&utm_campaign=free_trial" class="btn-primary font-display font-semibold uppercase tracking-wide text-lg px-8 py-3.5 rounded">Start 15-Day Trial</a>
   </div>
 </section>
 
@@ -268,7 +258,7 @@ addEventListener('DOMContentLoaded',function(){
     </div>
     <div class="border-t border-av-line pt-5 flex flex-wrap justify-between gap-2 text-av-faint text-xs">
       <span>© 2026 Arsenal Vault. All rights reserved.</span>
-      <span>Cloud &amp; Windows desktop · SQLCipher AES-256</span>
+      <span>Encrypted cloud vault · SQLCipher AES-256</span>
     </div>
   </div>
 </footer>

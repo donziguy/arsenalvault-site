@@ -133,48 +133,18 @@
         ::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
     </style>
+<link rel="stylesheet" href="css/av-site-fix.css">
 </head>
-<body class="bg-av-dark min-h-screen">
-
-    <!-- Navigation -->
-    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <img src="img/av-logo.png" alt="Arsenal Vault" class="h-10">
-                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
-                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
-                    <a href="pricing.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
-                    <a href="download.html"  class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
-                    <a href="support.html"   class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="pricing.html"   class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2">
-                        <i class="bi bi-list text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
-                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
-                <a href="pricing.html"  class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
-                <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
-                <a href="support.html"  class="block text-gray-300 hover:text-av-gold py-2">Support</a>
-                <a href="pricing.html"  class="block gradient-gold text-av-dark px-4 py-2 rounded-lg font-semibold text-center mt-3">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
+<body class="bg-av-dark min-h-screen av-unified">
+<nav class="av-topnav" aria-label="Primary navigation">
+  <div class="av-topnav-inner">
+    <a href="index.html" class="av-brand"><img src="img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
+    <div class="av-navlinks"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
+  </div>
+  <div id="av-mobile-menu" class="av-mobile"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+</nav>
+<!-- Page Header -->
     <section class="border-b border-av-gold/10 py-14"
              style="background: radial-gradient(ellipse at 20% 0%, rgba(212,175,55,0.07) 0%, transparent 55%),
                                 radial-gradient(ellipse at 80% 0%, rgba(212,175,55,0.04) 0%, transparent 40%),

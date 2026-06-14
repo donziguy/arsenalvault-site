@@ -49,31 +49,18 @@
         .prose li { color: #4B5563; line-height: 1.8; margin-bottom: 0.5rem; }
         .prose strong { color: #111827; }
     </style>
+<link rel="stylesheet" href="../css/av-site-fix.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="../index.html" class="flex items-center gap-3">
-                        <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-10">
-                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="../index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
-                    <a href="../features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
-                    <a href="../pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
-                    <a href="../blog/" class="nav-link text-av-gold font-medium">Blog</a>
-                    <a href="../support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="../pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/20">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Article Header -->
+<body class="bg-gray-50 av-unified">
+<nav class="av-topnav" aria-label="Primary navigation">
+  <div class="av-topnav-inner">
+    <a href="../index.html" class="av-brand"><img src="../img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
+    <div class="av-navlinks"><a href="../index.html">Home</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../download.html">Download</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
+  </div>
+  <div id="av-mobile-menu" class="av-mobile"><a href="../index.html">Home</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../download.html">Download</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
+</nav>
+<!-- Article Header -->
     <header class="gradient-dark py-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <a href="./" class="inline-flex items-center gap-2 text-av-gold text-sm mb-6 hover:underline">
@@ -186,7 +173,7 @@
             <div class="mt-12 p-8 bg-av-dark rounded-2xl text-center">
                 <h3 class="text-xl font-display font-bold text-white mb-3">Start Your Own Encrypted Vault</h3>
                 <p class="text-gray-400 mb-6">Arsenal Vault gives each vault owner a separate SQLCipher-encrypted database protected with a unique 256-bit key.</p>
-                <a href="https://app.arsenalvault.com/register?utm_source=blog&utm_medium=article&utm_campaign=encrypted_vaults" class="inline-block gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">Get Started Free</a>
+                <a href="https://app.arsenalvault.com/register?utm_source=blog&utm_medium=article&utm_campaign=encrypted_vaults" class="inline-block gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">Start 15-Day Trial</a>
             </div>
 
             <!-- Back to Blog -->

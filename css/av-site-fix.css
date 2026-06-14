@@ -1,0 +1,36 @@
+/* Arsenal Vault sitewide sanity patch — one brand system, no CSS clown car. */
+:root{--av-gold:#D4AF37;--av-gold-2:#CFB53B;--av-dark:#1A1A1A;--av-dark-2:#2C2C2C;--av-bg:#F8F7F3;--av-card:#FFFFFF;--av-line:#E7E2D4;--av-text:#171717;--av-muted:#5F5A50;}
+html{background:var(--av-bg)!important;}
+body.av-unified{font-family:'Source Sans 3',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;background:var(--av-bg)!important;color:var(--av-text)!important;}
+body.av-unified::before{display:none!important;}
+body.av-unified h1,body.av-unified h2,body.av-unified h3,body.av-unified .font-display{font-family:'Playfair Display',Georgia,serif!important;letter-spacing:normal!important;text-transform:none!important;}
+body.av-unified .stamp{font-family:'Source Sans 3',sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--av-gold)!important;font-weight:700!important;}
+body.av-unified .bg-av-gun,body.av-unified .bg-av-gun2{background:var(--av-card)!important;}
+body.av-unified .border-av-line{border-color:var(--av-line)!important;}
+body.av-unified .text-av-paper{color:var(--av-text)!important;}
+body.av-unified .text-av-dim,body.av-unified .text-av-faint{color:var(--av-muted)!important;}
+body.av-unified .text-av-gold{color:var(--av-gold)!important;}
+body.av-unified .btn-primary,body.av-unified .gradient-gold{background:linear-gradient(135deg,var(--av-gold),var(--av-gold-2))!important;color:var(--av-dark)!important;border:0!important;box-shadow:0 12px 28px rgba(212,175,55,.22)!important;}
+body.av-unified .gradient-dark{background:linear-gradient(180deg,#1A1A1A 0%,#242424 100%)!important;color:#fff!important;}
+body.av-unified .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(212,175,55,.28)!important;}
+body.av-unified .rv{opacity:1!important;transform:none!important;}
+body.av-unified section{background-color:transparent;}
+body.av-unified .shadow-\[0_22px_60px_rgba\(0\,0\,0\,\.35\)\]{box-shadow:0 18px 40px rgba(26,26,26,.12)!important;}
+.av-topnav{position:sticky;top:0;z-index:50;background:rgba(26,26,26,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.22);}
+.av-topnav-inner{max-width:80rem;margin:0 auto;padding:0 1rem;height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.av-brand{display:flex;align-items:center;gap:.75rem;color:#fff!important;text-decoration:none;font-family:'Playfair Display',Georgia,serif!important;font-weight:700;font-size:1.25rem;white-space:nowrap;}
+.av-brand img{height:2.35rem;width:auto;}
+.av-brand span{color:var(--av-gold)!important;}
+.av-navlinks{display:flex;align-items:center;gap:1.35rem;}
+.av-navlinks a,.av-mobile a{color:#D7D2C8!important;text-decoration:none;font-weight:600;font-size:.95rem;}
+.av-navlinks a:hover,.av-mobile a:hover{color:var(--av-gold)!important;}
+.av-navlinks .av-cta,.av-mobile .av-cta{background:linear-gradient(135deg,var(--av-gold),var(--av-gold-2));color:var(--av-dark)!important;padding:.58rem .95rem;border-radius:.7rem;box-shadow:0 10px 24px rgba(212,175,55,.24);}
+.av-menu-btn{display:none;background:transparent;color:#D7D2C8;border:1px solid rgba(212,175,55,.22);border-radius:.55rem;padding:.45rem .65rem;font-size:1.4rem;line-height:1;}
+.av-mobile{display:none;border-top:1px solid rgba(212,175,55,.18);background:#2C2C2C;padding:.75rem 1rem 1rem;}
+.av-mobile a{display:block;padding:.65rem 0;}
+.av-mobile .av-cta{text-align:center;margin-top:.5rem;padding:.75rem;}
+@media(max-width:900px){.av-navlinks{display:none}.av-menu-btn{display:block}.av-mobile.open{display:block}}
+body.av-unified .av-topnav .text-av-paper,body.av-unified .av-topnav .text-av-dim,body.av-unified .av-topnav .text-av-faint{color:#D7D2C8!important;}
+body.av-unified footer,body.av-unified footer.bg-av-ink,body.av-unified footer.bg-av-dark,body.av-unified footer.bg-av-gun,body.av-unified footer.bg-av-gun2{background:#1A1A1A!important;color:#D7D2C8!important;}
+body.av-unified footer .text-av-dim,body.av-unified footer .text-av-faint,body.av-unified footer .text-gray-400,body.av-unified footer .text-gray-300{color:#D7D2C8!important;}
+.av-trial-note{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:#5F4700;border-radius:999px;padding:.45rem .8rem;font-weight:700;font-size:.92rem;}
