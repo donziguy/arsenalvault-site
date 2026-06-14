@@ -13,36 +13,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to Hostinger
+      - name: Deploy homepage to Hostinger
         uses: appleboy/ssh-action@v1.0.3
-        continue-on-error: true
         with:
           host: 46.202.198.30
           port: 65002
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           timeout: 120s
-          script: bash ~/deploy.sh
-
-      - name: Remove obsolete review draft
-        uses: appleboy/ssh-action@v1.0.3
-        continue-on-error: true
-        with:
-          host: 46.202.198.30
-          port: 65002
-          username: u421117894
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          timeout: 120s
-          script: rm -f ~/domains/arsenalvault.com/public_html/legal-new.html
-
-      - name: Upload marketing files directly
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: 46.202.198.30
-          port: 65002
-          username: u421117894
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          timeout: 120s
-          source: "index.html"
-          target: "~/domains/arsenalvault.com/public_html/"
-          overwrite: true
+          script: |
+            set -e
+            cd ~/domains/arsenalvault.com/public_html
+            cp index.html index.html.bak.$(date +%Y%m%d%H%M%S)
+            curl -fsSL "https://raw.githubusercontent.com/donziguy/arsenalvault-site/main/index.html?deploy=$(date +%s)" -o index.html
+            grep -n "All plans include a 15-day free trial" index.html
+            rm -f legal-new.html
