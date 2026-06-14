@@ -15,6 +15,7 @@ jobs:
 
       - name: Deploy to Hostinger
         uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
         with:
           host: 46.202.198.30
           port: 65002
