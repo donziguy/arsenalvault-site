@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy homepage to Hostinger
+      - name: Deploy marketing site to Hostinger
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 46.202.198.30
@@ -23,8 +23,12 @@ jobs:
           timeout: 120s
           script: |
             set -e
-            cd ~/domains/arsenalvault.com/public_html
-            cp index.html index.html.bak.$(date +%Y%m%d%H%M%S)
-            curl -fsSL "https://raw.githubusercontent.com/donziguy/arsenalvault-site/main/index.html?deploy=$(date +%s)" -o index.html
-            grep -n "All plans include a 15-day free trial" index.html
-            rm -f legal-new.html
+            WEBROOT="$HOME/domains/arsenalvault.com/public_html"
+            TMPDIR=$(mktemp -d)
+            trap 'rm -rf "$TMPDIR"' EXIT
+            cd "$WEBROOT"
+            cp index.html "index.html.bak.$(date +%Y%m%d%H%M%S)"
+            curl -fsSL "https://github.com/donziguy/arsenalvault-site/archive/refs/heads/main.tar.gz?deploy=$(date +%s)" -o "$TMPDIR/site.tgz"
+            tar -xzf "$TMPDIR/site.tgz" --strip-components=1 -C "$WEBROOT" --exclude='*/.github*'
+            rm -f "$WEBROOT/legal-new.html"
+            grep -n "All plans include a 15-day free trial" "$WEBROOT/index.html"
