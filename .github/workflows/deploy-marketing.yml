@@ -43,6 +43,6 @@ jobs:
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           timeout: 120s
-          source: "index.html,about.html,features.html,pricing.html,download.html,support.html,upgrade.html,security.html,legal.html,sitemap.xml,robots.txt,.htaccess,img/*,img/screenshots/*,static/*,static/img/*,blog/*,support/*,checklist/*"
+          source: "index.html"
           target: "~/domains/arsenalvault.com/public_html/"
           overwrite: true
