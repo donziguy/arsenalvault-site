@@ -41,6 +41,7 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
+        .hubspot-contact-frame { width: 100%; min-height: 760px; border: 0; display: block; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -217,37 +218,14 @@
                 <p class="text-gray-600">Can't find what you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
             </div>
             
-            <form class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="Your name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="you@example.com">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition bg-white">
-                        <option>General Question</option>
-                        <option>Technical Support</option>
-                        <option>Billing Inquiry</option>
-                        <option>Feature Request</option>
-                        <option>Bug Report</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="How can we help?"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">
-                        <i class="bi bi-send me-2"></i> Send Message
-                    </button>
-                </div>
-            </form>
+            <div class="bg-white rounded-2xl border border-gray-200 p-2 md:p-4 shadow-sm overflow-hidden">
+                <iframe
+                    class="hubspot-contact-frame"
+                    title="Arsenal Vault contact form"
+                    src="https://share.hsforms.com/ui-forms-embed-components-app.html?_hsFormId=ce8c57a3-2f13-457d-97ed-1d273ffc1019&amp;_hsPortalId=245057554&amp;_hsHublet=na2&amp;_hsIsQa=false&amp;_hsDisableScriptloader=true&amp;_hsBufferKey=2drtzKutDMojPaenUPsVx5y3fMJtyXUwWI4cimTUnvE%3D&amp;_hsIsPreview=true&amp;_hsAllowUnpublished=true"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             
             <div class="mt-12 pt-8 border-t border-gray-200 text-center">
                 <p class="text-gray-600 mb-4">Or reach us directly:</p>
