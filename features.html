@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- HubSpot Forms -->
-    <script src="https://js-na2.hsforms.net/forms/embed/245057554.js" defer></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
@@ -72,7 +70,7 @@
                     <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
                     <a href="about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
                     <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
-                    <a href="pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
+                    <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
                 </div>
                 <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
             </div>
@@ -314,7 +312,7 @@
                             <i class="bi bi-shield-check text-av-dark text-3xl"></i>
                         </div>
                         <h3 class="text-2xl font-display font-bold text-white">AES-256 Encryption</h3>
-                        <p class="text-gray-400 text-sm mt-2">Military-grade. Per-user. Unbreakable.</p>
+                        <p class="text-gray-400 text-sm mt-2">AES-256. Per-user. Isolated.</p>
                     </div>
                     
                     <div class="space-y-4 text-sm">
@@ -336,12 +334,12 @@
                         </div>
                         <div class="flex items-center gap-3 text-gray-300">
                             <i class="bi bi-check-circle-fill text-av-gold"></i>
-                            <span>Desktop: same encryption, local storage</span>
+                            <span>Desktop: encrypted local storage</span>
                         </div>
                     </div>
                     
                     <div class="mt-8 pt-6 border-t border-av-gold/10 text-center">
-                        <p class="text-gray-500 text-xs">If one user's key is ever compromised,<br><strong class="text-gray-400">zero other accounts are affected.</strong></p>
+                        <p class="text-gray-500 text-xs">Account isolation helps protect other vaults<br><strong class="text-gray-400">if one account is ever compromised.</strong></p>
                     </div>
                 </div>
             </div>
@@ -371,97 +369,5 @@
     </footer>
     <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
 
-    <!-- Signup Modal -->
-    <div id="signup-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            <div id="modal-form-container">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="bi bi-bell text-av-gold text-2xl"></i>
-                    </div>
-                    <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
-                    <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
-                </div>
-                <form id="modal-signup-form">
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-gray-300 text-sm mb-2">Name (optional)</label>
-                            <input type="text" name="name" placeholder="John Smith" class="form-input">
-                        </div>
-                        <div>
-                            <label class="block text-gray-300 text-sm mb-2">Email <span class="text-av-gold">*</span></label>
-                            <input type="email" name="email" required placeholder="john@example.com" class="form-input">
-                        </div>
-                        <button type="submit" class="btn-submit flex items-center justify-center gap-2">
-                            <i class="bi bi-send"></i> <span>Notify Me at Launch</span>
-                        </button>
-                    </div>
-                    <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
-                </form>
-            </div>
-            <div id="modal-success" class="hidden text-center py-4">
-                <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="bi bi-check-lg text-green-400 text-4xl"></i>
-                </div>
-                <h3 class="text-white text-2xl font-display font-bold mb-2">You're on the list!</h3>
-                <p class="text-gray-400 mb-6">We'll send you an email when Arsenal Vault is ready.</p>
-                <button onclick="closeSignupModal()" class="btn-submit">Got it!</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
-        
-        function openSignupModal() {
-            document.getElementById('signup-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeSignupModal() {
-            document.getElementById('signup-modal').classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => {
-                document.getElementById('modal-form-container').classList.remove('hidden');
-                document.getElementById('modal-success').classList.add('hidden');
-                document.getElementById('modal-signup-form').reset();
-            }, 300);
-        }
-        
-        document.getElementById('signup-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeSignupModal();
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeSignupModal();
-        });
-        
-        document.getElementById('modal-signup-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = { email: formData.get('email'), name: formData.get('name') || '', source: 'features-page', timestamp: new Date().toISOString() };
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
-            try {
-                if (WEBHOOK_URL === 'YOUR_N8N_WEBHOOK_URL_HERE') {
-                    console.log('Demo mode - Form data:', data);
-                    await new Promise(resolve => setTimeout(resolve, 1000));
-                } else {
-                    const response = await fetch(WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                    if (!response.ok) throw new Error('Network error');
-                }
-                document.getElementById('modal-form-container').classList.add('hidden');
-                document.getElementById('modal-success').classList.remove('hidden');
-            } catch (error) {
-                alert('Something went wrong. Please try again.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }
-        });
-    </script>
 </body>
 </html>

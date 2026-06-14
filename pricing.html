@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- HubSpot Forms -->
-    <script src="https://js-na2.hsforms.net/forms/embed/245057554.js" defer></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
@@ -404,39 +402,5 @@
         });
     </script>
 
-    <!-- Signup Modal -->
-    <div id="signup-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            <div class="text-center mb-6">
-                <div class="w-16 h-16 bg-av-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="bi bi-bell text-av-gold text-2xl"></i>
-                </div>
-                <h3 class="text-white text-2xl font-display font-bold mb-2">Get Early Access</h3>
-                <p class="text-gray-400">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
-            </div>
-            <div class="hs-form-dark">
-                <div class="hs-form-frame" data-region="na2" data-form-id="aaaf32eb-8d35-461e-a051-634cdaf0ac8e" data-portal-id="245057554"></div>
-            </div>
-            <p class="text-gray-500 text-xs text-center mt-4"><i class="bi bi-shield-check"></i> We respect your privacy. Unsubscribe anytime.</p>
-        </div>
-    </div>
-
-    <script>
-        function openSignupModal() {
-            document.getElementById('signup-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeSignupModal() {
-            document.getElementById('signup-modal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        document.getElementById('signup-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeSignupModal();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeSignupModal();
-        });
-    </script>
 </body>
 </html>

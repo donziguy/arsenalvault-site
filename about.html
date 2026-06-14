@@ -62,6 +62,7 @@
                     <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
                     <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
                     <a href="blog/" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Blog</a>
+                    <a href="about.html" class="nav-link text-av-gold font-medium">About</a>
                     <a href="support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
                 </div>
                 <div class="hidden md:flex items-center">
@@ -78,6 +79,7 @@
             <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
             <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
             <a href="blog/" class="block text-gray-300 hover:text-av-gold py-2">Blog</a>
+            <a href="about.html" class="block text-av-gold py-2">About</a>
             <a href="support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
         </div>
     </nav>
@@ -162,7 +164,7 @@
 
                     <div>
                         <h2 class="text-2xl font-display font-bold text-gray-900 mb-4">My Background</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4">By day, I work in IT: technical operations, technical operations, systems engineering, and cybersecurity. I've spent years managing infrastructure, securing systems, and solving complex technical problems for businesses.</p>
+                        <p class="text-gray-600 leading-relaxed mb-4">By day, I work in IT: technical operations, systems engineering, and cybersecurity. I've spent years managing infrastructure, securing systems, and solving complex technical problems for businesses.</p>
                         <p class="text-gray-600 leading-relaxed">That background shaped how Arsenal Vault was built: with real security, not just marketing buzzwords. When I say your data is encrypted, I mean it's actually encrypted, because I understand what that means and why it matters.</p>
                     </div>
                 </div>
@@ -178,7 +180,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition flex items-center justify-center gap-2">
                     <i class="bi bi-rocket"></i> Start Free Trial
-                </button>
+                </a>
                 <a href="features.html" class="border-2 border-av-gold text-av-gold px-8 py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">
                     See Features
                 </a>
@@ -205,62 +207,11 @@
         </div>
     </footer>
 
-    <!-- HubSpot Modal -->
-    <div id="signup-modal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
-        <div class="bg-av-dark rounded-2xl max-w-md w-full p-8 relative border border-av-gold/30">
-            <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i class="bi bi-x-lg text-xl"></i></button>
-            <h3 class="text-2xl font-display font-bold text-white mb-2">Get Early Access</h3>
-            <p class="text-gray-400 mb-6">Be the first to know when Arsenal Vault launches. Early subscribers get exclusive pricing.</p>
-            <div id="hubspot-form-container">
-                <script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/245057554.js"></script>
-                <script>
-                    hbspt.forms.create({
-                        region: "na2",
-                        portalId: "245057554",
-                        formId: "aaaf32eb-8d35-461e-a051-634cdaf0ac8e",
-                        target: "#hubspot-form-container",
-                        css: "",
-                        cssClass: "hs-form-dark"
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
 
     <script>
-        // Mobile menu toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-        
-        // Modal functions
-        function openSignupModal() {
-            document.getElementById('signup-modal').classList.remove('hidden');
-            document.getElementById('signup-modal').classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeSignupModal() {
-            document.getElementById('signup-modal').classList.add('hidden');
-            document.getElementById('signup-modal').classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-        document.getElementById('signup-modal')?.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('signup-modal')) closeSignupModal();
-        });
     </script>
-
-    <style>
-        .hs-form-dark input[type="email"], .hs-form-dark input[type="text"] {
-            background: #2C2C2C !important; border: 1px solid #D4AF37 !important; color: white !important;
-            border-radius: 8px !important; padding: 12px 16px !important; width: 100% !important;
-        }
-        .hs-form-dark input[type="submit"] {
-            background: linear-gradient(135deg, #D4AF37, #CFB53B) !important; color: #1A1A1A !important;
-            border: none !important; border-radius: 8px !important; padding: 12px 24px !important;
-            font-weight: 600 !important; cursor: pointer !important; width: 100% !important; margin-top: 8px !important;
-        }
-        .hs-form-dark label { color: #9CA3AF !important; font-size: 14px !important; }
-        .hs-form-dark .hs-error-msgs { color: #EF4444 !important; font-size: 12px !important; }
-    </style>
 </body>
 </html>
