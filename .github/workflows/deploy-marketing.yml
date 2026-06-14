@@ -26,9 +26,10 @@ jobs:
             WEBROOT="$HOME/domains/arsenalvault.com/public_html"
             TMPDIR=$(mktemp -d)
             trap 'rm -rf "$TMPDIR"' EXIT
+            curl -fsSL "https://github.com/donziguy/arsenalvault-site/archive/refs/heads/main.tar.gz?deploy=$(date +%s)" -o "$TMPDIR/site.tgz"
+            tar -xzf "$TMPDIR/site.tgz" -C "$TMPDIR"
             cd "$WEBROOT"
             cp index.html "index.html.bak.$(date +%Y%m%d%H%M%S)"
-            curl -fsSL "https://github.com/donziguy/arsenalvault-site/archive/refs/heads/main.tar.gz?deploy=$(date +%s)" -o "$TMPDIR/site.tgz"
-            tar -xzf "$TMPDIR/site.tgz" --strip-components=1 -C "$WEBROOT" --exclude='*/.github*'
-            rm -f "$WEBROOT/legal-new.html"
+            cp -a "$TMPDIR/arsenalvault-site-main/." "$WEBROOT/"
+            rm -rf "$WEBROOT/.github" "$WEBROOT/legal-new.html"
             grep -n "All plans include a 15-day free trial" "$WEBROOT/index.html"
