@@ -1,17 +1,12 @@
 Options -Indexes
 RewriteEngine On
 
+# Redirect index.html to clean URLs
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^blog/index\.html$ /blog/ [R=301,L]
+
 # Serve .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L,QSA]
-
-# Keep marketing HTML from trapping stale trial/nav copy in browser caches.
-<IfModule mod_headers.c>
-  <FilesMatch "\.html$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
-  </FilesMatch>
-</IfModule>

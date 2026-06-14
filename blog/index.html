@@ -1,225 +1,353 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-652RBNGMD2');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Arsenal Vault</title>
-<meta name="description" content="Practical guides on firearms collection management — inventory, insurance documentation, estate planning, encryption, and choosing the right tools.">
-<link rel="canonical" href="https://arsenalvault.com/blog/">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://arsenalvault.com/blog/">
-<meta property="og:title" content="Blog — Arsenal Vault">
-<meta property="og:description" content="Practical guides on firearms collection management — inventory, insurance, estate planning, and encryption.">
-<meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog — Arsenal Vault">
-<meta name="twitter:description" content="Practical guides on firearms collection management.">
-<meta name="twitter:image" content="https://arsenalvault.com/img/av-shield-512.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
-<link rel="shortcut icon" href="../img/favicon.ico">
-<meta name="theme-color" content="#0E0E10">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<!-- NOTE: cdn.tailwindcss.com is the dev build. Precompile to static CSS in the deploy workflow for production. -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: { extend: {
-    colors: {
-      'av-gold':'#D4AF37','av-gold-bright':'#E6C658','av-gold-deep':'#9A7B22',
-      'av-ink':'#0E0E10','av-gun':'#16161A','av-gun2':'#1E1E24','av-line':'#2A2A31',
-      'av-paper':'#ECEAE3','av-dim':'#A7A39A','av-faint':'#6E6B64','av-ok':'#6FB36F'
-    },
-    fontFamily: {
-      display:['Playfair Display','serif'],
-      sans:['Source Sans 3','system-ui','sans-serif'],
-      mono:['"JetBrains Mono"','monospace']
-    }
-  }}
-};
-</script>
-<style>
-  body{background:#0E0E10}
-  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background:radial-gradient(1200px 600px at 70% -10%,rgba(212,175,55,.06),transparent 60%),
-      repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);}
-  .stamp{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#D4AF37}
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
-  .rv.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-  .btn-primary{background:linear-gradient(180deg,#E6C658,#D4AF37);color:#1A1500;
-    box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 24px rgba(212,175,55,.18);transition:transform .15s,box-shadow .2s}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 12px 30px rgba(212,175,55,.28)}
-</style>
-<link rel="stylesheet" href="../css/av-site-fix.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://arsenalvault.com/blog/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Arsenal Vault</title>
+    <meta name="description" content="Insights on firearms collection management, inventory tracking, insurance documentation, and more from Arsenal Vault.">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsenalvault.com/blog/">
+    <meta property="og:title" content="Blog - Arsenal Vault">
+    <meta property="og:description" content="Insights on firearms collection management, inventory tracking, insurance documentation, and more.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
 </head>
-<body class="font-sans text-av-paper antialiased av-unified">
-
-<nav class="av-topnav" aria-label="Primary navigation">
-  <div class="av-topnav-inner">
-    <a href="../index.html" class="av-brand"><img src="../img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
-    <div class="av-navlinks"><a href="../index.html">Home</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../download.html">Download</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
-    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
-  </div>
-  <div id="av-mobile-menu" class="av-mobile"><a href="../index.html">Home</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../download.html">Download</a><a href="../blog/">Blog</a><a href="../about.html">About</a><a href="../support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
-</nav>
-<section class="pt-16 pb-10 border-b border-av-line text-center" style="background:radial-gradient(700px 300px at 50% -20%,rgba(212,175,55,.07),transparent 70%)">
-  <div class="max-w-3xl mx-auto px-6 rv in">
-    <span class="stamp">The Arsenal Vault blog</span>
-    <h1 class="font-display font-bold uppercase text-[clamp(2.3rem,5vw,3.6rem)] leading-[1.05] mt-3 mb-4">Field notes for <span class="text-av-gold">serious collectors</span></h1>
-    <p class="text-av-dim text-[1.1rem] max-w-[56ch] mx-auto">Practical guides on documenting, insuring, protecting, and passing on a collection — written for people who actually own one.</p>
-  </div>
-</section>
-
-<section class="py-14">
-  <div class="max-w-6xl mx-auto px-6">
-
-    <a href="why-your-firearms-inventory-needs-an-encrypted-vault.html" class="rv in group block mb-12 rounded-2xl border border-av-gold-deep overflow-hidden hover:border-av-gold transition" style="background:linear-gradient(135deg,#1E1E24,#16161A)">
-      <div class="grid md:grid-cols-[1.2fr_1fr]">
-        <div class="p-8 lg:p-10 flex flex-col justify-center">
-          <span class="font-mono text-[.62rem] tracking-[.18em] uppercase text-av-gold border border-av-gold-deep rounded px-2 py-0.5 self-start mb-4">Featured · Security</span>
-          <h2 class="font-display font-bold uppercase text-[clamp(1.6rem,3.2vw,2.4rem)] leading-[1.05] mb-3 group-hover:text-av-gold transition">Why your firearms inventory needs its own encrypted vault</h2>
-          <p class="text-av-dim text-[1.02rem] mb-5">Your firearms inventory is sensitive data. Here's why isolated encrypted vaults, SQLCipher, and unique 256-bit keys actually matter for collectors — and what "encrypted" really means.</p>
-          <span class="inline-flex items-center gap-2 text-av-gold font-display font-semibold uppercase tracking-wide text-sm">Read the article <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3">
+                        <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-10">
+                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="../features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="../pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="../download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="../blog/" class="nav-link text-av-gold font-medium">Blog</a>
+                    <a href="../support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
+                </div>
+            </div>
         </div>
-        <div class="hidden md:flex items-center justify-center bg-av-ink/40 border-l border-av-line p-10">
-          <i class="bi bi-shield-lock text-av-gold/80 text-[7rem] drop-shadow-[0_8px_30px_rgba(212,175,55,.25)]"></i>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="../index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+            <a href="../features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="../pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="../download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="../blog/" class="block text-av-gold py-2">Blog</a>
+            <a href="../support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
         </div>
-      </div>
-    </a>
+    </nav>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <a href="how-much-does-firearm-inventory-software-cost.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-cash-coin text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Buying guide</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">How much does firearm inventory software cost?</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">A plain-English breakdown of what it costs, what changes the price, and when a spreadsheet is genuinely enough.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">May 11, 2026</span>
+    <!-- Hero -->
+    <section class="gradient-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">The <span class="text-gradient-gold">Vault</span> Blog</h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">Insights on firearms collection management, inventory tracking, insurance documentation, and protecting what matters.</p>
         </div>
-      </a>
+    </section>
 
-      <a href="spreadsheets-vs-apps.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-file-earmark-spreadsheet text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Comparison</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">Spreadsheets vs. dedicated apps</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">You've got $4,000 in a rifle tracked in guns2_FINAL_v3.xlsx. Is it time for an upgrade? An honest comparison.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">March 6, 2026</span>
+    <!-- Blog Posts Grid -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Post 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-box-seam text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 28, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="ammo-inventory-management.html" class="hover:text-av-gold transition">Ammunition Inventory Management: Tracking What You Shoot</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Know what you have, what you're using, and when to buy more. Ammo tracking made simple.</p>
+                        <a href="ammo-inventory-management.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-camera text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 28, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="photographing-your-collection.html" class="hover:text-av-gold transition">Best Practices for Photographing Your Firearm Collection</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Good photos matter for insurance and documentation. Here's how to take them without a pro setup.</p>
+                        <a href="photographing-your-collection.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-bullseye text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 28, 2026</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="range-day-prep.html" class="hover:text-av-gold transition">Preparing for Range Day: Using Arsenal Vault to Track Your Loadout</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">A smoother morning starts with knowing what you're bringing and what ammo you need.</p>
+                        <a href="range-day-prep.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-gear text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 28, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="reloading-tracker-setup.html" class="hover:text-av-gold transition">Setting Up Your Reloading Tracker in Arsenal Vault</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Track components, save recipes, and log batches. No more guessing how many primers you have.</p>
+                        <a href="reloading-tracker-setup.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-table text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 29, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="import-from-spreadsheet.html" class="hover:text-av-gold transition">How to Import Your Firearm Data from a Spreadsheet</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Already tracking in Excel or Google Sheets? Here's how to bring that data into Arsenal Vault without retyping everything.</p>
+                        <a href="import-from-spreadsheet.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-cloud-arrow-up text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 27, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="desktop-vs-cloud.html" class="hover:text-av-gold transition">Arsenal Vault Desktop vs Cloud: Which is Right for You?</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Both versions have the same features. The difference is where your data lives. Here's how to decide.</p>
+                        <a href="desktop-vs-cloud.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-exclamation-triangle text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 25, 2026</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="stolen-firearm-checklist.html" class="hover:text-av-gold transition">What to Do When a Firearm is Stolen: A Documentation Checklist</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Nobody wants to think about it, but preparation matters. Here's exactly what to do and why records are critical.</p>
+                        <a href="stolen-firearm-checklist.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-rocket text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 20, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="getting-started.html" class="hover:text-av-gold transition">Getting Started with Arsenal Vault: Your First 10 Minutes</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">A quick walkthrough of Arsenal Vault's core features. Add your first firearm, track ammunition, and explore the dashboard.</p>
+                        <a href="getting-started.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-shield-check text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 6, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="why-track-your-firearms.html" class="hover:text-av-gold transition">Why Every Gun Owner Should Track Their Collection</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Beyond knowing what you own — the real reasons serious collectors maintain detailed inventory records.</p>
+                        <a href="why-track-your-firearms.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-file-earmark-text text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 6, 2026</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="insurance-documentation.html" class="hover:text-av-gold transition">Insurance Documentation: Protecting Your Firearms Investment</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">What your insurance company needs to see — and why most claims get lowballed.</p>
+                        <a href="insurance-documentation.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-people text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 6, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="estate-planning-firearms.html" class="hover:text-av-gold transition">Estate Planning for Firearm Collectors</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">Does your spouse know what's in the safe? A guide to passing on your collection responsibly.</p>
+                        <a href="estate-planning-firearms.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover-lift">
+                    <div class="h-48 bg-gradient-to-br from-av-dark to-av-dark-light flex items-center justify-center">
+                        <i class="bi bi-table text-av-gold text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <span>March 6, 2026</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                            <a href="spreadsheets-vs-apps.html" class="hover:text-av-gold transition">Spreadsheets vs Dedicated Apps: What Works Better?</a>
+                        </h2>
+                        <p class="text-gray-600 text-sm mb-4">You've got $4,000 in a rifle tracked in "guns2_FINAL_v3.xlsx" — time for an upgrade?</p>
+                        <a href="spreadsheets-vs-apps.html" class="text-av-gold font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+            </div>
         </div>
-      </a>
+    </section>
 
-      <a href="insurance-documentation.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-clipboard2-check text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Insurance</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">Insurance documentation: protecting your investment</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">What your insurer needs to see at claim time — and why most firearms claims get lowballed without proper records.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">March 6, 2026</span>
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-av-dark">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-display font-bold text-white mb-4">Stay Updated</h2>
+            <p class="text-gray-400 mb-6">Get notified when we publish new articles and when Arsenal Vault launches.</p>
+            <a href="https://app.arsenalvault.com/register" class="inline-block gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">Start Free Trial</a>
         </div>
-      </a>
+    </section>
 
-      <a href="estate-planning-firearms.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-people text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Estate planning</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">Estate planning for firearm collectors</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">Does your spouse know what's in the safe? Passing on a collection responsibly and legally.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">March 6, 2026</span>
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-8">
+                    <span class="text-gray-400 font-display font-semibold">Arsenal Vault</span>
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
         </div>
-      </a>
+    </footer>
 
-      <a href="firearm-inventory-checklist.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-list-check text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Checklist</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">The firearm inventory checklist</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">Serial numbers, photos, receipts, optics, insurance records — everything every gun owner should document.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">May 15, 2026</span>
-        </div>
-      </a>
-
-      <a href="why-track-your-firearms.html" class="rv group flex flex-col bg-av-gun border border-av-line rounded-xl overflow-hidden hover:border-av-gold-deep hover:-translate-y-1 transition">
-        <div class="h-1 bg-av-gold/60"></div>
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3"><i class="bi bi-bullseye text-av-gold"></i><span class="font-mono text-[.6rem] tracking-[.16em] uppercase text-av-faint">Fundamentals</span></div>
-          <h3 class="font-display font-bold uppercase text-xl leading-tight mb-2 group-hover:text-av-gold transition">Why every gun owner should track their collection</h3>
-          <p class="text-av-dim text-[.92rem] flex-1">Beyond knowing what you own — the real reasons serious collectors keep detailed inventory records.</p>
-          <span class="mt-4 text-av-faint text-xs font-mono">March 6, 2026</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="py-16 border-t border-av-line bg-av-gun">
-  <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 items-center">
-    <div class="rv">
-      <span class="stamp">Free download</span>
-      <h2 class="font-display font-bold uppercase text-[clamp(1.6rem,3.5vw,2.4rem)] leading-tight mt-3 mb-3">Get the firearm inventory checklist</h2>
-      <p class="text-av-dim mb-5">A printable, no-signup checklist of everything worth documenting before you need it. Yours free.</p>
-      <a href="../checklist/" class="btn-primary inline-block font-display font-semibold uppercase tracking-wide px-6 py-3 rounded">Download the checklist</a>
-    </div>
-    <div class="rv border border-av-line rounded-xl bg-av-ink p-7 text-center">
-      <i class="bi bi-safe2 text-av-gold text-4xl mb-3 block"></i>
-      <h3 class="font-display font-bold uppercase text-xl mb-2">Ready to put it into practice?</h3>
-      <p class="text-av-dim text-sm mb-5">Start a free 15-day trial and document your collection in its own encrypted vault.</p>
-      <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=blog_footer_cta&utm_campaign=free_trial" class="font-display font-semibold uppercase tracking-wide px-6 py-2.5 rounded border border-av-gold text-av-gold hover:bg-av-gold hover:text-av-ink transition inline-block">Start 15-Day Trial</a>
-    </div>
-  </div>
-</section>
-
-<footer class="border-t border-av-line bg-av-gun pt-14 pb-8">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-9">
-      <div class="col-span-2 md:col-span-1">
-        <a href="../index.html" class="flex items-center gap-2 font-display font-bold text-lg mb-3">
-          <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-9"> Arsenal<span class="text-av-gold">Vault</span></a>
-        <p class="text-av-faint text-sm max-w-[34ch]">Proof-ready firearm records for theft, insurance, and estate planning.</p>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Product</h4>
-        <a href="../features.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Features</a>
-        <a href="../pricing.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Pricing</a>
-        <a href="../download.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Download</a>
-        <a href="../security.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Security</a>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Company</h4>
-        <a href="../about.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">About</a>
-        <a href="./" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Blog</a>
-        <a href="../support.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Support</a>
-        <a href="../support.html#contact" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Contact</a>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Legal</h4>
-        <a href="../legal.html#pp" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Privacy Policy</a>
-        <a href="../legal.html#tos" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Terms of Service</a>
-      </div>
-    </div>
-    <div class="border-t border-av-line pt-5 flex flex-wrap justify-between gap-2 text-av-faint text-xs">
-      <span>© 2026 Arsenal Vault. All rights reserved.</span>
-      <span>Encrypted cloud vault · SQLCipher AES-256</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});})();
-</script>
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
 </body>
 </html>

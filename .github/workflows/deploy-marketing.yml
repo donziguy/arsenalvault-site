@@ -29,8 +29,9 @@ jobs:
             trap 'rm -rf "$TMPDIR"' EXIT
             curl -fsSL "https://github.com/donziguy/arsenalvault-site/archive/refs/heads/main.tar.gz?deploy=$(date +%s)" -o "$TMPDIR/site.tgz"
             tar -xzf "$TMPDIR/site.tgz" -C "$TMPDIR"
-            cd "$WEBROOT"
-            cp index.html "index.html.bak.$(date +%Y%m%d%H%M%S)"
+            mkdir -p "$WEBROOT"
+            shopt -s dotglob nullglob
+            rm -rf "$WEBROOT"/*
             cp -a "$TMPDIR/arsenalvault-site-main/." "$WEBROOT/"
             rm -rf "$WEBROOT/.github" "$WEBROOT/legal-new.html"
             grep -n "All plans include a 15-day free trial" "$WEBROOT/index.html"

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-652RBNGMD2');</script>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://arsenalvault.com/blog/ammo-inventory-management.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammunition Inventory Management: Tracking What You Shoot - Arsenal Vault</title>
+    <meta name="description" content="How to track your ammunition inventory effectively. Know what you have, what you're shooting, and when to restock.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://arsenalvault.com/blog/ammo-inventory-management.html">
+    <meta property="og:title" content="Ammunition Inventory Management: Tracking What You Shoot">
+    <meta property="og:description" content="Track your ammo inventory. Know what you have and when to buy more.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{colors:{'av-gold':'#D4AF37','av-gold-light':'#CFB53B','av-dark':'#1A1A1A','av-dark-light':'#2C2C2C'},fontFamily:{'display':['Playfair Display','serif'],'body':['Source Sans 3','sans-serif']}}}}</script>
+    <style>
+        body{font-family:'Source Sans 3',sans-serif;}h1,h2,h3{font-family:'Playfair Display',serif;}
+        .gradient-gold{background:linear-gradient(135deg,#D4AF37,#CFB53B);}.gradient-dark{background:linear-gradient(180deg,#1A1A1A 0%,#242424 100%);}
+        .nav-link{position:relative;}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#D4AF37;transition:width 0.3s ease;}.nav-link:hover::after{width:100%;}
+        .prose h2{margin-top:2rem;margin-bottom:1rem;}.prose p{margin-bottom:1rem;line-height:1.75;}.prose ul,.prose ol{margin-bottom:1rem;}.prose li{margin-bottom:0.5rem;}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><a href="../index.html" class="flex items-center gap-3"><img src="../img/av-logo.png" alt="Arsenal Vault" class="h-10"><span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span></a></div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="../features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="../pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="../download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="../blog/" class="nav-link text-av-gold font-medium">Blog</a>
+                    <a href="../about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
+                    <a href="../support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                </div>
+                <div class="hidden md:flex items-center"><a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition text-sm">Get Started</a></div>
+                <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="../index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+            <a href="../features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="../pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="../download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="../blog/" class="block text-av-gold py-2">Blog</a>
+            <a href="../about.html" class="block text-gray-300 hover:text-av-gold py-2">About</a>
+            <a href="../support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <header class="gradient-dark py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <a href="../blog/" class="hover:text-av-gold">Blog</a>
+                <i class="bi bi-chevron-right text-xs"></i>
+                <span>Ammo Inventory</span>
+            </div>
+            <h1 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">Ammunition Inventory Management: Tracking What You Shoot</h1>
+            <p class="text-gray-300 text-lg mb-6">Know what you have, what you're using, and when to buy more. Ammo tracking doesn't have to be complicated.</p>
+            <div class="flex items-center gap-4 text-sm text-gray-400">
+                <span><i class="bi bi-calendar3 mr-1"></i> March 28, 2026</span>
+                <span><i class="bi bi-clock mr-1"></i> 5 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg text-gray-700">
+                
+                <p class="text-xl text-gray-600 mb-8">If you shoot regularly, ammunition is a recurring expense. Knowing what you have on hand helps with budgeting, prevents surprise shortages, and lets you buy smart when prices are good.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Why Track Ammunition?</h2>
+                <p>Beyond just knowing how many boxes are in the closet, tracking ammunition gives you:</p>
+
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Inventory awareness</strong> — No more discovering you're out of 9mm the night before a range trip</li>
+                    <li><strong>Cost tracking</strong> — Know your actual cost per round over time</li>
+                    <li><strong>Usage patterns</strong> — See which calibers you're shooting most</li>
+                    <li><strong>Purchase timing</strong> — Buy when prices are low, not when you're desperate</li>
+                    <li><strong>Budget planning</strong> — Understand your annual ammo spend</li>
+                </ul>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">What to Track</h2>
+                <p>For each ammunition type in your inventory, track:</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Basic Information</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Caliber</strong> — 9mm, .45 ACP, .223, 12 gauge, etc.</li>
+                    <li><strong>Brand</strong> — Federal, Winchester, Hornady, etc.</li>
+                    <li><strong>Type</strong> — FMJ, JHP, match, hunting, etc.</li>
+                    <li><strong>Grain weight</strong> — 115gr, 147gr, 55gr, etc.</li>
+                    <li><strong>Quantity on hand</strong> — Round count</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Optional (But Useful)</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Purchase date</strong> — When you bought it</li>
+                    <li><strong>Cost per round</strong> — What you paid</li>
+                    <li><strong>Lot number</strong> — For consistency tracking</li>
+                    <li><strong>Storage location</strong> — Which shelf or can</li>
+                    <li><strong>Notes</strong> — How it shoots in specific guns</li>
+                </ul>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Setting Up Your Inventory</h2>
+                <p>The hardest part is the initial count. Here's a practical approach:</p>
+
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Gather everything</strong> — Pull all your ammo to one spot</li>
+                    <li><strong>Sort by caliber</strong> — Group like with like</li>
+                    <li><strong>Count and record</strong> — Box count × rounds per box (plus loose rounds)</li>
+                    <li><strong>Enter into Arsenal Vault</strong> — One entry per caliber/type combo</li>
+                    <li><strong>Set minimum thresholds</strong> — Decide your restock points</li>
+                </ol>
+
+                <p>This takes maybe 30-60 minutes depending on collection size. After that, maintenance is quick.</p>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
+                    <div class="flex items-start gap-3">
+                        <i class="bi bi-lightbulb text-amber-600 text-xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-amber-900 mb-1">Tip: Group by Purpose</h4>
+                            <p class="text-amber-800 text-sm mb-0">Consider tracking practice ammo and defensive ammo separately, even if they're the same caliber. Your cheap range 9mm and your carry hollow points have different uses and price points.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Maintaining Your Inventory</h2>
+                <p>Once set up, keep it current with two simple habits:</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">When You Buy</h3>
+                <p>Add the new ammo to inventory. Record quantity and what you paid. Takes 30 seconds.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">After the Range</h3>
+                <p>Deduct what you shot. Be honest about the count. "About 150 rounds of 9mm" is fine — you don't need to be exact to the round.</p>
+
+                <p>If you don't update after every range trip, do it weekly. The point is to stay close to reality, not to obsess over precision.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Setting Restock Thresholds</h2>
+                <p>Decide how much of each caliber you want to keep on hand. This varies by:</p>
+
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>How often you shoot that caliber</li>
+                    <li>How easy it is to find locally</li>
+                    <li>Price volatility (remember 2020?)</li>
+                    <li>Your storage space and budget</li>
+                </ul>
+
+                <p>Example minimums for an active shooter:</p>
+
+                <div class="bg-gray-100 rounded-xl p-6 my-8">
+                    <h4 class="font-semibold text-gray-900 mb-4">Sample Thresholds</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><strong>9mm (primary caliber):</strong> 500 rounds minimum</li>
+                        <li><strong>.45 ACP:</strong> 200 rounds minimum</li>
+                        <li><strong>.223/5.56:</strong> 300 rounds minimum</li>
+                        <li><strong>12 gauge:</strong> 100 shells minimum</li>
+                        <li><strong>.22 LR:</strong> 1,000 rounds minimum</li>
+                        <li><strong>Defensive ammo:</strong> 100 rounds per carry gun</li>
+                    </ul>
+                </div>
+
+                <p>When inventory drops below your threshold, it shows up on your Arsenal Vault dashboard. Time to shop.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Cost Tracking</h2>
+                <p>Recording what you pay per round creates useful data over time:</p>
+
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Spot good deals</strong> — You know what's cheap vs. normal</li>
+                    <li><strong>Annual spending</strong> — See total ammo cost per year</li>
+                    <li><strong>Price trends</strong> — Track how prices change</li>
+                    <li><strong>Budget accuracy</strong> — Plan next year's spending</li>
+                </ul>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Common Mistakes</h2>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Over-complicating it</h3>
+                <p>You don't need to track every lot number and manufacture date. Keep it simple: caliber, type, quantity, cost.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Forgetting to update</h3>
+                <p>An inventory that's 6 months out of date isn't useful. Build the habit of updating after purchases and range trips.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Ignoring cost per round</h3>
+                <p>Tracking cost helps you recognize deals and avoid overpaying. Worth the extra 10 seconds when adding purchases.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">The Payoff</h2>
+                <p>Once your ammo inventory is set up, you get:</p>
+
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Confidence walking into any gun store — you know what you need</li>
+                    <li>No panic buying — you maintain healthy stock levels</li>
+                    <li>Better budgeting — no surprise credit card bills</li>
+                    <li>Smarter purchasing — buy in bulk when prices are right</li>
+                    <li>Range day prep — know exactly what to grab</li>
+                </ul>
+
+                <div class="bg-av-dark rounded-xl p-8 my-10 text-center">
+                    <h3 class="text-xl font-display font-bold text-white mb-3">Start Tracking Your Ammo</h3>
+                    <p class="text-gray-300 mb-6">Arsenal Vault includes ammunition tracking on all plans. Know what you have.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://app.arsenalvault.com/download/desktop" class="gradient-gold text-av-dark px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">Download Desktop</a>
+                        <a href="https://app.arsenalvault.com/register" class="border-2 border-av-gold text-av-gold px-6 py-3 rounded-lg font-semibold hover:bg-av-gold hover:text-av-dark transition">Try Cloud Version</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-display font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="reloading-tracker-setup.html" class="bg-white rounded-xl p-6 border border-gray-200 hover:border-av-gold transition">
+                    <h4 class="font-semibold text-gray-900 mb-2">Setting Up Your Reloading Tracker</h4>
+                    <p class="text-sm text-gray-600">Track components, recipes, and batches for handloaders.</p>
+                </a>
+                <a href="range-day-prep.html" class="bg-white rounded-xl p-6 border border-gray-200 hover:border-av-gold transition">
+                    <h4 class="font-semibold text-gray-900 mb-2">Preparing for Range Day</h4>
+                    <p class="text-sm text-gray-600">Use your inventory to prep smarter for the range.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3"><img src="../img/av-logo.png" alt="Arsenal Vault" class="h-8"><span class="text-av-gold font-display font-bold">Arsenal Vault</span></div>
+                <div class="flex gap-6 text-sm">
+                    <a href="../features.html" class="text-gray-400 hover:text-av-gold transition">Features</a>
+                    <a href="../pricing.html" class="text-gray-400 hover:text-av-gold transition">Pricing</a>
+                    <a href="../support.html" class="text-gray-400 hover:text-av-gold transition">Support</a>
+                    <a href="../about.html" class="text-gray-400 hover:text-av-gold transition">About</a>
+                    <a href="../legal.html" class="text-gray-400 hover:text-av-gold transition">Legal</a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('mobile-menu-btn')?.addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});</script>
+</body>
+</html>

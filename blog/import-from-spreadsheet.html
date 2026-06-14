@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://arsenalvault.com/blog/import-from-spreadsheet.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Import Your Firearm Data from a Spreadsheet - Arsenal Vault</title>
+    <meta name="description" content="Step-by-step guide to importing your existing firearm inventory from Excel or Google Sheets into Arsenal Vault using CSV files.">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://arsenalvault.com/blog/import-from-spreadsheet.html">
+    <meta property="og:title" content="How to Import Your Firearm Data from a Spreadsheet">
+    <meta property="og:description" content="Step-by-step guide to importing your existing firearm inventory from Excel or Google Sheets into Arsenal Vault.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .prose h2 { margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose ul, .prose ol { margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.9em; }
+        pre { background: #1a1a1a; color: #e5e7eb; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center gap-3">
+                        <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-10">
+                        <span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="../features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="../pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="../download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="../blog/" class="nav-link text-av-gold font-medium">Blog</a>
+                    <a href="../about.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">About</a>
+                    <a href="../support.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Support</a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="https://app.arsenalvault.com/register" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition text-sm">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="../index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+            <a href="../features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="../pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="../download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="../blog/" class="block text-av-gold py-2">Blog</a>
+            <a href="../about.html" class="block text-gray-300 hover:text-av-gold py-2">About</a>
+            <a href="../support.html" class="block text-gray-300 hover:text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="gradient-dark py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+                <a href="../blog/" class="hover:text-av-gold">Blog</a>
+                <i class="bi bi-chevron-right text-xs"></i>
+                <span>Import from Spreadsheet</span>
+            </div>
+            <h1 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">How to Import Your Firearm Data from a Spreadsheet</h1>
+            <p class="text-gray-300 text-lg mb-6">Already tracking your collection in Excel or Google Sheets? Here's how to bring that data into Arsenal Vault without retyping everything.</p>
+            <div class="flex items-center gap-4 text-sm text-gray-400">
+                <span><i class="bi bi-calendar3 mr-1"></i> March 29, 2026</span>
+                <span><i class="bi bi-clock mr-1"></i> 6 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg text-gray-700">
+                
+                <p class="text-xl text-gray-600 mb-8">If you're like most collectors, you probably started with a spreadsheet. Maybe it's an Excel file on your desktop, or a Google Sheet you update on your phone. That's fine for a while, but eventually you want something purpose-built. Good news: you don't have to start from scratch.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">What You'll Need</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Your existing spreadsheet (Excel, Google Sheets, or similar)</li>
+                    <li>Arsenal Vault account (Desktop or Cloud)</li>
+                    <li>About 15-20 minutes</li>
+                </ul>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Step 1: Export Your Spreadsheet as CSV</h2>
+                <p>Arsenal Vault imports data via CSV (comma-separated values) files. Most spreadsheet apps can export to this format.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">From Excel:</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Open your spreadsheet</li>
+                    <li>Go to <strong>File → Save As</strong></li>
+                    <li>Choose <strong>CSV (Comma delimited) (*.csv)</strong> as the format</li>
+                    <li>Save the file</li>
+                </ol>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">From Google Sheets:</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Open your spreadsheet</li>
+                    <li>Go to <strong>File → Download → Comma Separated Values (.csv)</strong></li>
+                    <li>The file will download to your computer</li>
+                </ol>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Step 2: Check Your Column Headers</h2>
+                <p>Arsenal Vault expects specific column names to map your data correctly. Here are the supported fields:</p>
+
+                <div class="bg-gray-100 rounded-xl p-6 my-8 overflow-x-auto">
+                    <h4 class="font-semibold text-gray-900 mb-4">Supported Column Names</h4>
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="text-left">
+                                <th class="pb-2 pr-4">Your Column</th>
+                                <th class="pb-2">Maps To</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr><td class="py-1 pr-4"><code>make</code> or <code>manufacturer</code></td><td>Make</td></tr>
+                            <tr><td class="py-1 pr-4"><code>model</code></td><td>Model</td></tr>
+                            <tr><td class="py-1 pr-4"><code>serial</code> or <code>serial_number</code></td><td>Serial Number</td></tr>
+                            <tr><td class="py-1 pr-4"><code>caliber</code> or <code>gauge</code></td><td>Caliber</td></tr>
+                            <tr><td class="py-1 pr-4"><code>type</code> or <code>firearm_type</code></td><td>Type (Pistol, Rifle, etc.)</td></tr>
+                            <tr><td class="py-1 pr-4"><code>purchase_date</code> or <code>acquired</code></td><td>Purchase Date</td></tr>
+                            <tr><td class="py-1 pr-4"><code>purchase_price</code> or <code>price</code></td><td>Purchase Price</td></tr>
+                            <tr><td class="py-1 pr-4"><code>current_value</code> or <code>value</code></td><td>Current Value</td></tr>
+                            <tr><td class="py-1 pr-4"><code>location</code> or <code>storage</code></td><td>Storage Location</td></tr>
+                            <tr><td class="py-1 pr-4"><code>notes</code> or <code>comments</code></td><td>Notes</td></tr>
+                            <tr><td class="py-1 pr-4"><code>condition</code></td><td>Condition</td></tr>
+                            <tr><td class="py-1 pr-4"><code>barrel_length</code></td><td>Barrel Length</td></tr>
+                            <tr><td class="py-1 pr-4"><code>finish</code></td><td>Finish</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
+                    <div class="flex items-start gap-3">
+                        <i class="bi bi-lightbulb text-amber-600 text-xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-amber-900 mb-1">Tip: Rename Your Columns</h4>
+                            <p class="text-amber-800 text-sm mb-0">If your spreadsheet uses different column names (like "Gun" instead of "Make"), rename them before exporting. It'll make the import smoother.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Step 3: Clean Up Your Data</h2>
+                <p>Before importing, do a quick cleanup pass:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Remove empty rows</strong> at the bottom of your spreadsheet</li>
+                    <li><strong>Check for merged cells</strong> and unmerge them</li>
+                    <li><strong>Standardize date formats</strong> (YYYY-MM-DD works best, like 2024-03-15)</li>
+                    <li><strong>Remove currency symbols</strong> from price columns ($500 → 500)</li>
+                    <li><strong>Check for special characters</strong> that might cause issues</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Example: Before and After</h3>
+                
+                <p><strong>Before (messy):</strong></p>
+                <pre><code>Gun,Serial #,Cal,Bought For
+Glock 19,ABC123,9mm,$550
+S&W M&P,XYZ789,9MM,$600.00</code></pre>
+
+                <p><strong>After (clean):</strong></p>
+                <pre><code>make,model,serial,caliber,purchase_price
+Glock,19,ABC123,9mm,550
+Smith & Wesson,M&P,XYZ789,9mm,600</code></pre>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Step 4: Import into Arsenal Vault</h2>
+                
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">In the Desktop App:</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Open Arsenal Vault</li>
+                    <li>Go to <strong>Settings → Import/Export</strong></li>
+                    <li>Click <strong>Import CSV</strong></li>
+                    <li>Select your CSV file</li>
+                    <li>Review the column mapping preview</li>
+                    <li>Click <strong>Import</strong></li>
+                </ol>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">In the Cloud App:</h3>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Log into Arsenal Vault</li>
+                    <li>Click the gear icon → <strong>Import Data</strong></li>
+                    <li>Drag and drop your CSV file (or click to browse)</li>
+                    <li>Map any unrecognized columns</li>
+                    <li>Confirm and import</li>
+                </ol>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Step 5: Review and Add Photos</h2>
+                <p>After import, browse through your firearms list and verify the data came through correctly. This is also a good time to:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Add photos (CSV can't import images)</li>
+                    <li>Fill in any missing fields</li>
+                    <li>Correct any mapping errors</li>
+                    <li>Add accessories linked to specific firearms</li>
+                </ul>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">Troubleshooting Common Issues</h2>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">"Some rows weren't imported"</h3>
+                <p>Usually caused by:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Empty required fields (make/model)</li>
+                    <li>Malformed data in a row</li>
+                    <li>Hidden characters from copy/paste</li>
+                </ul>
+                <p>Solution: Open the CSV in a text editor (Notepad, TextEdit) and look for weird characters or blank lines.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">"Columns didn't map correctly"</h3>
+                <p>Your column headers don't match expected names. Either rename them in your spreadsheet before export, or use the manual mapping feature during import.</p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">"Dates look wrong"</h3>
+                <p>Excel sometimes formats dates in locale-specific ways (MM/DD/YYYY vs DD/MM/YYYY). Arsenal Vault prefers ISO format: YYYY-MM-DD. You can reformat dates in Excel with a custom format before exporting.</p>
+
+                <h2 class="text-2xl font-display font-bold text-gray-900">What About Ammunition and Accessories?</h2>
+                <p>You can import ammunition and accessories the same way. The process is identical — just use the appropriate import option and match your columns to the expected fields.</p>
+
+                <p><strong>Ammunition columns:</strong> <code>caliber</code>, <code>brand</code>, <code>grain</code>, <code>quantity</code>, <code>cost_per_round</code>, <code>purchase_date</code></p>
+
+                <p><strong>Accessories columns:</strong> <code>name</code>, <code>type</code>, <code>brand</code>, <code>price</code>, <code>purchase_date</code>, <code>notes</code></p>
+
+                <div class="bg-av-dark rounded-xl p-8 my-10 text-center">
+                    <h3 class="text-xl font-display font-bold text-white mb-3">Ready to Make the Switch?</h3>
+                    <p class="text-gray-300 mb-6">Import your existing data and upgrade from spreadsheets in minutes.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://app.arsenalvault.com/download/desktop" class="gradient-gold text-av-dark px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">Download Desktop</a>
+                        <a href="https://app.arsenalvault.com/register" class="border-2 border-av-gold text-av-gold px-6 py-3 rounded-lg font-semibold hover:bg-av-gold hover:text-av-dark transition">Try Cloud Version</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-display font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="getting-started.html" class="bg-white rounded-xl p-6 border border-gray-200 hover:border-av-gold transition">
+                    <h4 class="font-semibold text-gray-900 mb-2">Getting Started with Arsenal Vault: Your First 10 Minutes</h4>
+                    <p class="text-sm text-gray-600">A quick walkthrough of Arsenal Vault's core features.</p>
+                </a>
+                <a href="spreadsheets-vs-apps.html" class="bg-white rounded-xl p-6 border border-gray-200 hover:border-av-gold transition">
+                    <h4 class="font-semibold text-gray-900 mb-2">Spreadsheets vs. Dedicated Apps: What's Best for Tracking Firearms?</h4>
+                    <p class="text-sm text-gray-600">The pros and cons of each approach for managing your collection.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="../img/av-logo.png" alt="Arsenal Vault" class="h-8">
+                    <span class="text-av-gold font-display font-bold">Arsenal Vault</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="../features.html" class="text-gray-400 hover:text-av-gold transition">Features</a>
+                    <a href="../pricing.html" class="text-gray-400 hover:text-av-gold transition">Pricing</a>
+                    <a href="../support.html" class="text-gray-400 hover:text-av-gold transition">Support</a>
+                    <a href="../about.html" class="text-gray-400 hover:text-av-gold transition">About</a>
+                    <a href="../legal.html" class="text-gray-400 hover:text-av-gold transition">Legal</a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

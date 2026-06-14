@@ -1,186 +1,270 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-652RBNGMD2');
-</script>
-<script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support — Arsenal Vault</title>
-<meta name="description" content="Help with Arsenal Vault records, security, billing, cloud access, and Windows desktop. Or reach us directly at support@arsenalvault.com.">
-<link rel="canonical" href="https://arsenalvault.com/support.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://arsenalvault.com/support.html">
-<meta property="og:title" content="Support — Arsenal Vault">
-<meta property="og:description" content="Help with Arsenal Vault records, security, billing, cloud access, and Windows desktop. Or reach us directly at support@arsenalvault.com.">
-<meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Support — Arsenal Vault">
-<meta name="twitter:description" content="Help with Arsenal Vault records, security, billing, cloud access, and Windows desktop. Or reach us directly at support@arsenalvault.com.">
-<meta name="twitter:image" content="https://arsenalvault.com/img/av-shield-512.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
-<link rel="shortcut icon" href="img/favicon.ico">
-<meta name="theme-color" content="#0E0E10">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<!-- NOTE: cdn.tailwindcss.com is the dev build. Before production, precompile
-     Tailwind to a static stylesheet in the deploy workflow for faster paint. -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: { extend: {
-    colors: {
-      'av-gold':'#D4AF37','av-gold-bright':'#E6C658','av-gold-deep':'#9A7B22',
-      'av-ink':'#0E0E10','av-gun':'#16161A','av-gun2':'#1E1E24','av-line':'#2A2A31',
-      'av-paper':'#ECEAE3','av-dim':'#A7A39A','av-faint':'#6E6B64','av-ok':'#6FB36F'
-    },
-    fontFamily: {
-      display:['Playfair Display','serif'],
-      sans:['Source Sans 3','system-ui','sans-serif'],
-      mono:['"JetBrains Mono"','monospace']
-    }
-  }}
-};
-</script>
-<style>
-  body{background:#0E0E10}
-  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background:radial-gradient(1200px 600px at 70% -10%,rgba(212,175,55,.06),transparent 60%),
-      repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);}
-  .stamp{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#D4AF37}
-  .plate-sheen{position:relative;overflow:hidden}
-  .plate-sheen::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(115deg,transparent 40%,rgba(212,175,55,.06) 50%,transparent 60%)}
-  .rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
-  .rv.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-  .btn-primary{background:linear-gradient(180deg,#E6C658,#D4AF37);color:#1A1500;
-    box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 24px rgba(212,175,55,.18);transition:transform .15s,box-shadow .2s}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 12px 30px rgba(212,175,55,.28)}
-  /* check icon with SVG fallback if the icon font fails to load */
-  .chk i{display:inline-block}
-  .chk svg{display:none}
-  .no-bi .chk i{display:none}
-  .no-bi .chk svg{display:inline-block}
-</style>
-<link rel="stylesheet" href="css/av-site-fix.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-652RBNGMD2');
+    </script>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="91ad2fc0-3ac6-4c85-8532-795652377dc7"></script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://arsenalvault.com/support.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Arsenal Vault</title>
+    <meta name="description" content="Get help with Arsenal Vault. FAQ, documentation, and contact support.">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsenalvault.com/support.html">
+    <meta property="og:title" content="Support - Arsenal Vault">
+    <meta property="og:description" content="Get help with Arsenal Vault. FAQs, contact support, and documentation for firearms inventory management.">
+    <meta property="og:image" content="https://arsenalvault.com/img/av-shield-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'av-gold': '#D4AF37', 'av-gold-light': '#CFB53B', 'av-dark': '#1A1A1A', 'av-dark-light': '#2C2C2C' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Source Sans 3', 'sans-serif'] } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
 </head>
-<body class="font-sans text-av-paper antialiased av-unified">
-<script>
-// detect Bootstrap Icons load; if absent, flip to SVG fallbacks (protects the
-// pricing checkmarks from silently vanishing if the CDN/CSP blocks the font)
-addEventListener('DOMContentLoaded',function(){
-  try{
-    var t=document.createElement('i');t.className='bi bi-check-lg';t.style.position='absolute';t.style.opacity=0;
-    document.body.appendChild(t);
-    var f=getComputedStyle(t,'::before').fontFamily||'';
-    if(f.indexOf('bootstrap-icons')===-1){document.body.classList.add('no-bi');}
-    document.body.removeChild(t);
-  }catch(e){document.body.classList.add('no-bi');}
-});
-</script>
-<nav class="av-topnav" aria-label="Primary navigation">
-  <div class="av-topnav-inner">
-    <a href="index.html" class="av-brand"><img src="img/av-logo.png" alt="Arsenal Vault"><span>Arsenal Vault</span></a>
-    <div class="av-navlinks"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
-    <button class="av-menu-btn" type="button" onclick="document.getElementById('av-mobile-menu').classList.toggle('open')" aria-label="Open menu">☰</button>
-  </div>
-  <div id="av-mobile-menu" class="av-mobile"><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="support.html">Support</a><a onclick="window.umami&&umami.track('start_15_day_trial_clicked')" href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=mobile_nav&utm_campaign=15_day_trial" class="av-cta">Start 15-Day Trial</a></div>
-</nav>
-<section class="pt-16 pb-12 border-b border-av-line text-center" style="background:radial-gradient(700px 300px at 50% -20%,rgba(212,175,55,.07),transparent 70%)">
-  <div class="max-w-3xl mx-auto px-6 rv in">
-    <span class="stamp">Support</span>
-    <h1 class="font-display font-bold uppercase text-[clamp(2.3rem,5vw,3.6rem)] leading-[1.05] mt-3 mb-4">Help with your <span class='text-av-gold'>records vault</span></h1>
-    <p class="text-av-dim text-[1.1rem] max-w-[58ch] mx-auto">Answers to the most common questions. Still stuck? Reach us directly and we'll get back within 24 hours.</p>
-  </div>
-</section><section class="py-16"><div class="max-w-3xl mx-auto px-6"><div class="mb-9"><h2 class="font-display font-bold uppercase text-xl text-av-gold mb-4">Getting started</h2><div class="space-y-3">
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">How do I get started?</h3>
-            <p class="text-av-dim text-[.95rem]">Create your account and start documenting serials, photos, receipts, values, ammo, and accessories in minutes. Prefer offline? Download the Windows desktop app from the download page.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Can I import data from other software?</h3>
-            <p class="text-av-dim text-[.95rem]">Yes. Arsenal Vault supports CSV import so you can move existing records out of spreadsheets and into a structured vault.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Is there a free trial?</h3>
-            <p class="text-av-dim text-[.95rem]">Yes — 15 days free, no credit card required. You're only asked for payment if you continue after the trial.</p></div></div></div><div class="mb-9"><h2 class="font-display font-bold uppercase text-xl text-av-gold mb-4">Features &amp; usage</h2><div class="space-y-3">
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">How do I add photos?</h3>
-            <p class="text-av-dim text-[.95rem]">When viewing or editing any item, open the Photos tab and use the upload button. Add multiple photos per item; they're automatically resized for storage.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Can I generate insurance reports?</h3>
-            <p class="text-av-dim text-[.95rem]">Yes. Go to Reports &gt; Collection Overview to generate a comprehensive PDF with photos, serial numbers, and values — ideal for insurance documentation.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">What are the 15 parts categories?</h3>
-            <p class="text-av-dim text-[.95rem]">Barrels, Triggers, Stocks &amp; Grips, Optics &amp; Sights, Magazines, Muzzle Devices, Handguards &amp; Rails, Bolts &amp; Carriers, Lowers &amp; Receivers, Uppers, Springs &amp; Pins, Lights &amp; Lasers, Furniture, Suppressors, and Other Parts.</p></div></div></div><div class="mb-9"><h2 class="font-display font-bold uppercase text-xl text-av-gold mb-4">Security &amp; privacy</h2><div class="space-y-3">
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Is my data secure?</h3>
-            <p class="text-av-dim text-[.95rem]">Yes. Each cloud owner gets a separate SQLCipher-encrypted database with a unique 256-bit key, and sensitive fields like serial numbers get an additional encryption layer. Desktop users keep all data on their local machine.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Do you share or sell my data?</h3>
-            <p class="text-av-dim text-[.95rem]">Never. Your inventory is yours alone. We don't share, sell, or analyze your collection data for any purpose. See our Privacy Policy for details.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">How do I back up my data?</h3>
-            <p class="text-av-dim text-[.95rem]">Cloud accounts have automatic daily backups with the ability to download your data anytime. Desktop users can create a complete backup from Admin &gt; Backup.</p></div></div></div><div class="mb-9"><h2 class="font-display font-bold uppercase text-xl text-av-gold mb-4">Billing &amp; account</h2><div class="space-y-3">
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">What's your refund policy?</h3>
-            <p class="text-av-dim text-[.95rem]">A 30-day money-back guarantee on all purchases. If you're not satisfied for any reason, contact us for a full refund — no questions asked.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">Can I upgrade or downgrade?</h3>
-            <p class="text-av-dim text-[.95rem]">Yes, anytime. Upgrades take effect immediately; downgrades take effect at your next billing cycle.</p></div>
-          <div class="rv border border-av-line rounded-lg bg-av-gun p-5">
-            <h3 class="font-display font-bold text-lg uppercase mb-1.5">What payment methods do you accept?</h3>
-            <p class="text-av-dim text-[.95rem]">All major credit and debit cards via Stripe secure checkout.</p></div></div></div>
-      <div id="contact" class="rv border border-av-gold-deep rounded-xl bg-av-gun p-8 text-center mt-12">
-        <h2 class="font-display font-bold uppercase text-2xl mb-2">Contact support</h2>
-        <p class="text-av-dim mb-5">Can't find what you're looking for? We respond within 24 hours.</p>
-        <a href="mailto:support@arsenalvault.com" class="btn-primary inline-block font-display font-semibold uppercase tracking-wide px-7 py-3 rounded">Email support@arsenalvault.com</a>
-      </div>
-    </div></section>
-<footer class="border-t border-av-line bg-av-gun pt-14 pb-8">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-9">
-      <div class="col-span-2 md:col-span-1">
-        <a href="index.html" class="flex items-center gap-2 font-display font-bold text-lg mb-3">
-          <img src="img/av-logo.png" alt="Arsenal Vault" class="h-9"> Arsenal<span class="text-av-gold">Vault</span></a>
-        <p class="text-av-faint text-sm max-w-[34ch]">Proof-ready firearm records for theft, insurance, and estate planning.</p>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Product</h4>
-        <a href="features.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Features</a>
-        <a href="pricing.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Pricing</a>
-        <a href="download.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Download</a>
-        <a href="security.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Security</a>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Company</h4>
-        <a href="about.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">About</a>
-        <a href="blog/" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Blog</a>
-        <a href="support.html" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Support</a>
-        <a href="support.html#contact" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Contact</a>
-      </div>
-      <div>
-        <h4 class="font-mono text-[.66rem] tracking-[.22em] uppercase text-av-gold mb-3.5">Legal</h4>
-        <a href="legal.html#pp" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Privacy Policy</a>
-        <a href="legal.html#tos" class="block text-av-dim hover:text-av-paper text-sm py-1.5">Terms of Service</a>
-      </div>
-    </div>
-    <div class="border-t border-av-line pt-5 flex flex-wrap justify-between gap-2 text-av-faint text-xs">
-      <span>© 2026 Arsenal Vault. All rights reserved.</span>
-      <span>Encrypted cloud vault · SQLCipher AES-256</span>
-    </div>
-  </div>
-</footer>
-<script>
-(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});})();
-</script>
-</body></html>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-av-dark border-b border-av-gold/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><a href="index.html" class="flex items-center gap-3"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-10"><span class="text-av-gold font-display font-bold text-xl">Arsenal Vault</span></a></div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Home</a>
+                    <a href="features.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Features</a>
+                    <a href="pricing.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Pricing</a>
+                    <a href="download.html" class="nav-link text-gray-300 hover:text-av-gold transition font-medium">Download</a>
+                    <a href="support.html" class="nav-link text-av-gold font-medium">Support</a>
+                    <a href="pricing.html" class="gradient-gold text-av-dark px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center"><button id="mobile-menu-btn" class="text-gray-300 hover:text-av-gold p-2"><i class="bi bi-list text-2xl"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-av-dark-light border-t border-av-gold/20 px-4 py-3 space-y-2">
+            <a href="index.html" class="block text-gray-300 hover:text-av-gold py-2">Home</a>
+                <a href="features.html" class="block text-gray-300 hover:text-av-gold py-2">Features</a>
+            <a href="pricing.html" class="block text-gray-300 hover:text-av-gold py-2">Pricing</a>
+            <a href="download.html" class="block text-gray-300 hover:text-av-gold py-2">Download</a>
+            <a href="support.html" class="block text-av-gold py-2">Support</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-dark py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">How Can We <span class="text-gradient-gold">Help</span>?</h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">Find answers to common questions or get in touch with our support team.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-12 bg-white border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="#faq" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-question-circle text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">FAQ</h3><p class="text-sm text-gray-500">Common questions answered</p></div>
+                </a>
+                <a href="#docs" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-book text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">Documentation</h3><p class="text-sm text-gray-500">Guides and tutorials</p></div>
+                </a>
+                <a href="#contact" class="flex items-center gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold/50 transition group">
+                    <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center group-hover:scale-110 transition"><i class="bi bi-envelope text-av-dark text-xl"></i></div>
+                    <div><h3 class="font-semibold text-gray-900">Contact Us</h3><p class="text-sm text-gray-500">Get personalized help</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Getting Started</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I install Arsenal Vault?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Download the installer from our download page, run it, and follow the on-screen instructions. The installation takes less than a minute. <a href="support/windows-install.html" class="text-av-gold hover:underline">See our detailed Windows 11 installation guide →</a></p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Is Arsenal Vault available now?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes! Arsenal Vault is available now. Download the Desktop app from our <a href="download.html" class="text-av-gold hover:underline">download page</a> for a free 15-day trial, or sign up for the <a href="https://app.arsenalvault.com/register" class="text-av-gold hover:underline">cloud version</a>.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I import data from other software?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes, Arsenal Vault supports CSV import for easy data migration. We have guides for migrating from popular alternatives including spreadsheets and other inventory apps.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Features & Usage</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I add photos to my inventory?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">When viewing or editing any item, click the "Photos" tab and use the upload button. You can add multiple photos per item, and they'll be automatically resized for optimal storage.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I generate reports for insurance?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes! Go to Reports > Collection Overview to generate a comprehensive PDF report with photos, serial numbers, and values. This is perfect for insurance documentation.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What are the 15 parts categories?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Arsenal Vault includes categories for: Barrels, Triggers, Stocks & Grips, Optics & Sights, Magazines, Muzzle Devices, Handguards & Rails, Bolts & Carriers, Lowers & Receivers, Uppers, Springs & Pins, Lights & Lasers, Furniture, Suppressors, and Other Parts.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Security & Privacy</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Is my data secure?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Absolutely. For desktop users, all data stays on your local machine. Cloud users benefit from end-to-end encryption, with sensitive fields like serial numbers using additional encryption layers.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Do you share or sell my data?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Never. Your inventory data is yours alone. We don't share, sell, or analyze your collection data for any purpose. See our Privacy Policy for complete details.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">How do I backup my data?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">For desktop users, go to Admin > Backup to create a complete backup file. Cloud users have automatic daily backups with the ability to download their data at any time.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-av-gold mb-4">Billing & Account</h3>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What's your refund policy?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">We offer a 30-day money-back guarantee on all purchases. If you're not satisfied for any reason, contact us for a full refund, no questions asked.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">Can I upgrade from desktop to cloud?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">Yes! You can export your data from the desktop version and import it to a cloud account at any time. We also offer upgrade pricing for existing desktop customers.</p>
+                    </details>
+                    <details class="bg-white rounded-xl border border-gray-200 p-6 group">
+                        <summary class="flex justify-between items-center cursor-pointer font-semibold text-gray-900">What payment methods do you accept?<i class="bi bi-chevron-down text-av-gold group-open:rotate-180 transition"></i></summary>
+                        <p class="mt-4 text-gray-600">We accept all major credit cards (Visa, Mastercard, American Express, Discover) and PayPal through our secure payment processor.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation -->
+    <section id="docs" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Documentation & Guides</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Windows Install Guide -->
+                <a href="support/windows-install.html" class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-av-gold hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition">
+                        <i class="bi bi-windows text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 group-hover:text-av-gold transition">Installing on Windows 11</h3>
+                        <p class="text-sm text-gray-500 mt-1">Step-by-step guide to downloading and installing the Arsenal Vault Desktop application.</p>
+                        <span class="inline-flex items-center gap-1 text-av-gold text-sm mt-2 group-hover:gap-2 transition-all">Read Guide <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <!-- Placeholder for future guides -->
+                <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 opacity-60">
+                    <div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="bi bi-apple text-gray-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Installing on macOS</h3>
+                        <p class="text-sm text-gray-500 mt-1">Guide for macOS users coming soon.</p>
+                        <span class="inline-flex items-center gap-1 text-gray-400 text-sm mt-2">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Contact Support</h2>
+                <p class="text-gray-600">Can't find what you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition bg-white">
+                        <option>General Question</option>
+                        <option>Technical Support</option>
+                        <option>Billing Inquiry</option>
+                        <option>Feature Request</option>
+                        <option>Bug Report</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-av-gold focus:border-av-gold outline-none transition" placeholder="How can we help?"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="gradient-gold text-av-dark px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">
+                        <i class="bi bi-send me-2"></i> Send Message
+                    </button>
+                </div>
+            </form>
+            
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                <p class="text-gray-600 mb-4">Or reach us directly:</p>
+                <a href="mailto:support@arsenalvault.com" class="text-av-gold font-semibold hover:underline">support@arsenalvault.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-av-dark-light border-t border-av-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0"><img src="img/av-logo.png" alt="Arsenal Vault" class="h-8"></div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Arsenal Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });</script>
+</body>
+</html>
