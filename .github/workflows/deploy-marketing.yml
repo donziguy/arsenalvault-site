@@ -35,6 +35,8 @@ jobs:
           port: 65002
           username: u421117894
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          timeout: 120s
+          command_timeout: 10m
           source: site-build.tar.gz
           target: /home/u421117894/domains/arsenalvault.com
 
