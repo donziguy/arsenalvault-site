@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Static marketing site for [arsenalvault.com](https://arsenalvault.com).",
   "scripts": {
-    "build": "eleventy",
+    "build": "rm -rf _site && eleventy",
     "serve": "eleventy --serve --port=8080",
     "check": "npm run build && node scripts/check-generated-site.mjs"
   },

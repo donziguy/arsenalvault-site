@@ -15,7 +15,6 @@ const htmlFiles = [
   "contact.html",
   "about.html",
   "legal.html",
-  "upgrade.html",
   "support/windows-install.html",
   "blog/ammo-inventory-management.html",
   "blog/desktop-vs-cloud.html",
