@@ -13,7 +13,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy marketing site to Hostinger
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Package build output
+        run: tar -czf site-build.tar.gz -C _site .
+
+      - name: Upload build output to Hostinger
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 46.202.198.30
+          port: 65002
+          username: u421117894
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          source: site-build.tar.gz
+          target: /home/u421117894/domains/arsenalvault.com
+
+      - name: Publish build output
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: 46.202.198.30
@@ -25,13 +50,9 @@ jobs:
           script: |
             set -e
             WEBROOT="$HOME/domains/arsenalvault.com/public_html"
-            TMPDIR=$(mktemp -d)
-            trap 'rm -rf "$TMPDIR"' EXIT
-            curl -fsSL "https://github.com/donziguy/arsenalvault-site/archive/refs/heads/main.tar.gz?deploy=$(date +%s)" -o "$TMPDIR/site.tgz"
-            tar -xzf "$TMPDIR/site.tgz" -C "$TMPDIR"
             mkdir -p "$WEBROOT"
             shopt -s dotglob nullglob
             rm -rf "$WEBROOT"/*
-            cp -a "$TMPDIR/arsenalvault-site-main/." "$WEBROOT/"
-            rm -rf "$WEBROOT/.github" "$WEBROOT/legal-new.html"
+            tar -xzf "$HOME/domains/arsenalvault.com/site-build.tar.gz" -C "$WEBROOT"
+            rm -f "$HOME/domains/arsenalvault.com/site-build.tar.gz"
             grep -n "All plans include a 15-day free trial" "$WEBROOT/index.html"

@@ -1,0 +1,17 @@
+{
+  "name": "arsenalvault-site",
+  "version": "1.0.0",
+  "description": "Static marketing site for [arsenalvault.com](https://arsenalvault.com).",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port=8080",
+    "check": "npm run build && node scripts/check-generated-site.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-rss": "^3.0.0"
+  }
+}

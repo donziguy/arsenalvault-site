@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtagId }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.gtagId }}');
+    </script>
+    <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="{{ site.umamiId }}"></script>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="{{ canonical or (page.url | siteUrl) }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:url" content="{{ canonical or (page.url | siteUrl) }}">
+    <meta property="og:title" content="{{ ogTitle or title }}">
+    <meta property="og:description" content="{{ ogDescription or description or site.description }}">
+    <meta property="og:image" content="{{ ogImage or site.defaultImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ ogTitle or title }}">
+    <meta name="twitter:description" content="{{ ogDescription or description or site.description }}">
+    <meta name="twitter:image" content="{{ ogImage or site.defaultImage }}">
+    <link rel="alternate" type="application/rss+xml" title="Arsenal Vault Blog" href="{{ '/feed.xml' | siteUrl }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'av-gold': '#D4AF37',
+                        'av-gold-light': '#CFB53B',
+                        'av-gold-dark': '#B8962E',
+                        'av-dark': '#1A1A1A',
+                        'av-dark-light': '#2C2C2C',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Source Sans 3', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); }
+        .gradient-dark { background: linear-gradient(180deg, #1A1A1A 0%, #242424 100%); }
+        .text-gradient-gold { background: linear-gradient(135deg, #D4AF37, #CFB53B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15); }
+        .hero-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .prose h2 { margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose ul { margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: #1A1A1A; border: 1px solid rgba(212,175,55,0.3); border-radius: 1rem; max-width: 28rem; width: 90%; padding: 2rem; position: relative; animation: modalSlideIn 0.3s ease; }
+        @keyframes modalSlideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .hs-form-dark .hs-form-field label { color: #E5E7EB !important; font-family: 'Source Sans 3', sans-serif !important; font-size: 0.875rem !important; margin-bottom: 0.5rem !important; }
+        .hs-form-dark .hs-input { width: 100% !important; padding: 0.75rem 1rem !important; background: #2C2C2C !important; border: 1px solid rgba(212,175,55,0.3) !important; border-radius: 0.5rem !important; color: white !important; font-size: 1rem !important; font-family: 'Source Sans 3', sans-serif !important; }
+        .hs-form-dark .hs-input:focus { outline: none !important; border-color: #D4AF37 !important; }
+        .hs-form-dark .hs-input::placeholder { color: #9CA3AF !important; }
+        .hs-form-dark .hs-button { width: 100% !important; padding: 0.875rem 2rem !important; background: linear-gradient(135deg, #D4AF37, #CFB53B) !important; color: #1A1A1A !important; font-weight: 600 !important; border-radius: 0.5rem !important; cursor: pointer !important; border: none !important; font-size: 1rem !important; font-family: 'Source Sans 3', sans-serif !important; transition: opacity 0.2s !important; }
+        .hs-form-dark .hs-button:hover { opacity: 0.9 !important; }
+        .hs-form-dark .hs-error-msgs { color: #FCA5A5 !important; font-size: 0.875rem !important; margin-top: 0.25rem !important; }
+        .hs-form-dark .hs-form-required { color: #D4AF37 !important; }
+        .hs-form-dark .submitted-message { color: #D4AF37 !important; text-align: center !important; font-size: 1.125rem !important; }
+        .hs-form-dark .hs-richtext { color: #9CA3AF !important; font-size: 0.75rem !important; }
+    </style>
+    {% if headExtra %}{{ headExtra | safe }}{% endif %}
+</head>
+<body class="{{ bodyClass or 'bg-gray-50' }}">
+    {% include "partials/nav.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-btn');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

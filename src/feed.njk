@@ -1,0 +1,22 @@
+---
+permalink: "feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Arsenal Vault Blog</title>
+  <subtitle>{{ site.description }}</subtitle>
+  <link href="{{ '/feed.xml' | siteUrl }}" rel="self"/>
+  <link href="{{ '/blog/' | siteUrl }}"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ '/blog/' | siteUrl }}</id>
+  {% for post in collections.posts | reverse %}
+  <entry>
+    <title>{{ post.data.ogTitle or post.data.title }}</title>
+    <link href="{{ post.url | siteUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ post.url | siteUrl }}</id>
+    <summary>{{ post.data.description }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

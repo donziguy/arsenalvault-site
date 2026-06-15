@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+permalink: "blog/index.html"
+title: "Arsenal Vault Blog - Firearms Inventory Tips"
+description: "Tips and guides for firearms inventory management, insurance documentation, collection tracking, and Arsenal Vault workflows."
+canonical: "https://arsenalvault.com/blog/"
+ogType: "website"
+ogTitle: "Arsenal Vault Blog"
+ogDescription: "Tips and guides for firearms inventory management, insurance documentation, collection tracking, and Arsenal Vault workflows."
+ogImage: "https://arsenalvault.com/img/av-shield-512.png"
+---
+<header class="gradient-dark py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">Arsenal Vault Blog</h1>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">Practical guides for firearms inventory management, insurance records, collection documentation, and smarter range prep.</p>
+    </div>
+</header>
+
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for post in collections.posts | reverse %}
+            <article class="bg-white rounded-2xl border border-gray-200 p-7 hover-lift shadow-sm">
+                <div class="text-sm text-gray-500 mb-3">
+                    <span><i class="bi bi-calendar3 mr-1"></i>{{ post.date | readableDate }}</span>
+                    {% if post.data.readTime %}<span class="ml-3"><i class="bi bi-clock mr-1"></i>{{ post.data.readTime }}</span>{% endif %}
+                </div>
+                <h2 class="text-xl font-display font-bold text-gray-900 mb-3">
+                    <a href="{{ post.url }}" class="hover:text-av-gold transition">{{ post.data.ogTitle or post.data.title }}</a>
+                </h2>
+                <p class="text-gray-600 mb-5">{{ post.data.description }}</p>
+                <a href="{{ post.url }}" class="inline-flex items-center gap-2 text-av-gold font-semibold hover:underline">Read Article <i class="bi bi-arrow-right"></i></a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
