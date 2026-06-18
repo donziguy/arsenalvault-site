@@ -42,7 +42,7 @@ for (const file of htmlFiles) {
   if (!html.includes('href="/contact.html"')) failures.push(`${rel}: missing Contact link`);
   if (html.includes("support@arsenalvault.com")) failures.push(`${rel}: exposes support email`);
   if (html.includes("mailto:")) failures.push(`${rel}: contains mailto link`);
-  if (!html.includes('href="https://app.arsenalvault.com/register"')) failures.push(`${rel}: missing register CTA`);
+  if (!/href="https:\/\/app\.arsenalvault\.com\/register(?:\?[^"]*)?"/.test(html)) failures.push(`${rel}: missing register CTA`);
   if (!html.includes("analytics.arsenalvault.com/script.js")) failures.push(`${rel}: missing analytics`);
 }
 

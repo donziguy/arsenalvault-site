@@ -57,4 +57,4 @@ jobs:
             rm -rf "$WEBROOT"/*
             tar -xzf "$HOME/domains/arsenalvault.com/site-build.tar.gz" -C "$WEBROOT"
             rm -f "$HOME/domains/arsenalvault.com/site-build.tar.gz"
-            grep -n "All plans include a 15-day free trial" "$WEBROOT/index.html"
+            grep -n "Free Forever includes 5 firearms" "$WEBROOT/index.html"

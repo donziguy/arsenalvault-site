@@ -2,11 +2,11 @@
 layout: layouts/base.njk
 permalink: "pricing.html"
 title: "Pricing - Arsenal Vault"
-description: "Arsenal Vault pricing plans. Basic, Pro, and Ultimate options for every collector. Start free for 15 days."
+description: "Arsenal Vault pricing plans. Free Forever plus Basic, Pro, and Ultimate options for every collector."
 canonical: "https://arsenalvault.com/pricing.html"
 ogType: "website"
 ogTitle: "Pricing - Arsenal Vault"
-ogDescription: "Simple, transparent pricing. Cloud plans from $4.99/mo or Desktop from $44.99/yr. 15-day free trial, no credit card required."
+ogDescription: "Simple, transparent pricing. Start with Free Forever, upgrade Cloud from $1.99/mo, or use Desktop from $44.99/yr."
 ogImage: "https://arsenalvault.com/img/av-shield-512.png"
 bodyClass: "bg-gray-50"
 ---
@@ -14,9 +14,33 @@ bodyClass: "bg-gray-50"
     <section class="gradient-dark py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-4">Simple, <span class="text-gradient-gold">Transparent</span> Pricing</h1>
-            <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">Choose the hosted Cloud app for browser access, or the Windows Desktop edition from the download page. Both start with a 15-day free trial.</p>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">Choose the hosted Cloud app for browser access, or the Windows Desktop edition from the download page. Cloud starts with a real Free Forever account.</p>
             <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 text-av-gold px-4 py-2 rounded-full text-sm font-medium">
-                <i class="bi bi-shield-check"></i> 15-day free trial &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Cancel anytime
+                <i class="bi bi-shield-check"></i> Free Forever &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Upgrade when ready
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Decision Helper -->
+    <section class="py-12 bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-display font-bold text-gray-900 mb-2">Not sure which version to use?</h2>
+                <p class="text-gray-600">Pick based on how you want to access your records, not just the price.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-display font-bold text-gray-900 mb-2"><i class="bi bi-cloud text-av-gold mr-2"></i>Choose Cloud</h3>
+                    <p class="text-gray-600 text-sm">Use this if you want browser access, a free starter vault, and upgrade paths for sharing, reloading, and reports.</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-display font-bold text-gray-900 mb-2"><i class="bi bi-pc-display text-av-gold mr-2"></i>Choose Desktop</h3>
+                    <p class="text-gray-600 text-sm">Use this if you want a Windows app and prefer to keep inventory data local on your own machine.</p>
+                </div>
+                <div class="rounded-xl border border-av-gold/30 bg-av-gold/5 p-6">
+                    <h3 class="font-display font-bold text-gray-900 mb-2"><i class="bi bi-shield-lock text-av-gold mr-2"></i>Worried about privacy?</h3>
+                    <p class="text-gray-600 text-sm">Start with the <a href="security.html" class="text-av-gold font-semibold hover:underline">security page</a> before choosing a plan.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -25,8 +49,32 @@ bodyClass: "bg-gray-50"
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-display font-bold text-gray-900 text-center mb-2">Cloud Plans</h2>
-            <p class="text-gray-500 text-center mb-12">The hosted Arsenal Vault app for browser access, automatic backups, and vault sharing.</p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <p class="text-gray-500 text-center mb-12">The hosted Arsenal Vault app for browser access. Start free, then upgrade when your collection outgrows it.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+
+                <!-- Free -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="bi bi-gift text-av-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-gray-900 mb-2">Free Forever</h3>
+                        <p class="text-gray-500 text-sm">For getting organized</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-gray-900">$0</span>
+                        <span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>5 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 photos and 3 documents</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition and maintenance tracking</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Manual CSV export</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Vault sharing</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=site_cta&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Create Free Account</a>
+                </div>
 
                 <!-- Basic -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
@@ -38,19 +86,19 @@ bodyClass: "bg-gray-50"
                         <p class="text-gray-500 text-sm">For the everyday collector</p>
                     </div>
                     <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$4.99</span>
+                        <span class="text-5xl font-display font-bold text-gray-900">$1.99</span>
                         <span class="text-gray-500">/mo</span>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>2 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited photos and documents</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>1 vault member</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Manual CSV export</span></li>
                         <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=site_cta&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Create Free Account</a>
                 </div>
 
                 <!-- Pro - Most Popular -->
@@ -64,19 +112,19 @@ bodyClass: "bg-gray-50"
                         <p class="text-gray-400 text-sm">For serious collectors</p>
                     </div>
                     <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-av-gold">$9.99</span>
+                        <span class="text-5xl font-display font-bold text-av-gold">$5.99</span>
                         <span class="text-gray-400">/mo</span>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">20 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Unlimited firearms</strong></span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Automated cloud backup</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=site_cta&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Create Free Account</a>
                 </div>
 
                 <!-- Ultimate -->
@@ -89,19 +137,19 @@ bodyClass: "bg-gray-50"
                         <p class="text-gray-500 text-sm">For large collections</p>
                     </div>
                     <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$19.99</span>
+                        <span class="text-5xl font-display font-bold text-gray-900">$12.99</span>
                         <span class="text-gray-500">/mo</span>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Photo uploads</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>10+ vault members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Backup plus future API and bulk tools</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start Free Trial</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=site_cta&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Create Free Account</a>
                 </div>
             </div>
         </div>
@@ -193,26 +241,30 @@ bodyClass: "bg-gray-50"
                     <thead>
                         <tr class="border-b-2 border-gray-200">
                             <th class="text-left py-4 px-4 font-semibold text-gray-900">Feature</th>
-                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Basic<br><span class="font-normal text-gray-500">$4.99/mo</span></th>
-                            <th class="text-center py-4 px-4 font-semibold text-av-gold">Pro<br><span class="font-normal text-gray-400">$9.99/mo</span></th>
-                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Ultimate<br><span class="font-normal text-gray-500">$19.99/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Free<br><span class="font-normal text-gray-500">$0/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Basic<br><span class="font-normal text-gray-500">$1.99/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-av-gold">Pro<br><span class="font-normal text-gray-400">$5.99/mo</span></th>
+                            <th class="text-center py-4 px-4 font-semibold text-gray-900">Ultimate<br><span class="font-normal text-gray-500">$12.99/mo</span></th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-600">
                         <tr class="border-b border-gray-100">
                             <td class="py-4 px-4">Firearms</td>
-                            <td class="text-center py-4 px-4">10</td>
-                            <td class="text-center py-4 px-4 font-semibold text-av-gold">20</td>
+                            <td class="text-center py-4 px-4">5</td>
+                            <td class="text-center py-4 px-4">Unlimited</td>
+                            <td class="text-center py-4 px-4 font-semibold text-av-gold">Unlimited</td>
                             <td class="text-center py-4 px-4">Unlimited</td>
                         </tr>
                         <tr class="border-b border-gray-100">
                             <td class="py-4 px-4">Vault Members</td>
-                            <td class="text-center py-4 px-4">2</td>
+                            <td class="text-center py-4 px-4">0</td>
+                            <td class="text-center py-4 px-4">1</td>
                             <td class="text-center py-4 px-4 font-semibold text-av-gold">5</td>
-                            <td class="text-center py-4 px-4">10</td>
+                            <td class="text-center py-4 px-4">10+</td>
                         </tr>
                         <tr class="border-b border-gray-100">
                             <td class="py-4 px-4">Ammunition Tracking</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
@@ -222,9 +274,11 @@ bodyClass: "bg-gray-50"
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                         </tr>
                         <tr class="border-b border-gray-100">
                             <td class="py-4 px-4">Photo Uploads</td>
+                            <td class="text-center py-4 px-4">3</td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
@@ -232,12 +286,14 @@ bodyClass: "bg-gray-50"
                         <tr class="border-b border-gray-100">
                             <td class="py-4 px-4">Reloading Tracker</td>
                             <td class="text-center py-4 px-4"><i class="bi bi-x-lg text-gray-300 text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-x-lg text-gray-300 text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                         </tr>
                         <tr class="border-b border-gray-100">
-                            <td class="py-4 px-4">Cloud Backup</td>
-                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="py-4 px-4">Automated Cloud Backup</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-x-lg text-gray-300 text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-x-lg text-gray-300 text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                         </tr>
@@ -246,9 +302,11 @@ bodyClass: "bg-gray-50"
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-4">15-Day Free Trial</td>
+                            <td class="py-4 px-4">Manual CSV Export</td>
+                            <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
                             <td class="text-center py-4 px-4"><i class="bi bi-check-lg text-av-gold text-xl"></i></td>
@@ -265,8 +323,8 @@ bodyClass: "bg-gray-50"
             <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
             <div class="space-y-6">
                 <div class="bg-white rounded-xl p-6 border border-gray-200">
-                    <h3 class="font-semibold text-gray-900 mb-2">Do I need a credit card to start the free trial?</h3>
-                    <p class="text-gray-600">No. Sign up and get 15 days free with no credit card required. You'll only be asked for payment if you choose to continue after the trial.</p>
+                    <h3 class="font-semibold text-gray-900 mb-2">Do I need a credit card to start?</h3>
+                    <p class="text-gray-600">No. Create a Free Forever account with no credit card required. Upgrade only when you need higher limits, vault sharing, reports, or reloading tools.</p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-200">
                     <h3 class="font-semibold text-gray-900 mb-2">Can I upgrade or downgrade my plan?</h3>
@@ -278,7 +336,7 @@ bodyClass: "bg-gray-50"
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-200">
                     <h3 class="font-semibold text-gray-900 mb-2">Is my data secure?</h3>
-                    <p class="text-gray-600">Yes. All data is encrypted at rest using per-user encryption keys and in transit via TLS. We never share your information with third parties. Your data. Your control. Your vault.</p>
+                    <p class="text-gray-600">Yes. All data is encrypted at rest using per-user encryption keys and in transit via TLS. We never share your information with third parties. <a href="security.html" class="text-av-gold hover:underline">Read the security details.</a></p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-gray-200">
                     <h3 class="font-semibold text-gray-900 mb-2">What's the difference between Cloud and Desktop?</h3>
@@ -296,7 +354,7 @@ bodyClass: "bg-gray-50"
     <section class="py-20 gradient-dark">
         <div class="max-w-3xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to get organized?</h2>
-            <p class="text-gray-400 mb-8">Start your free 15-day trial today. No credit card required.</p>
-            <a href="https://app.arsenalvault.com/register" class="inline-block gradient-gold text-av-dark px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start Free Trial</a>
+            <p class="text-gray-400 mb-8">Create your free account today. No credit card required.</p>
+            <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=site_cta&utm_campaign=free_account" class="inline-block gradient-gold text-av-dark px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition shadow-lg shadow-av-gold/25">Create Free Account</a>
         </div>
     </section>
