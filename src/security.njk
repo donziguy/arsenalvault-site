@@ -69,6 +69,7 @@ bodyClass: "bg-gray-50"
                     <li class="flex gap-3"><i class="bi bi-shield-check text-av-gold mt-1"></i><span>Cloud traffic uses HTTPS/TLS encryption in transit.</span></li>
                     <li class="flex gap-3"><i class="bi bi-shield-check text-av-gold mt-1"></i><span>Payments are handled through Stripe, not stored directly by Arsenal Vault.</span></li>
                     <li class="flex gap-3"><i class="bi bi-shield-check text-av-gold mt-1"></i><span>The Desktop edition is available for collectors who want a local workflow.</span></li>
+                    <li class="flex gap-3"><i class="bi bi-shield-check text-av-gold mt-1"></i><span>Optional Private Vault lets you protect locked cloud vault data with your own passphrase.</span></li>
                     <li class="flex gap-3"><i class="bi bi-shield-check text-av-gold mt-1"></i><span>You can try the Cloud app without entering a credit card.</span></li>
                 </ul>
             </div>
@@ -76,7 +77,53 @@ bodyClass: "bg-gray-50"
     </div>
 </section>
 
-<section class="py-16 bg-white border-y border-gray-200">
+<section id="private-vault" class="py-20 bg-gray-50 border-y border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 text-av-gold px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <i class="bi bi-key"></i> Optional stronger privacy
+            </div>
+            <h2 class="text-3xl font-display font-bold text-gray-900 mb-3">Private Vault</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Optional stronger privacy for serious collectors. Your passphrase wraps the vault encryption key so locked vault data stays unreadable without your key.</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-10 items-start mb-10">
+            <div>
+                <p class="text-gray-600 mb-6">Every Arsenal Vault cloud account already uses per-user encrypted storage. Private Vault goes further: you hold a passphrase that wraps your vault encryption key. When the vault is <strong>locked</strong>, that data is unreadable without your key.</p>
+                <h3 class="font-display font-bold text-gray-900 mb-4">How it works</h3>
+                <ol class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 rounded-full gradient-gold text-av-dark font-bold flex items-center justify-center flex-shrink-0">1</span>
+                        <div><h4 class="font-semibold text-gray-900">Enable</h4><p class="text-gray-600 text-sm">Create a strong passphrase and save your recovery kit.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 rounded-full gradient-gold text-av-dark font-bold flex items-center justify-center flex-shrink-0">2</span>
+                        <div><h4 class="font-semibold text-gray-900">Lock</h4><p class="text-gray-600 text-sm">Idle lock or manual lock seals the vault behind your key.</p></div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 rounded-full gradient-gold text-av-dark font-bold flex items-center justify-center flex-shrink-0">3</span>
+                        <div><h4 class="font-semibold text-gray-900">Unlock</h4><p class="text-gray-600 text-sm">Enter your passphrase when you need access again.</p></div>
+                    </li>
+                </ol>
+            </div>
+            <div class="bg-white rounded-2xl border border-gray-200 p-8">
+                <h3 class="font-display font-bold text-gray-900 mb-4">Important limits</h3>
+                <ul class="space-y-3 text-sm text-gray-600 mb-6">
+                    <li class="flex gap-3"><i class="bi bi-check-lg text-av-gold mt-0.5"></i><span>Cloud only — not available on desktop</span></li>
+                    <li class="flex gap-3"><i class="bi bi-check-lg text-av-gold mt-0.5"></i><span>Ultimate includes Private Vault; Basic/Pro can add it for $3/mo or $36/yr</span></li>
+                    <li class="flex gap-3"><i class="bi bi-slash-circle text-av-gold mt-0.5"></i><span>Vault sharing is disabled while Private Vault is on</span></li>
+                    <li class="flex gap-3"><i class="bi bi-exclamation-triangle text-av-gold mt-0.5"></i><span>Lost passphrase + lost recovery phrase = permanent data loss</span></li>
+                    <li class="flex gap-3"><i class="bi bi-exclamation-triangle text-av-gold mt-0.5"></i><span>Account password reset does not recover your Private Vault key</span></li>
+                    <li class="flex gap-3"><i class="bi bi-arrow-return-left text-av-gold mt-0.5"></i><span>To cancel the paid add-on, return to managed keys first (while unlocked)</span></li>
+                </ul>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">While unlocked for an active session, Arsenal Vault can process your data to power features. Private Vault protects <strong>locked</strong> vault data with a key only you control — we don’t claim absolute zero-knowledge during active use.</p>
+                <p class="text-gray-900 font-semibold mb-4">Your data. Your control. Your vault.</p>
+                <a href="pricing.html#private-vault" class="inline-flex items-center gap-2 text-av-gold font-semibold hover:underline">See Private Vault pricing <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-white border-b border-gray-200">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-10">Cloud Or Desktop?</h2>
         <div class="grid md:grid-cols-2 gap-8">
