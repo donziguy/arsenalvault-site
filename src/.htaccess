@@ -5,6 +5,9 @@ RewriteEngine On
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^blog/index\.html$ /blog/ [R=301,L]
 
+# Canonical pricing URL matches nav (/pricing.html)
+RewriteRule ^pricing/?$ /pricing.html [R=301,L,QSA]
+
 # Serve .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
