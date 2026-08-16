@@ -2,11 +2,11 @@
 layout: layouts/base.njk
 permalink: "index.html"
 title: "Arsenal Vault - Firearms Inventory Management"
-description: "Free forever firearms inventory for web and Windows desktop. Document serial numbers, photos, ammo, parts, and maintenance for insurance, theft, and estate records."
+description: "Insurance-ready firearm records — serials, photos, values — in one private vault. Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited."
 canonical: "https://arsenalvault.com/"
 ogType: "website"
-ogTitle: "Arsenal Vault - Firearms Inventory Management"
-ogDescription: "Build a secure, insurance-ready firearms inventory with encrypted cloud vaults or local Windows desktop storage."
+ogTitle: "Arsenal Vault - Know what you own. Prove it when it matters."
+ogDescription: "Insurance-ready firearm records — serials, photos, values — in one private vault. Free forever for up to 5 firearms."
 ogImage: "https://arsenalvault.com/img/av-shield-512.png"
 bodyClass: "bg-gray-50"
 headExtra: |
@@ -15,7 +15,7 @@ headExtra: |
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Arsenal Vault",
-        "description": "Professional firearms inventory management software for collectors",
+        "description": "Insurance-ready firearm records — serials, photos, and values — in one private vault. Free forever for up to 5 firearms.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows, Web",
         "offers": {
@@ -40,41 +40,32 @@ headExtra: |
       </script>
 ---
 <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-gray-100 to-gray-50 hero-pattern py-20 lg:py-28">
+    <section class="bg-white hero-pattern py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <div class="inline-flex items-center gap-2 bg-av-gold/10 border border-av-gold/30 rounded-full px-4 py-1.5 mb-6">
-                        <span class="w-2 h-2 bg-av-gold rounded-full"></span>
-                        <span class="text-av-gold text-sm font-semibold">Free Forever on Web & Desktop</span>
+                        <span class="text-av-gold text-sm font-semibold">Free forever for up to 5 firearms</span>
                     </div>
                     <h1 class="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight">
-                        Know What You Own. <span class="text-gradient-gold">Protect What Matters.</span>
+                        Know what you own. <span class="text-gradient-gold">Prove it when it matters.</span>
                     </h1>
-                    <p class="text-gray-600 text-lg mb-4 leading-relaxed max-w-xl">
-                        Build proof-ready firearm records for insurance, theft, and estate planning — serial numbers, photos, ammo, parts, values, and maintenance in one secure vault.
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
+                        Insurance-ready firearm records — serials, photos, values — in one private vault. Built for collectors who are done trusting a spreadsheet.
                     </p>
-                    <p class="text-gray-600 text-base mb-8 leading-relaxed max-w-xl">
-                        <strong class="text-gray-800">Start free on the web app</strong> (recommended) for browser access anywhere. Prefer local-only? Download the Windows desktop app — also free forever.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=hero_cta&utm_campaign=free_account&utm_content=web_primary" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold text-center hover:opacity-90 transition text-lg shadow-lg shadow-av-gold/25 flex items-center justify-center gap-2">
-                            <i class="bi bi-cloud"></i> Start Free on Web
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=hero_cta&utm_campaign=free_account&utm_content=web_primary" class="gradient-gold text-av-dark px-8 py-3.5 rounded-lg font-semibold text-center hover:opacity-90 transition text-lg shadow-lg shadow-av-gold/25">
+                            Start free — up to 5 firearms
                         </a>
-                        <a href="/download.html?utm_source=arsenalvault.com&utm_medium=hero_cta&utm_campaign=free_account&utm_content=desktop_secondary" class="border-2 border-av-gold text-av-gold px-8 py-3.5 rounded-lg font-semibold text-center hover:bg-av-gold hover:text-av-dark transition text-lg flex items-center justify-center gap-2">
-                            <i class="bi bi-pc-display"></i> Download Free Desktop
+                        <a href="/checklist/" class="inline-flex items-center justify-center gap-1 text-av-gold font-semibold hover:underline">
+                            Get the free checklist <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
-                    <div class="grid sm:grid-cols-3 gap-3 mt-6 max-w-xl">
-                        <div class="flex items-center gap-2 text-sm text-gray-600"><i class="bi bi-gift text-av-gold"></i><span>Free forever on both</span></div>
-                        <div class="flex items-center gap-2 text-sm text-gray-600"><i class="bi bi-credit-card-2-front text-av-gold"></i><span>No credit card needed</span></div>
-                        <div class="flex items-center gap-2 text-sm text-gray-600"><i class="bi bi-shield-lock text-av-gold"></i><span>Encrypted vaults</span></div>
-                    </div>
+                    <p class="text-gray-500 text-sm mt-4">No credit card. Upgrade to Basic ($1.99/mo) when you need unlimited.</p>
                     <div class="mt-6 flex flex-wrap gap-2 max-w-xl">
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-file-earmark-text text-av-gold"></i> Insurance records</span>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-exclamation-triangle text-av-gold"></i> Theft documentation</span>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-people text-av-gold"></i> Estate / heir access</span>
-                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-key text-av-gold"></i> Private Vault available</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-file-earmark-text text-av-gold"></i> Insurance records</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-exclamation-triangle text-av-gold"></i> Theft documentation</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-people text-av-gold"></i> Estate / heirs</span>
                     </div>
                 </div>
                 <div class="relative">
@@ -84,7 +75,10 @@ headExtra: |
                     <div class="absolute -bottom-6 -left-6 bg-av-dark rounded-xl p-4 shadow-xl border border-av-gold/20 hidden lg:block">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 gradient-gold rounded-full flex items-center justify-center"><i class="bi bi-shield-check text-av-dark"></i></div>
-                            <div><p class="text-white font-semibold text-sm">Web App Recommended</p><p class="text-gray-400 text-xs">Desktop available too</p></div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Your data. Your control.</p>
+                                <p class="text-gray-400 text-xs">Your vault.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,116 +86,54 @@ headExtra: |
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <section class="bg-white border-y border-gray-200 py-8">
+    <!-- Proof Bar -->
+    <section class="bg-white border-y border-gray-200 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-6 text-center md:text-left">
-                <a href="about.html" class="block group rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-av-gold focus-visible:ring-offset-4 focus-visible:ring-offset-white">
-                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-1 group-hover:text-av-gold-dark transition">Built By A Collector</p>
-                    <p class="text-gray-600 text-sm">Created by someone who actually understands collection records, insurance proof, and privacy.</p>
-                </a>
-                <a href="pricing.html" class="block group rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-av-gold focus-visible:ring-offset-4 focus-visible:ring-offset-white">
-                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-1 group-hover:text-av-gold-dark transition">Web Or Desktop</p>
-                    <p class="text-gray-600 text-sm">Prefer the web app for access anywhere. Prefer local-only? Desktop keeps inventory on your Windows machine.</p>
-                </a>
-                <a href="security.html" class="block group rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-av-gold focus-visible:ring-offset-4 focus-visible:ring-offset-white">
-                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-1 group-hover:text-av-gold-dark transition">Security Page</p>
-                    <p class="text-gray-600 text-sm">Clear details on encryption, account isolation, backups, payments, and what data is never sold.</p>
-                </a>
-                <a href="pricing.html" class="block group rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-av-gold focus-visible:ring-offset-4 focus-visible:ring-offset-white">
-                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-1 group-hover:text-av-gold-dark transition">Free Forever</p>
-                    <p class="text-gray-600 text-sm">Web and Desktop both have a free forever option. No credit card. Upgrade only when you need more.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Chooser -->
-    <section class="py-14 bg-gray-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-3">Two products. Same core inventory tools.</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Both include a free forever option. We recommend the web app for most people — desktop is a strong alternative if you want local-only storage.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white rounded-2xl p-8 border-2 border-av-gold shadow-lg shadow-av-gold/10 relative">
-                    <div class="absolute -top-3 left-6 gradient-gold text-av-dark text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center"><i class="bi bi-cloud text-av-dark text-xl"></i></div>
-                        <div>
-                            <h3 class="text-xl font-display font-bold text-gray-900">Web App</h3>
-                            <p class="text-sm text-gray-500">Browser access anywhere</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 text-sm mb-6">
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Free forever starter vault</span></li>
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Access from any device with a browser</span></li>
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Best path for most collectors</span></li>
-                    </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_product_chooser&utm_campaign=free_account&utm_content=web" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition">Start Free on Web</a>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-2">Insurance claim</p>
+                    <p class="text-gray-600 text-sm">Serials, photos, and values ready when an adjuster asks.</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-av-dark rounded-xl flex items-center justify-center border border-av-gold/30"><i class="bi bi-windows text-av-gold text-xl"></i></div>
-                        <div>
-                            <h3 class="text-xl font-display font-bold text-gray-900">Windows Desktop</h3>
-                            <p class="text-sm text-gray-500">Local-only on your PC</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 text-sm mb-6">
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Free forever option available</span></li>
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Data stays on your machine</span></li>
-                        <li class="flex gap-2"><i class="bi bi-check-lg text-av-gold"></i><span>Great if you want offline / local workflow</span></li>
-                    </ul>
-                    <a href="/download.html?utm_source=arsenalvault.com&utm_medium=home_product_chooser&utm_campaign=free_account&utm_content=desktop" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Download Free Desktop</a>
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-2">Theft report</p>
+                    <p class="text-gray-600 text-sm">A complete list you can hand to law enforcement the same day.</p>
+                </div>
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-av-gold font-bold mb-2">Estate &amp; heirs</p>
+                    <p class="text-gray-600 text-sm">What you own, documented — so family is not left guessing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Grid -->
+    <!-- Features -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Everything You Need to Manage Your Collection</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">From individual firearms to complete arsenals, Arsenal Vault gives you the same core inventory tools in both Cloud and Windows Desktop editions.</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">What you actually get</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">The records that matter. Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-crosshair text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Firearms Tracking</h3>
-                    <p class="text-gray-600">Complete records for every firearm: make, model, serial numbers, caliber, purchase info, and custom fields.</p>
-                </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-box-seam text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Ammunition Inventory</h3>
-                    <p class="text-gray-600">Track rounds by caliber, brand, and quantity. Know exactly what you have and when to restock.</p>
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-camera text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Serials and photos</h3>
+                    <p class="text-gray-600">Make, model, serial, value, and photos in one place. Free includes 3 photos and 3 documents per firearm.</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
                     <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-puzzle text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Parts & Accessories</h3>
-                    <p class="text-gray-600">Organize optics, magazines, grips, and components. Link parts to specific firearms.</p>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Accessories, too</h3>
+                    <p class="text-gray-600">Optics, slings, cases, and the rest — attached to the firearm they belong to, not lost in a notes column.</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-tools text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Maintenance Logs</h3>
-                    <p class="text-gray-600">Record cleanings, repairs, and round counts. Set reminders for scheduled maintenance.</p>
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-file-earmark-arrow-down text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Export when needed</h3>
+                    <p class="text-gray-600">Take your data with you. CSV export on every plan. PDF insurance reports are Pro and Ultimate.</p>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-file-earmark-pdf text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">PDF Reports</h3>
-                    <p class="text-gray-600">Generate professional reports for insurance, compliance, or personal records.</p>
+                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-safe2 text-av-dark text-2xl"></i></div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Private Vault, optional</h3>
+                    <p class="text-gray-600">Encrypted cloud backup if you want it. It is optional — not required to use the vault.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-8 hover-lift border border-gray-100">
-                    <div class="w-14 h-14 gradient-gold rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-av-gold/20"><i class="bi bi-cloud-check text-av-dark text-2xl"></i></div>
-                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Cloud or Desktop</h3>
-                    <p class="text-gray-600">Use the hosted cloud app for access anywhere, or the Windows desktop app when you want a local workflow.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="features.html" class="inline-flex items-center gap-2 text-av-gold font-semibold hover:underline">
-                    See All Features <i class="bi bi-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -266,9 +198,25 @@ headExtra: |
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Start free forever on the <strong>web app</strong> or <strong>desktop app</strong>. Upgrade only when you need higher limits, sharing, reports, or extra tools.</p>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-start">
+                <!-- Free - Start here -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-av-gold shadow-lg shadow-av-gold/10 hover-lift relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">START HERE</div>
+                    <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Free</h3><p class="text-gray-500 text-sm">For getting organized</p></div>
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-display font-bold text-gray-900">$0</span><span class="text-gray-500">/forever</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>5 firearms</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 photos per firearm</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 documents per firearm</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>CSV export</span></li>
+                    </ul>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_free&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start free — up to 5 firearms</a>
+                </div>
+
                 <!-- Basic -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Basic</h3><p class="text-gray-500 text-sm">For the everyday collector</p></div>
@@ -277,18 +225,15 @@ headExtra: |
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited photos and documents</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>1 vault member</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Manual CSV export</span></li>
-                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>Reloading tracker</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited photos &amp; docs</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>CSV export</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>PDF reports are Pro+</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_basic&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Create Free Account</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_basic&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start free — up to 5 firearms</a>
                 </div>
                 
                 <!-- Pro - Most Popular -->
-                <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform md:-translate-y-4">
+                <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform lg:-translate-y-4">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-white mb-2">Pro</h3><p class="text-gray-400 text-sm">For serious collectors</p></div>
                     <div class="text-center mb-8">
@@ -296,14 +241,11 @@ headExtra: |
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 vault members</strong></span></li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Automated cloud backup</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Reloading tracker</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_pro&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Create Free Account</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_pro&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start free — up to 5 firearms</a>
                 </div>
                 
                 <!-- Ultimate -->
@@ -313,17 +255,25 @@ headExtra: |
                         <span class="text-5xl font-display font-bold text-gray-900">$12.99</span><span class="text-gray-500">/mo</span>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Ammunition tracking</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Maintenance logs</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Everything in Pro</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>10+ vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Backup plus future API and bulk tools</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Reloading tracker</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Private Vault included</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_ultimate&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Create Free Account</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_ultimate&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start free — up to 5 firearms</a>
                 </div>
             </div>
-            <p class="text-center text-gray-500 text-sm mt-10">Free forever options on both products. Cloud Free Forever includes 5 firearms, 3 photos, and 3 documents. No credit card required. <a href="/pricing.html" class="text-av-gold hover:underline">See full pricing</a> · <a href="/download.html" class="text-av-gold hover:underline">Desktop download</a></p>
+            <p class="text-center text-gray-500 text-sm mt-10">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited. No credit card to start. <a href="/pricing.html" class="text-av-gold hover:underline">See full pricing</a></p>
+        </div>
+    </section>
+
+    <!-- Desktop as a footnote -->
+    <section class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm mb-4">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited. No credit card to start.</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                <strong class="text-gray-800">Prefer local-only?</strong> Windows desktop stays on your PC. The web vault is the primary product; desktop is there if you want records that never leave the machine.
+                <a href="/download.html" class="text-av-gold font-semibold hover:underline">Download the desktop app.</a>
+            </p>
         </div>
     </section>
