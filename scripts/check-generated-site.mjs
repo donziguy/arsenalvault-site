@@ -44,6 +44,9 @@ for (const file of htmlFiles) {
   if (html.includes("mailto:")) failures.push(`${rel}: contains mailto link`);
   if (!/href="https:\/\/app\.arsenalvault\.com\/register(?:\?[^"]*)?"/.test(html)) failures.push(`${rel}: missing register CTA`);
   if (!html.includes("analytics.arsenalvault.com/script.js")) failures.push(`${rel}: missing analytics`);
+  const hubspotLoaders = html.split('id="hs-script-loader"').length - 1;
+  if (hubspotLoaders !== 1) failures.push(`${rel}: expected one HubSpot loader, found ${hubspotLoaders}`);
+  if (!html.includes("js.hs-scripts.com/245057554.js")) failures.push(`${rel}: missing HubSpot portal script`);
 }
 
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
