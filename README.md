@@ -21,6 +21,6 @@ Built with Eleventy and deployed as static HTML to Hostinger on every push to `m
 - `npm run check` - Build and validate generated pages.
 
 ## Deploy
-Push to `main` -> GitHub Actions builds `_site/` -> uploads the generated static output to Hostinger.
+Push to `main` -> GitHub Actions builds `_site/` -> uploads the generated static output to Hostinger. `src/.htaccess` is copied into `_site/` (301 www → apex, clean URLs).
 
 Requires `HOSTINGER_SSH_KEY` secret in repo settings.
