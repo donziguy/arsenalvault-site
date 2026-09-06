@@ -1,6 +1,10 @@
 Options -Indexes
 RewriteEngine On
 
+# Force apex host (Search Console: www returns 200 while canonicals are apex)
+RewriteCond %{HTTP_HOST} ^www\.arsenalvault\.com$ [NC]
+RewriteRule ^(.*)$ https://arsenalvault.com/$1 [R=301,L,QSA]
+
 # Redirect index.html to clean URLs
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^blog/index\.html$ /blog/ [R=301,L]
