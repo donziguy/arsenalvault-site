@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+permalink: "claim-prep-checklist-thanks.html"
+title: "Your checklist is ready | Arsenal Vault"
+description: "Download the Arsenal Vault firearm insurance claim-prep checklist PDF."
+canonical: "https://arsenalvault.com/claim-prep-checklist-thanks.html"
+ogType: "website"
+ogTitle: "Your checklist is ready"
+ogDescription: "Download the PDF. We’ll also email a copy if you opted in."
+ogImage: "https://arsenalvault.com/img/av-shield-512.png"
+bodyClass: "bg-gray-50"
+eleventyExcludeFromCollections: true
+headExtra: |
+  <meta name="robots" content="noindex, follow">
+---
+<header class="gradient-dark py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-display font-bold text-white mb-6">Your checklist is ready</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Download the PDF below. We’ll also email a copy if you opted in.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-16">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 text-center">
+                    <i class="bi bi-file-earmark-pdf text-4xl text-av-gold"></i>
+                    <h2 class="text-2xl font-display font-bold text-av-dark mt-4 mb-3">Firearm insurance claim-prep checklist</h2>
+                    <p class="text-gray-600 mb-6">Keep a copy somewhere you can still open if the safe is gone.</p>
+                    <a id="claim-prep-pdf-link" href="/static/AV-firearm-insurance-claim-prep-checklist.pdf" download class="inline-block gradient-gold text-av-dark px-8 py-4 rounded-xl font-bold hover:opacity-90 transition"><i class="bi bi-download mr-2"></i>Download PDF</a>
+                    <p class="text-sm text-gray-600 mt-8">Keep serials and photos in one place you can still open. <a href="https://app.arsenalvault.com/register?utm_source=checklist&utm_medium=thanks&utm_campaign=claim_prep_checklist&utm_content=thanks_register" class="text-av-gold font-semibold hover:underline">Start free — up to 5 firearms</a></p>
+                </div>
+                <p class="text-sm text-gray-500 mt-8 text-center">Educational only. Not insurance/legal/claims advice. Not affiliated with any carrier. Your data. Your control. Your vault.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('claim-prep-pdf-link')?.addEventListener('click', function () {
+            if (window.gtag) {
+                gtag('event', 'file_download', { event_category: 'checklist', event_label: 'insurance_claim_prep_pdf' });
+            }
+            if (window.umami) {
+                umami.track('claim_prep_checklist_pdf_download');
+            }
+        });
+    </script>
