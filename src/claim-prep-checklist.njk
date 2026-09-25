@@ -37,16 +37,14 @@ bodyClass: "bg-gray-50"
                     <h2 class="text-2xl font-display font-bold text-av-dark mb-2">Email me the checklist</h2>
                     <p class="text-gray-600 mb-6">We’ll send the PDF and show the download on the next page.</p>
 
-                    <!-- HUBSPOT_FORM_EMBED: replace with hsforms when portalId+formId provided -->
-                    <!-- Known site portal: 245057554, region na2 (see contact.njk). No claim-prep form GUID yet.
-                         Set data-form-id on the form below to submit via the HubSpot Forms API; until then the native form redirects to the thanks page. -->
+                    <!-- HUBSPOT_FORM_EMBED: native form posts to Forms API v3 for portal 245057554, region na2, form 7fe6a20b-a72e-4c31-803c-6112c7a28012. -->
 
                     <form id="claim-prep-form" class="space-y-4" novalidate
                         data-av-signup-source="checklist_gate"
                         data-av-lead-magnet="insurance_claim_checklist"
                         data-portal-id="245057554"
                         data-region="na2"
-                        data-form-id="">
+                        data-form-id="7fe6a20b-a72e-4c31-803c-6112c7a28012">
                         <input type="hidden" name="av_signup_source" value="checklist_gate">
                         <input type="hidden" name="av_lead_magnet" value="insurance_claim_checklist">
 
@@ -69,7 +67,7 @@ bodyClass: "bg-gray-50"
                             </select>
                         </div>
                         <div class="flex items-start gap-3">
-                            <input id="claim-prep-consent" name="checklist_consent" type="checkbox" value="yes" required class="mt-1 h-4 w-4 rounded border-gray-300 text-av-gold focus:ring-av-gold">
+                            <input id="claim-prep-consent" name="checklist_consent" type="checkbox" value="true" required class="mt-1 h-4 w-4 rounded border-gray-300 text-av-gold focus:ring-av-gold">
                             <label for="claim-prep-consent" class="text-sm text-gray-700">Send me the PDF and occasional Arsenal Vault updates. Unsubscribe anytime.</label>
                         </div>
                         <p id="claim-prep-error" class="hidden text-sm text-red-700" role="alert"></p>
@@ -111,28 +109,41 @@ bodyClass: "bg-gray-50"
                     if (value) thanks.searchParams.set(key, value);
                 });
                 var thanksUrl = thanks.pathname + thanks.search;
+                var button = form.querySelector('button[type="submit"]');
 
-                function go() {
-                    window.location.assign(thanksUrl);
+                function showError(message) {
+                    if (button) button.disabled = false;
+                    if (errorEl) {
+                        errorEl.textContent = message;
+                        errorEl.classList.remove('hidden');
+                    }
                 }
 
                 if (!portalId || !formId) {
-                    go();
+                    showError('We couldn’t send the checklist. Please try again.');
                     return;
                 }
 
-                var fields = [];
-                ['email', 'firstname', 'av_firearm_count_band', 'av_signup_source', 'av_lead_magnet', 'checklist_consent'].forEach(function (name) {
-                    var value = data.get(name);
-                    if (value) fields.push({ name: name, value: String(value) });
-                });
-                utmKeys.forEach(function (key) {
-                    var value = params.get(key);
-                    if (value) fields.push({ name: key, value: value });
-                });
+                var bandValues = ['1\u20135', '6\u201320', '21+', 'prefer not to say'];
+                var fields = [
+                    { name: 'email', value: String(data.get('email') || '').trim() }
+                ];
+                var firstName = String(data.get('firstname') || '').trim();
+                if (firstName) fields.push({ name: 'firstname', value: firstName });
+                var band = String(data.get('av_firearm_count_band') || '');
+                if (bandValues.indexOf(band) !== -1) fields.push({ name: 'av_firearm_count_band', value: band });
+                fields.push({ name: 'checklist_consent', value: 'true' });
+                fields.push({ name: 'av_signup_source', value: form.getAttribute('data-av-signup-source') || 'checklist_gate' });
+                fields.push({ name: 'av_lead_magnet', value: form.getAttribute('data-av-lead-magnet') || 'insurance_claim_checklist' });
+
+                var context = {
+                    pageUri: window.location.href,
+                    pageName: document.title
+                };
+                var hutkMatch = document.cookie.match(/(?:^|; )hubspotutk=([^;]*)/);
+                if (hutkMatch && hutkMatch[1]) context.hutk = decodeURIComponent(hutkMatch[1]);
 
                 var host = region === 'na1' ? 'https://api.hsforms.com' : 'https://api-' + region + '.hsforms.com';
-                var button = form.querySelector('button[type="submit"]');
                 if (button) button.disabled = true;
 
                 fetch(host + '/submissions/v3/integration/submit/' + encodeURIComponent(portalId) + '/' + encodeURIComponent(formId), {
@@ -140,15 +151,13 @@ bodyClass: "bg-gray-50"
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         fields: fields,
-                        context: {
-                            pageUri: window.location.href,
-                            pageName: document.title
-                        }
+                        context: context
                     })
-                }).then(function () {
-                    go();
+                }).then(function (response) {
+                    if (!response.ok) throw new Error(String(response.status));
+                    window.location.assign(thanksUrl);
                 }).catch(function () {
-                    go();
+                    showError('We couldn’t send the checklist. Please try again.');
                 });
             });
         })();
