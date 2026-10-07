@@ -4,6 +4,7 @@ import path from "node:path";
 const root = path.join(process.cwd(), "_site");
 const requiredFiles = [
   "index.html",
+  "start.html",
   "features.html",
   "pricing.html",
   "download.html",
@@ -49,13 +50,24 @@ for (const file of htmlFiles) {
   if (!html.includes("js.hs-scripts.com/245057554.js")) failures.push(`${rel}: missing HubSpot portal script`);
 }
 
+const startPage = await readFile(path.join(root, "start.html"), "utf8");
+const startPrimary = "https://app.arsenalvault.com/register?utm_source=google&utm_medium=cpc&utm_campaign=av_gads_soft_v1&utm_content=start_primary";
+const startSecondary = "https://arsenalvault.com/claim-prep-checklist.html?utm_source=google&utm_medium=cpc&utm_campaign=av_gads_soft_v1&utm_content=start_secondary";
+if (!startPage.includes(startPrimary)) failures.push("start.html: missing av_gads_soft_v1 primary register CTA");
+if (!startPage.includes(startSecondary)) failures.push("start.html: missing av_gads_soft_v1 claim-prep checklist CTA");
+if (!startPage.includes('rel="canonical" href="https://arsenalvault.com/start"')) failures.push("start.html: canonical is not /start");
+if (/free trial/i.test(startPage)) failures.push("start.html: says free trial");
+if (startPage.includes("screenshots/")) failures.push("start.html: includes product screenshots");
+
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 for (const file of requiredFiles.filter((file) => file.endsWith(".html"))) {
   const url = file === "index.html"
     ? "https://arsenalvault.com/"
     : file === "blog/index.html"
       ? "https://arsenalvault.com/blog/"
-      : `https://arsenalvault.com/${file}`;
+      : file === "start.html"
+        ? "https://arsenalvault.com/start"
+        : `https://arsenalvault.com/${file}`;
   if (!sitemap.includes(url)) failures.push(`sitemap.xml: missing ${url}`);
 }
 

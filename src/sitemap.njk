@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {% for item in collections.all %}
 {% if item.url and not item.data.eleventyExcludeFromCollections %}
   <url>
-    <loc>{{ item.url | siteUrl }}</loc>
+    <loc>{% if item.url == "/start.html" %}https://arsenalvault.com/start{% else %}{{ item.url | siteUrl }}{% endif %}</loc>
     <lastmod>{{ (item.date or page.date).toISOString().slice(0, 10) }}</lastmod>
     <changefreq>{% if item.url.startsWith('/blog/') %}monthly{% else %}monthly{% endif %}</changefreq>
     <priority>{% if item.url == '/' %}1.0{% elif item.url.startsWith('/blog/') %}0.8{% else %}0.7{% endif %}</priority>
