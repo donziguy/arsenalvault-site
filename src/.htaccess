@@ -9,6 +9,10 @@ RewriteRule ^(.*)$ https://arsenalvault.com/$1 [R=301,L,QSA]
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^blog/index\.html$ /blog/ [R=301,L]
 
+# Soft Google Ads landing page: one public URL at /start
+RewriteCond %{THE_REQUEST} \s/+start\.html[\s?] [NC]
+RewriteRule ^start\.html$ /start [R=301,L,QSA]
+
 # Serve .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
