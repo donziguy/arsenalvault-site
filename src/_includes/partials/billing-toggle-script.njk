@@ -1,0 +1,25 @@
+<script>
+(function () {
+    var classesOn = ["gradient-gold", "text-av-dark"];
+    var classesOff = ["text-gray-600"];
+    function apply(interval) {
+        document.querySelectorAll("[data-billing]").forEach(function (button) {
+            var on = button.getAttribute("data-billing") === interval;
+            button.setAttribute("aria-pressed", on ? "true" : "false");
+            classesOn.forEach(function (name) { button.classList.toggle(name, on); });
+            classesOff.forEach(function (name) { button.classList.toggle(name, !on); });
+        });
+        document.querySelectorAll("[data-show]").forEach(function (el) {
+            el.classList.toggle("hidden", el.getAttribute("data-show") !== interval);
+        });
+    }
+    var buttons = document.querySelectorAll("[data-billing]");
+    if (!buttons.length) return;
+    apply("monthly");
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            apply(button.getAttribute("data-billing"));
+        });
+    });
+})();
+</script>

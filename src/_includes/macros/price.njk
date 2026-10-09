@@ -1,0 +1,16 @@
+{% macro money(monthly, yearly, note, tone) %}
+{% set amount = "text-5xl font-display font-bold " + ("text-av-gold" if tone == "gold" else ("text-white" if tone == "light" else "text-gray-900")) %}
+{% set suffix = "text-gray-400" if (tone == "gold" or tone == "light") else "text-gray-500" %}
+<div class="text-center mb-8">
+    <div>
+        <span class="{{ amount }}" data-show="monthly">${{ monthly }}</span><span class="{{ suffix }}" data-show="monthly">/mo</span>
+        <span class="{{ amount }} hidden" data-show="yearly">${{ yearly }}</span><span class="{{ suffix }} hidden" data-show="yearly">/yr</span>
+    </div>
+    <p class="{{ suffix }} text-sm mt-2" data-show="monthly">or ${{ yearly }}/yr{% if note %} ({{ note }}){% endif %}</p>
+    <p class="{{ suffix }} text-sm mt-2 hidden" data-show="yearly">or ${{ monthly }}/mo</p>
+</div>
+{% endmacro %}
+
+{% macro pair(monthly, yearly) %}
+<span data-show="monthly">${{ monthly }}/mo</span><span class="hidden" data-show="yearly">${{ yearly }}/yr</span>
+{% endmacro %}
