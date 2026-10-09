@@ -18,11 +18,51 @@ headExtra: |
         "description": "Serials, photos, and values in one private vault. Free Forever for up to 5 firearms, with CSV ready for a claim. PDF insurance reports are Pro and Ultimate.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows, Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "description": "Free forever for up to 5 firearms",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Basic monthly",
+            "price": "1.99",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Basic yearly",
+            "price": "19",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro monthly",
+            "price": "5.99",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro yearly",
+            "price": "59",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Ultimate monthly",
+            "price": "12.99",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "name": "Ultimate yearly",
+            "price": "129",
+            "priceCurrency": "USD"
+          }
+        ],
         "publisher": {
           "@type": "Organization",
           "name": "Arsenal Vault",
@@ -197,88 +237,86 @@ headExtra: |
     </section>
 
     <!-- Pricing Preview -->
+    {% from "macros/price.njk" import money %}
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited.</p>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-4">Simple pricing. Free forever for up to 5 firearms.</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Start free with no credit card. Upgrade when you want unlimited storage or an insurance-ready PDF of everything you own.</p>
             </div>
+            {% include "partials/billing-toggle.njk" %}
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-start">
                 <!-- Free - Start here -->
                 <div class="bg-white rounded-2xl p-8 border-2 border-av-gold shadow-lg shadow-av-gold/10 hover-lift relative">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">START HERE</div>
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Free</h3><p class="text-gray-500 text-sm">For getting organized</p></div>
                     <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$0</span><span class="text-gray-500">/forever</span>
+                        <span class="text-5xl font-display font-bold text-gray-900">$0</span>
+                        <p class="text-gray-500 text-sm mt-2">Free forever for up to 5 firearms</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>5 firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 photos per firearm</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 documents per firearm</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>3 photos and 3 documents</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Serial numbers, purchase details, and notes</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>CSV export</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_free&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start free — up to 5 firearms</a>
+                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_free&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start free</a>
                 </div>
 
                 <!-- Basic -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Basic</h3><p class="text-gray-500 text-sm">For the everyday collector</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$1.99</span><span class="text-gray-500">/mo</span>
-                    </div>
+                    {{ money(pricing.basic.monthly, pricing.basic.yearly, pricing.basic.note) | safe }}
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited photos &amp; docs</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Unlimited photos and documents</span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>CSV export</span></li>
-                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>PDF reports are Pro+</span></li>
+                        <li class="flex items-center gap-3 text-gray-400"><i class="bi bi-x-lg text-gray-300 text-xl"></i><span>PDF reports are Pro and Ultimate</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_basic&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start free — up to 5 firearms</a>
+                    <a href="https://app.arsenalvault.com/pricing?utm_source=arsenalvault.com&utm_medium=home_pricing_basic&utm_campaign=cloud_plans" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Choose Basic</a>
                 </div>
-                
-                <!-- Pro - Most Popular -->
+
+                <!-- Pro -->
                 <div class="bg-av-dark rounded-2xl p-8 border-2 border-av-gold shadow-2xl hover-lift relative transform lg:-translate-y-4">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">MOST POPULAR</div>
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-gold text-av-dark text-xs font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">Best for insurance</div>
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-white mb-2">Pro</h3><p class="text-gray-400 text-sm">For serious collectors</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-av-gold">$5.99</span><span class="text-gray-400">/mo</span>
-                    </div>
+                    {{ money(pricing.pro.monthly, pricing.pro.yearly, pricing.pro.note, "gold") | safe }}
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong class="text-white">Unlimited firearms</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 vault members</strong></span></li>
-                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Automated cloud backup</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Insurance-ready PDF reports</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong class="text-white">5 members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Reloading tools</span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_pro&utm_campaign=free_account" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Start free — up to 5 firearms</a>
-                    <p class="text-center text-gray-400 text-xs mt-3">Signup starts free. Upgrade for the PDF insurance report pack.</p>
+                    <a href="https://app.arsenalvault.com/pricing?utm_source=arsenalvault.com&utm_medium=home_pricing_pro&utm_campaign=cloud_plans" class="block w-full text-center gradient-gold text-av-dark py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-av-gold/25">Choose Pro</a>
+                    <p class="text-center text-gray-400 text-xs mt-3">Signup starts free. Upgrade for the insurance-ready PDF.</p>
                 </div>
-                
+
                 <!-- Ultimate -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-200 hover-lift">
                     <div class="text-center mb-6"><h3 class="text-xl font-display font-bold text-gray-900 mb-2">Ultimate</h3><p class="text-gray-500 text-sm">For large collections</p></div>
-                    <div class="text-center mb-8">
-                        <span class="text-5xl font-display font-bold text-gray-900">$12.99</span><span class="text-gray-500">/mo</span>
-                    </div>
+                    {{ money(pricing.ultimate.monthly, pricing.ultimate.yearly, pricing.ultimate.note) | safe }}
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Everything in Pro</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>PDF insurance reports</span></li>
-                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>10+ vault members</strong></span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Insurance-ready PDF reports</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span>Up to <strong>10 members</strong></span></li>
                         <li class="flex items-center gap-3 text-gray-600"><i class="bi bi-check-lg text-av-gold text-xl"></i><span><strong>Private Vault included</strong></span></li>
                     </ul>
-                    <a href="https://app.arsenalvault.com/register?utm_source=arsenalvault.com&utm_medium=home_pricing_ultimate&utm_campaign=free_account" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Start free — up to 5 firearms</a>
+                    <a href="https://app.arsenalvault.com/pricing?utm_source=arsenalvault.com&utm_medium=home_pricing_ultimate&utm_campaign=cloud_plans" class="block w-full text-center border-2 border-av-gold text-av-gold py-3 rounded-xl font-semibold hover:bg-av-gold hover:text-av-dark transition">Choose Ultimate</a>
                     <p class="text-center text-gray-500 text-xs mt-3">Signup starts free. Ultimate includes PDF insurance reports.</p>
                 </div>
             </div>
-            <p class="text-center text-gray-500 text-sm mt-10">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited. No credit card to start. <a href="/pricing.html" class="text-av-gold hover:underline">See full pricing</a></p>
+            <p class="text-center text-gray-500 text-sm mt-10">Free forever for up to 5 firearms. Basic is ${{ pricing.basic.monthly }}/mo or ${{ pricing.basic.yearly }}/yr. No credit card to start. <a href="/pricing.html" class="text-av-gold hover:underline">See full pricing</a></p>
         </div>
     </section>
 
     <!-- Desktop as a footnote -->
     <section class="bg-white border-t border-gray-200 py-12">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400 text-sm mb-4">Free forever for up to 5 firearms. Upgrade to Basic ($1.99/mo) when you need unlimited. No credit card to start.</p>
+            <p class="text-gray-400 text-sm mb-4">Free forever for up to 5 firearms. Upgrade to Basic (${{ pricing.basic.monthly }}/mo or ${{ pricing.basic.yearly }}/yr) when you need unlimited. No credit card to start.</p>
             <p class="text-gray-600 text-sm leading-relaxed">
-                <strong class="text-gray-800">Prefer local-only?</strong> Windows Desktop is a local evaluation trial, then an annual license — not Cloud Free Forever. The web vault is the primary product.
+                <strong class="text-gray-800">Prefer local-only?</strong> Windows Desktop is an annual license that renews yearly. It is not the Cloud plan. The web vault is the primary product.
                 <a href="/download.html" class="text-av-gold font-semibold hover:underline">Download the desktop app.</a>
             </p>
         </div>
     </section>
+{% include "partials/billing-toggle-script.njk" %}
