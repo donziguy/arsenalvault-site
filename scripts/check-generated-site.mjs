@@ -64,7 +64,44 @@ if (!startPage.includes('rel="canonical" href="https://arsenalvault.com/start"')
 if (/free trial/i.test(startPage)) failures.push("start.html: says free trial");
 if (startPage.includes("screenshots/")) failures.push("start.html: includes product screenshots");
 
+const htaccess = await readFile(path.join(root, ".htaccess"), "utf8");
+const requiredRedirects = [
+  ["www-to-apex", "RewriteRule ^(.*)$ https://arsenalvault.com/$1 [R=301,L,QSA]"],
+  ["start.html", "RewriteRule ^start\\.html$ /start [R=301,L,QSA]"],
+  ["jasper-partial-", "RewriteRule ^blog/jasper-partial-$ /blog/jasper-partial-recovery-serial-inventory.html [R=301,L]"],
+  ["upgrade.html", "RewriteRule ^upgrade\\.html$ /pricing.html [R=301,L]"],
+  ["upgrade", "RewriteRule ^upgrade$ /pricing.html [R=301,L]"],
+  ["blog checklist", "RewriteRule ^blog/firearm-inventory-checklist\\.html$ /checklist/ [R=301,L]"],
+  ["static checklist", "RewriteRule ^static/firearm-inventory-checklist\\.html$ /checklist/ [R=301,L]"],
+  ["cost article", "RewriteRule ^blog/how-much-does-firearm-inventory-software-cost\\.html$ /pricing.html [R=301,L]"],
+  ["encrypted vault", "RewriteRule ^blog/why-your-firearms-inventory-needs-an-encrypted-vault\\.html$ /security.html [R=301,L]"],
+  ["legal-new", "RewriteRule ^legal-new\\.html$ /legal.html [R=301,L]"]
+];
+for (const [name, rule] of requiredRedirects) {
+  if (!htaccess.includes(rule)) failures.push(`.htaccess: missing ${name} redirect`);
+}
+const wwwRuleAt = htaccess.indexOf("RewriteCond %{HTTP_HOST} ^www\\.arsenalvault\\.com$ [NC]");
+const jasperRuleAt = htaccess.indexOf("RewriteRule ^blog/jasper-partial-$");
+const cleanUrlRuleAt = htaccess.indexOf("RewriteRule ^(.+)$ $1.html [L,QSA]");
+if (wwwRuleAt === -1 || jasperRuleAt === -1 || cleanUrlRuleAt === -1 || !(wwwRuleAt < jasperRuleAt && jasperRuleAt < cleanUrlRuleAt)) {
+  failures.push(".htaccess: legacy redirects must stay after the www rule and before the clean-URL rewrite");
+}
+
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
+const feed = await readFile(path.join(root, "feed.xml"), "utf8");
+const blogIndex = await readFile(path.join(root, "blog/index.html"), "utf8");
+const jasperPost = await readFile(path.join(root, "blog/jasper-partial-recovery-serial-inventory.html"), "utf8");
+const fullJasperUrl = "https://arsenalvault.com/blog/jasper-partial-recovery-serial-inventory.html";
+if (!sitemap.includes(`<loc>${fullJasperUrl}</loc>`)) failures.push("sitemap.xml: missing full Jasper post URL");
+if (!feed.includes(`<link href="${fullJasperUrl}"/>`)) failures.push("feed.xml: missing full Jasper post URL");
+if (!blogIndex.includes('href="/blog/jasper-partial-recovery-serial-inventory.html"')) {
+  failures.push("blog/index.html: missing full Jasper post link");
+}
+if (!jasperPost.includes(`rel="canonical" href="${fullJasperUrl}"`)) failures.push("Jasper post: canonical is not the full slug");
+if (!jasperPost.includes(`property="og:url" content="${fullJasperUrl}"`)) failures.push("Jasper post: og:url is not the full slug");
+for (const [name, html] of [["sitemap.xml", sitemap], ["feed.xml", feed], ["blog/index.html", blogIndex], ["jasper post", jasperPost]]) {
+  if (/jasper-partial-(?!recovery)/.test(html)) failures.push(`${name}: publishes truncated jasper-partial- URL`);
+}
 for (const file of requiredFiles.filter((file) => file.endsWith(".html"))) {
   const url = file === "index.html"
     ? "https://arsenalvault.com/"
