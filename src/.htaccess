@@ -13,6 +13,17 @@ RewriteRule ^blog/index\.html$ /blog/ [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+start\.html[\s?] [NC]
 RewriteRule ^start\.html$ /start [R=301,L,QSA]
 
+# Retired URLs reported as 404s, plus the truncated Jasper slug.
+# The live post, sitemap, feed, blog index, canonical, and og:url all use the full slug.
+RewriteRule ^blog/jasper-partial-$ /blog/jasper-partial-recovery-serial-inventory.html [R=301,L]
+RewriteRule ^upgrade\.html$ /pricing.html [R=301,L]
+RewriteRule ^upgrade$ /pricing.html [R=301,L]
+RewriteRule ^blog/firearm-inventory-checklist\.html$ /checklist/ [R=301,L]
+RewriteRule ^static/firearm-inventory-checklist\.html$ /checklist/ [R=301,L]
+RewriteRule ^blog/how-much-does-firearm-inventory-software-cost\.html$ /pricing.html [R=301,L]
+RewriteRule ^blog/why-your-firearms-inventory-needs-an-encrypted-vault\.html$ /security.html [R=301,L]
+RewriteRule ^legal-new\.html$ /legal.html [R=301,L]
+
 # Serve .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
