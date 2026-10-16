@@ -23,6 +23,9 @@ jobs:
         run: npm ci
 
       - name: Build site
+        env:
+          GOOGLE_ADS_ID: ${{ secrets.GOOGLE_ADS_ID }}
+          GOOGLE_ADS_CONVERSION_LABEL: ${{ secrets.GOOGLE_ADS_CONVERSION_LABEL }}
         run: npm run build
 
       - name: Package build output
