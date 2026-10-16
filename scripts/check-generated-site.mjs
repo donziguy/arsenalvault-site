@@ -53,6 +53,20 @@ for (const file of htmlFiles) {
   const hubspotLoaders = html.split('id="hs-script-loader"').length - 1;
   if (hubspotLoaders !== 1) failures.push(`${rel}: expected one HubSpot loader, found ${hubspotLoaders}`);
   if (!html.includes("js.hs-scripts.com/245057554.js")) failures.push(`${rel}: missing HubSpot portal script`);
+  if (!html.includes("https://www.googletagmanager.com/gtag/js?id=G-652RBNGMD2")) {
+    failures.push(`${rel}: missing GA4 gtag loader`);
+  }
+  if (!html.includes('"ga4Id":"G-652RBNGMD2"') && !html.includes('"ga4Id": "G-652RBNGMD2"')) {
+    failures.push(`${rel}: missing GA4 measurement id in tracking config`);
+  }
+  if (!html.includes('"linkerDomains":["arsenalvault.com","app.arsenalvault.com"]') && !html.includes('"linkerDomains": ["arsenalvault.com", "app.arsenalvault.com"]')) {
+    failures.push(`${rel}: missing cross-domain linker domains`);
+  }
+  if (!html.includes("gtag('config', tracking.googleAdsId")) failures.push(`${rel}: missing Google Ads config`);
+  if (!html.includes("send_to: tracking.googleAdsId + '/' + tracking.googleAdsConversionLabel")) {
+    failures.push(`${rel}: missing register-click conversion`);
+  }
+  if (!html.includes("transport_type: 'beacon'")) failures.push(`${rel}: conversion is not sent with beacon transport`);
 }
 
 const startPage = await readFile(path.join(root, "start.html"), "utf8");
