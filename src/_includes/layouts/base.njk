@@ -87,9 +87,17 @@
     {% if headExtra %}{{ headExtra | safe }}{% endif %}
 </head>
 <body class="{{ bodyClass or 'bg-gray-50' }}">
+    {% if chrome == "landing" %}
+    {% include "partials/nav-landing.njk" %}
+    {% else %}
     {% include "partials/nav.njk" %}
+    {% endif %}
     {{ content | safe }}
+    {% if chrome == "landing" %}
+    {% include "partials/footer-landing.njk" %}
+    {% else %}
     {% include "partials/footer.njk" %}
+    {% endif %}
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-btn');
         if (mobileMenuButton) {
