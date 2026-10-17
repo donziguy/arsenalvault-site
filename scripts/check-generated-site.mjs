@@ -45,7 +45,7 @@ const failures = [];
 for (const file of htmlFiles) {
   const rel = path.relative(root, file);
   const html = await readFile(file, "utf8");
-  if (!html.includes('href="/contact.html"')) failures.push(`${rel}: missing Contact link`);
+  if (rel !== "start.html" && !html.includes('href="/contact.html"')) failures.push(`${rel}: missing Contact link`);
   if (html.includes("support@arsenalvault.com")) failures.push(`${rel}: exposes support email`);
   if (html.includes("mailto:")) failures.push(`${rel}: contains mailto link`);
   if (!/href="https:\/\/app\.arsenalvault\.com\/register(?:\?[^"]*)?"/.test(html)) failures.push(`${rel}: missing register CTA`);
@@ -63,6 +63,26 @@ if (!startPage.includes(startSecondary)) failures.push("start.html: missing av_g
 if (!startPage.includes('rel="canonical" href="https://arsenalvault.com/start"')) failures.push("start.html: canonical is not /start");
 if (/free trial/i.test(startPage)) failures.push("start.html: says free trial");
 if (startPage.includes("screenshots/")) failures.push("start.html: includes product screenshots");
+if (startPage.includes("utm_medium=nav_cta") || startPage.includes("utm_medium=mobile_nav_cta") || startPage.includes("utm_campaign=free_account")) {
+  failures.push("start.html: nav CTA still overwrites campaign tags");
+}
+const startAnchors = [...startPage.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1]);
+const allowedStartHrefs = new Set([
+  "/start",
+  startPrimary,
+  startSecondary
+]);
+for (const href of startAnchors) {
+  if (!allowedStartHrefs.has(href)) failures.push(`start.html: unexpected link ${href}`);
+}
+const primaryCount = startAnchors.filter((href) => href === startPrimary).length;
+const secondaryCount = startAnchors.filter((href) => href === startSecondary).length;
+if (primaryCount < 3) failures.push(`start.html: expected nav, hero, and bottom primary CTAs, found ${primaryCount}`);
+if (secondaryCount !== 1) failures.push(`start.html: expected one secondary CTA, found ${secondaryCount}`);
+if (!startPage.includes('href="/start"')) failures.push("start.html: logo does not stay on /start");
+for (const leak of ["/features.html", "/pricing.html", "/blog/", "/about.html", "/support.html", "/contact.html", "/download.html", "/security.html", "/legal.html"]) {
+  if (startPage.includes(`href="${leak}`)) failures.push(`start.html: still links to ${leak}`);
+}
 
 const htaccess = await readFile(path.join(root, ".htaccess"), "utf8");
 const requiredRedirects = [
