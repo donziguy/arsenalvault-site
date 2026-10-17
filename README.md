@@ -13,10 +13,11 @@ Built with Eleventy and deployed as static HTML to Hostinger on every push to `m
 - `src/sitemap.njk` - Generated sitemap.
 - `src/feed.njk` - Generated Atom feed.
 - `img/` and `static/` - Passthrough image assets.
+- `src/styles/tailwind.css` and `tailwind.config.js` - Tailwind source, compiled to `/css/tailwind.css` during the Eleventy build.
 
 ## Commands
 - `npm install` - Install dependencies.
-- `npm run build` - Generate `_site/`.
+- `npm run build` - Compile Tailwind, then generate `_site/`.
 - `npm run serve` - Run a local Eleventy dev server.
 - `npm run check` - Build and validate generated pages.
 
