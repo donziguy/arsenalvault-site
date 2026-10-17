@@ -155,6 +155,7 @@ bodyClass: "bg-gray-50"
                     })
                 }).then(function (response) {
                     if (!response.ok) throw new Error(String(response.status));
+                    document.cookie = 'av_claim_prep=1; Path=/; Max-Age=86400; SameSite=Lax';
                     window.location.assign(thanksUrl);
                 }).catch(function () {
                     showError('We couldn’t send the checklist. Please try again.');

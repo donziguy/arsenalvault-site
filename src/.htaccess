@@ -24,6 +24,10 @@ RewriteRule ^blog/how-much-does-firearm-inventory-software-cost\.html$ /pricing.
 RewriteRule ^blog/why-your-firearms-inventory-needs-an-encrypted-vault\.html$ /security.html [R=301,L]
 RewriteRule ^legal-new\.html$ /legal.html [R=301,L]
 
+# Claim-prep PDF is served only after the HubSpot form sets this cookie.
+RewriteCond %{HTTP_COOKIE} !av_claim_prep=1
+RewriteRule ^static/AV-firearm-insurance-claim-prep-checklist\.pdf$ - [F,L]
+
 # Serve .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
