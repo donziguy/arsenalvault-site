@@ -1,10 +1,28 @@
+const { execFileSync } = require("child_process");
+const path = require("path");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+
+function compileTailwind() {
+  const cli = require.resolve("tailwindcss/lib/cli.js");
+  execFileSync(process.execPath, [
+    cli,
+    "--minify",
+    "-c", path.join(__dirname, "tailwind.config.js"),
+    "-i", path.join(__dirname, "src/styles/tailwind.css"),
+    "-o", path.join(__dirname, "src/styles/tailwind.generated.css")
+  ], { stdio: "inherit" });
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss.default);
 
+  eleventyConfig.on("eleventy.before", compileTailwind);
+  eleventyConfig.addWatchTarget("./src/styles/tailwind.css");
+  eleventyConfig.addWatchTarget("./tailwind.config.js");
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({ "src/styles/tailwind.generated.css": "css/tailwind.css" });
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 

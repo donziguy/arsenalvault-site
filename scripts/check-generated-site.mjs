@@ -50,10 +50,40 @@ for (const file of htmlFiles) {
   if (html.includes("mailto:")) failures.push(`${rel}: contains mailto link`);
   if (!/href="https:\/\/app\.arsenalvault\.com\/register(?:\?[^"]*)?"/.test(html)) failures.push(`${rel}: missing register CTA`);
   if (!html.includes("analytics.arsenalvault.com/script.js")) failures.push(`${rel}: missing analytics`);
-  const hubspotLoaders = html.split('id="hs-script-loader"').length - 1;
+  const hubspotLoaders = html.split("hs-script-loader").length - 1;
   if (hubspotLoaders !== 1) failures.push(`${rel}: expected one HubSpot loader, found ${hubspotLoaders}`);
   if (!html.includes("js.hs-scripts.com/245057554.js")) failures.push(`${rel}: missing HubSpot portal script`);
+  if (/<script[^>]+src=["'][^"']*js\.hs-scripts\.com\/245057554\.js["']/.test(html)) {
+    failures.push(`${rel}: HubSpot loader is not deferred until page load`);
+  }
+  if (!html.includes("window.addEventListener('load'")) failures.push(`${rel}: HubSpot loader does not wait for page load`);
+  if (html.includes("cdn.tailwindcss.com")) failures.push(`${rel}: still loads Tailwind from the CDN`);
+  if (!html.includes('href="/css/tailwind.css"')) failures.push(`${rel}: missing compiled Tailwind stylesheet`);
+  for (const tag of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\swidth="\d+"/.test(tag[0]) || !/\sheight="\d+"/.test(tag[0])) {
+      failures.push(`${rel}: image missing width or height (${tag[0].slice(0, 140)})`);
+    }
+  }
 }
+
+const tailwindCss = await readFile(path.join(root, "css/tailwind.css"), "utf8");
+if (tailwindCss.length < 10000) failures.push("css/tailwind.css is unexpectedly small");
+if (!tailwindCss.includes(".text-av-gold")) failures.push("css/tailwind.css is missing av-gold utilities");
+if (!tailwindCss.includes(".font-display")) failures.push("css/tailwind.css is missing the display font");
+
+function pngSize(buffer) {
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+const logoPath = path.join(process.cwd(), "static/img/av-shield-small.png");
+const ogPath = path.join(process.cwd(), "img/av-shield-512.png");
+const logoStat = await stat(logoPath);
+const ogStat = await stat(ogPath);
+const logoSize = pngSize(await readFile(logoPath));
+const ogSize = pngSize(await readFile(ogPath));
+if (logoStat.size > 8 * 1024) failures.push(`av-shield-small.png is ${logoStat.size} bytes, expected about 5 KB`);
+if (logoSize.width !== 96 || logoSize.height !== 144) failures.push(`av-shield-small.png is ${logoSize.width}x${logoSize.height}, expected 96x144`);
+if (ogStat.size > 90 * 1024) failures.push(`av-shield-512.png is ${ogStat.size} bytes`);
+if (ogSize.width !== 512 || ogSize.height !== 512) failures.push("av-shield-512.png is no longer 512x512");
 
 const startPage = await readFile(path.join(root, "start.html"), "utf8");
 const startPrimary = "https://app.arsenalvault.com/register?utm_source=google&utm_medium=cpc&utm_campaign=av_gads_soft_v1&utm_content=start_primary";
