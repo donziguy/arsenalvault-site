@@ -244,6 +244,29 @@ if (supportPage.includes("$36") || securityPage.includes("$36")) {
 requireText("support.html", supportPage, `$${pricing.privateVault.yearly}/yr`);
 requireText("download.html", downloadPage, "Annual license, renews yearly");
 
+const claimPrep = await readFile(path.join(root, "claim-prep-checklist.html"), "utf8");
+const claimThanks = await readFile(path.join(root, "claim-prep-checklist-thanks.html"), "utf8");
+const robots = await readFile(path.join(root, "robots.txt"), "utf8");
+const pdfHref = /href="[^"]*AV-firearm-insurance-claim-prep-checklist\.pdf"/;
+if (pdfHref.test(claimPrep)) failures.push("claim-prep-checklist.html links the PDF before the email form");
+if (pdfHref.test(claimThanks)) failures.push("claim-prep-checklist-thanks.html publishes a PDF href before the gate cookie");
+if (!claimPrep.includes("av_claim_prep=1")) failures.push("claim-prep form does not set the gate cookie");
+if (!claimPrep.includes("/submissions/v3/integration/submit/")) failures.push("claim-prep form does not post to the HubSpot capture");
+if (!claimThanks.includes("TODO(Marketer)")) failures.push("claim-prep thanks page is missing TODO(Marketer) placeholder copy");
+if (!claimThanks.includes("av_claim_prep=1")) failures.push("thanks page does not check the gate cookie");
+if (!claimThanks.includes("link.href = '/static/AV-firearm-insurance-claim-prep-checklist.pdf'")) {
+  failures.push("thanks page does not reveal the PDF after the gate cookie");
+}
+const pdfRule = "RewriteRule ^static/AV-firearm-insurance-claim-prep-checklist\\.pdf$ - [F,L]";
+const pdfCond = "RewriteCond %{HTTP_COOKIE} !av_claim_prep=1";
+if (!htaccess.includes(pdfRule) || !htaccess.includes(pdfCond)) failures.push(".htaccess: claim-prep PDF is not denied without the gate cookie");
+if (!(htaccess.indexOf(pdfCond) < htaccess.indexOf(pdfRule) && htaccess.indexOf(pdfRule) < cleanUrlRuleAt)) {
+  failures.push(".htaccess: claim-prep PDF rule must stay before the clean-URL rewrite");
+}
+if (!robots.includes("Disallow: /static/AV-firearm-insurance-claim-prep-checklist.pdf")) {
+  failures.push("robots.txt: claim-prep PDF is not disallowed");
+}
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
