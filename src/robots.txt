@@ -8,3 +8,4 @@ Sitemap: https://arsenalvault.com/sitemap.xml
 # Disallow admin/app paths (if any)
 Disallow: /api/
 Disallow: /admin/
+Disallow: /static/AV-firearm-insurance-claim-prep-checklist.pdf
