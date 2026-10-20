@@ -45,15 +45,45 @@ const failures = [];
 for (const file of htmlFiles) {
   const rel = path.relative(root, file);
   const html = await readFile(file, "utf8");
-  if (!html.includes('href="/contact.html"')) failures.push(`${rel}: missing Contact link`);
+  if (rel !== "start.html" && !html.includes('href="/contact.html"')) failures.push(`${rel}: missing Contact link`);
   if (html.includes("support@arsenalvault.com")) failures.push(`${rel}: exposes support email`);
   if (html.includes("mailto:")) failures.push(`${rel}: contains mailto link`);
   if (!/href="https:\/\/app\.arsenalvault\.com\/register(?:\?[^"]*)?"/.test(html)) failures.push(`${rel}: missing register CTA`);
   if (!html.includes("analytics.arsenalvault.com/script.js")) failures.push(`${rel}: missing analytics`);
-  const hubspotLoaders = html.split('id="hs-script-loader"').length - 1;
+  const hubspotLoaders = html.split("hs-script-loader").length - 1;
   if (hubspotLoaders !== 1) failures.push(`${rel}: expected one HubSpot loader, found ${hubspotLoaders}`);
   if (!html.includes("js.hs-scripts.com/245057554.js")) failures.push(`${rel}: missing HubSpot portal script`);
+  if (/<script[^>]+src=["'][^"']*js\.hs-scripts\.com\/245057554\.js["']/.test(html)) {
+    failures.push(`${rel}: HubSpot loader is not deferred until page load`);
+  }
+  if (!html.includes("window.addEventListener('load'")) failures.push(`${rel}: HubSpot loader does not wait for page load`);
+  if (html.includes("cdn.tailwindcss.com")) failures.push(`${rel}: still loads Tailwind from the CDN`);
+  if (!html.includes('href="/css/tailwind.css"')) failures.push(`${rel}: missing compiled Tailwind stylesheet`);
+  for (const tag of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\swidth="\d+"/.test(tag[0]) || !/\sheight="\d+"/.test(tag[0])) {
+      failures.push(`${rel}: image missing width or height (${tag[0].slice(0, 140)})`);
+    }
+  }
 }
+
+const tailwindCss = await readFile(path.join(root, "css/tailwind.css"), "utf8");
+if (tailwindCss.length < 10000) failures.push("css/tailwind.css is unexpectedly small");
+if (!tailwindCss.includes(".text-av-gold")) failures.push("css/tailwind.css is missing av-gold utilities");
+if (!tailwindCss.includes(".font-display")) failures.push("css/tailwind.css is missing the display font");
+
+function pngSize(buffer) {
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+const logoPath = path.join(process.cwd(), "static/img/av-shield-small.png");
+const ogPath = path.join(process.cwd(), "img/av-shield-512.png");
+const logoStat = await stat(logoPath);
+const ogStat = await stat(ogPath);
+const logoSize = pngSize(await readFile(logoPath));
+const ogSize = pngSize(await readFile(ogPath));
+if (logoStat.size > 8 * 1024) failures.push(`av-shield-small.png is ${logoStat.size} bytes, expected about 5 KB`);
+if (logoSize.width !== 96 || logoSize.height !== 144) failures.push(`av-shield-small.png is ${logoSize.width}x${logoSize.height}, expected 96x144`);
+if (ogStat.size > 90 * 1024) failures.push(`av-shield-512.png is ${ogStat.size} bytes`);
+if (ogSize.width !== 512 || ogSize.height !== 512) failures.push("av-shield-512.png is no longer 512x512");
 
 const startPage = await readFile(path.join(root, "start.html"), "utf8");
 const startPrimary = "https://app.arsenalvault.com/register?utm_source=google&utm_medium=cpc&utm_campaign=av_gads_soft_v1&utm_content=start_primary";
@@ -63,6 +93,26 @@ if (!startPage.includes(startSecondary)) failures.push("start.html: missing av_g
 if (!startPage.includes('rel="canonical" href="https://arsenalvault.com/start"')) failures.push("start.html: canonical is not /start");
 if (/free trial/i.test(startPage)) failures.push("start.html: says free trial");
 if (startPage.includes("screenshots/")) failures.push("start.html: includes product screenshots");
+if (startPage.includes("utm_medium=nav_cta") || startPage.includes("utm_medium=mobile_nav_cta") || startPage.includes("utm_campaign=free_account")) {
+  failures.push("start.html: nav CTA still overwrites campaign tags");
+}
+const startAnchors = [...startPage.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1]);
+const allowedStartHrefs = new Set([
+  "/start",
+  startPrimary,
+  startSecondary
+]);
+for (const href of startAnchors) {
+  if (!allowedStartHrefs.has(href)) failures.push(`start.html: unexpected link ${href}`);
+}
+const primaryCount = startAnchors.filter((href) => href === startPrimary).length;
+const secondaryCount = startAnchors.filter((href) => href === startSecondary).length;
+if (primaryCount < 3) failures.push(`start.html: expected nav, hero, and bottom primary CTAs, found ${primaryCount}`);
+if (secondaryCount !== 1) failures.push(`start.html: expected one secondary CTA, found ${secondaryCount}`);
+if (!startPage.includes('href="/start"')) failures.push("start.html: logo does not stay on /start");
+for (const leak of ["/features.html", "/pricing.html", "/blog/", "/about.html", "/support.html", "/contact.html", "/download.html", "/security.html", "/legal.html"]) {
+  if (startPage.includes(`href="${leak}`)) failures.push(`start.html: still links to ${leak}`);
+}
 
 const htaccess = await readFile(path.join(root, ".htaccess"), "utf8");
 const requiredRedirects = [
