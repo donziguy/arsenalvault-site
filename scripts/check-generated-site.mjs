@@ -279,35 +279,138 @@ if (/of 100 left|spots left|spots remaining/i.test(pricingPage)) {
   failures.push("pricing.html: invents a live spots counter");
 }
 
-const jsonLdBlocks = [...pricingPage.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-if (jsonLdBlocks.length < 2) failures.push("pricing.html: expected product and FAQ JSON-LD");
-for (const block of jsonLdBlocks) {
+const supportedAppCategories = new Set([
+  "GameApplication",
+  "SocialNetworkingApplication",
+  "TravelApplication",
+  "ShoppingApplication",
+  "SportsApplication",
+  "LifestyleApplication",
+  "BusinessApplication",
+  "DesignApplication",
+  "DeveloperApplication",
+  "DriverApplication",
+  "EducationalApplication",
+  "HealthApplication",
+  "FinanceApplication",
+  "SecurityApplication",
+  "BrowserApplication",
+  "CommunicationApplication",
+  "DesktopEnhancementApplication",
+  "EntertainmentApplication",
+  "MultimediaApplication",
+  "HomeApplication",
+  "UtilitiesApplication",
+  "ReferenceApplication"
+]);
+const merchantKeys = [
+  "aggregateRating",
+  "review",
+  "shippingDetails",
+  "hasMerchantReturnPolicy",
+  "gtin",
+  "gtin8",
+  "gtin12",
+  "gtin13",
+  "gtin14",
+  "brand"
+];
+
+function walkJsonLd(node, rel, path) {
+  if (Array.isArray(node)) {
+    node.forEach((item, index) => walkJsonLd(item, rel, `${path}[${index}]`));
+    return;
+  }
+  if (!node || typeof node !== "object") return;
+  for (const [key, value] of Object.entries(node)) {
+    if (merchantKeys.includes(key)) failures.push(`${rel}: JSON-LD ${path}.${key} must not be present`);
+    if (key === "@type" && (value === "Product" || (Array.isArray(value) && value.includes("Product")))) {
+      failures.push(`${rel}: JSON-LD Product type at ${path}`);
+    }
+    walkJsonLd(value, rel, `${path}.${key}`);
+  }
+}
+
+function expectedOffers() {
+  const offers = [
+    ["Free", pricing.free],
+    ["Basic monthly", pricing.basic.monthly],
+    ["Basic yearly", pricing.basic.yearly],
+    ["Pro monthly", pricing.pro.monthly],
+    ["Pro yearly", pricing.pro.yearly],
+    ["Ultimate monthly", pricing.ultimate.monthly],
+    ["Ultimate yearly", pricing.ultimate.yearly],
+    ["Private Vault monthly", pricing.privateVault.monthly],
+    ["Private Vault yearly", pricing.privateVault.yearly],
+    ["Desktop Basic yearly", pricing.desktop.basic],
+    ["Desktop Pro yearly", pricing.desktop.pro],
+    ["Desktop Ultimate yearly", pricing.desktop.ultimate]
+  ];
+  if (pricing.showFounderBanner) offers.push(["Founder Lifetime", pricing.founderPrice]);
+  return offers;
+}
+
+function assertSoftwareApplication(rel, data) {
+  if (data["@context"] !== "https://schema.org") failures.push(`${rel}: JSON-LD context is ${data["@context"]}`);
+  if (data["@type"] !== "SoftwareApplication") failures.push(`${rel}: JSON-LD type is ${data["@type"]}`);
+  if (data.name !== "Arsenal Vault") failures.push(`${rel}: JSON-LD name is ${data.name}`);
+  if (data.applicationCategory !== "LifestyleApplication") {
+    failures.push(`${rel}: applicationCategory is ${data.applicationCategory}`);
+  }
+  if (!supportedAppCategories.has(data.applicationCategory)) {
+    failures.push(`${rel}: applicationCategory is not a Google-supported app type`);
+  }
+  if (data.operatingSystem !== "Web, Windows") failures.push(`${rel}: operatingSystem is ${data.operatingSystem}`);
+  if (data.url !== "https://arsenalvault.com/") failures.push(`${rel}: JSON-LD url is ${data.url}`);
+  const publisher = data.publisher || {};
+  if (publisher["@type"] !== "Organization" || publisher.name !== "Arsenal Vault") {
+    failures.push(`${rel}: publisher is not an Organization named Arsenal Vault`);
+  }
+  if (!Array.isArray(data.offers)) failures.push(`${rel}: offers is not an array`);
+  const expected = expectedOffers();
+  const offers = Array.isArray(data.offers) ? data.offers : [];
+  if (offers.length !== expected.length) {
+    failures.push(`${rel}: expected ${expected.length} offers, found ${offers.length}`);
+  }
+  expected.forEach(([name, amount], index) => {
+    const offer = offers[index];
+    if (!offer) return;
+    if (offer["@type"] !== "Offer") failures.push(`${rel}: offer ${name} type is ${offer["@type"]}`);
+    if (offer.name !== name) failures.push(`${rel}: offer ${index} name is ${offer.name}`);
+    if (String(offer.price) !== String(amount)) failures.push(`${rel}: offer ${name} price is ${offer.price}, expected ${amount}`);
+    if (typeof offer.price !== "number") failures.push(`${rel}: offer ${name} price is not a number`);
+    if (offer.priceCurrency !== "USD") failures.push(`${rel}: offer ${name} currency is ${offer.priceCurrency}`);
+    if (offer.availability !== "https://schema.org/InStock") {
+      failures.push(`${rel}: offer ${name} availability is ${offer.availability}`);
+    }
+    if (offer.url !== "https://arsenalvault.com/pricing") failures.push(`${rel}: offer ${name} url is ${offer.url}`);
+  });
+  walkJsonLd(data, rel, "$");
+}
+
+const pricingJsonLd = [...pricingPage.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+if (pricingJsonLd.length !== 2) failures.push(`pricing.html: expected SoftwareApplication and FAQ JSON-LD, found ${pricingJsonLd.length}`);
+const pricingParsed = [];
+for (const block of pricingJsonLd) {
   try {
-    const data = JSON.parse(block[1]);
-    const encoded = JSON.stringify(data);
-    for (const amount of [
-      pricing.basic.monthly,
-      pricing.basic.yearly,
-      pricing.pro.monthly,
-      pricing.pro.yearly,
-      pricing.ultimate.monthly,
-      pricing.ultimate.yearly,
-      pricing.privateVault.monthly,
-      pricing.privateVault.yearly
-    ]) {
-      if (data["@type"] === "WebPage" && !encoded.includes(`"${amount}"`)) {
-        failures.push(`pricing.html JSON-LD missing price ${amount}`);
-      }
-    }
-    if (data["@type"] === "WebPage" && pricing.showFounderBanner && !encoded.includes(`"${pricing.founderPrice}"`)) {
-      failures.push("pricing.html JSON-LD missing founder price");
-    }
-    if (data["@type"] === "FAQPage" && !encoded.includes("Free forever for up to 5 firearms")) {
-      failures.push("pricing.html FAQ JSON-LD missing free-plan wording");
-    }
+    pricingParsed.push(JSON.parse(block[1]));
   } catch (error) {
     failures.push(`pricing.html JSON-LD did not parse: ${error.message}`);
   }
+}
+const pricingApp = pricingParsed.find((data) => data["@type"] === "SoftwareApplication");
+const pricingFaq = pricingParsed.find((data) => data["@type"] === "FAQPage");
+if (!pricingApp) failures.push("pricing.html: missing SoftwareApplication JSON-LD");
+else assertSoftwareApplication("pricing.html", pricingApp);
+if (!pricingFaq) failures.push("pricing.html: missing FAQ JSON-LD");
+else {
+  walkJsonLd(pricingFaq, "pricing.html", "$");
+  if (!JSON.stringify(pricingFaq).includes("Free forever for up to 5 firearms")) {
+    failures.push("pricing.html FAQ JSON-LD missing free-plan wording");
+  }
+}
+if (pricingPage.includes('"@type": "Product"') || pricingPage.includes('"@type":"Product"')) {
+  failures.push("pricing.html: still publishes Product JSON-LD");
 }
 
 requireText("index.html", homePage, "Best for insurance");
@@ -315,18 +418,41 @@ requireText("index.html", homePage, `$${pricing.basic.yearly}`);
 requireText("index.html", homePage, `$${pricing.pro.yearly}`);
 requireText("index.html", homePage, `$${pricing.ultimate.yearly}`);
 requireText("index.html", homePage, "data-billing=\"yearly\"");
-const homeJson = homePage.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
-if (!homeJson) {
-  failures.push("index.html: missing JSON-LD");
-} else {
+const homeJsonBlocks = [...homePage.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+if (homeJsonBlocks.length !== 1) failures.push(`index.html: expected one JSON-LD block, found ${homeJsonBlocks.length}`);
+let homeApp = null;
+for (const block of homeJsonBlocks) {
   try {
-    const data = JSON.parse(homeJson[1]);
-    const encoded = JSON.stringify(data);
-    for (const amount of ["0", pricing.basic.monthly, pricing.basic.yearly, pricing.pro.yearly, pricing.ultimate.yearly]) {
-      if (!encoded.includes(`"${amount}"`)) failures.push(`index.html JSON-LD missing price ${amount}`);
-    }
+    const data = JSON.parse(block[1]);
+    if (data["@type"] === "SoftwareApplication") homeApp = data;
+    walkJsonLd(data, "index.html", "$");
   } catch (error) {
     failures.push(`index.html JSON-LD did not parse: ${error.message}`);
+  }
+}
+if (!homeApp) failures.push("index.html: missing SoftwareApplication JSON-LD");
+else {
+  assertSoftwareApplication("index.html", homeApp);
+  if (pricingApp && JSON.stringify(homeApp) !== JSON.stringify(pricingApp)) {
+    failures.push("index.html and pricing.html SoftwareApplication JSON-LD differ");
+  }
+}
+if (homePage.includes('"@type": "Product"') || homePage.includes('"@type":"Product"')) {
+  failures.push("index.html: still publishes Product JSON-LD");
+}
+
+for (const file of htmlFiles) {
+  const rel = path.relative(root, file);
+  if (rel === "index.html" || rel === "pricing.html") continue;
+  const html = await readFile(file, "utf8");
+  if (html.includes("SoftwareApplication")) failures.push(`${rel}: unexpected SoftwareApplication schema`);
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  for (const block of blocks) {
+    try {
+      walkJsonLd(JSON.parse(block[1]), rel, "$");
+    } catch (error) {
+      failures.push(`${rel}: JSON-LD did not parse: ${error.message}`);
+    }
   }
 }
 

@@ -11,6 +11,8 @@ module.exports = {
   founderCloseDate: "Dec 31, 2026",
   founderPrice: "79",
   yearlySavingsLabel: "save up to 20%",
+  // Free tier price. SoftwareApplication JSON-LD reads this.
+  free: "0",
   basic: { monthly: "1.99", yearly: "19", note: "save 20%" },
   pro: { monthly: "5.99", yearly: "59", note: "2 months free" },
   ultimate: { monthly: "12.99", yearly: "129", note: "2 months free" },

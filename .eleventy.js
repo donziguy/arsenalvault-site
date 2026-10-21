@@ -30,6 +30,10 @@ module.exports = function(eleventyConfig) {
     return new URL(path, "https://arsenalvault.com").href;
   });
 
+  eleventyConfig.addFilter("jsonLd", function(value) {
+    return JSON.stringify(value, null, 2);
+  });
+
   eleventyConfig.addFilter("readableDate", function(value) {
     const date = new Date(value);
     return date.toLocaleDateString("en-US", {
