@@ -42,6 +42,20 @@ for (const file of requiredFiles) {
 const htmlFiles = (await walk(root)).filter((file) => file.endsWith(".html"));
 const failures = [];
 
+function parseTracking(html, rel) {
+  const match = html.match(/<script type="application\/json" id="av-tracking">([\s\S]*?)<\/script>/);
+  if (!match) {
+    failures.push(`${rel}: missing av-tracking config`);
+    return null;
+  }
+  try {
+    return JSON.parse(match[1]);
+  } catch (error) {
+    failures.push(`${rel}: av-tracking JSON did not parse: ${error.message}`);
+    return null;
+  }
+}
+
 for (const file of htmlFiles) {
   const rel = path.relative(root, file);
   const html = await readFile(file, "utf8");
@@ -64,6 +78,36 @@ for (const file of htmlFiles) {
       failures.push(`${rel}: image missing width or height (${tag[0].slice(0, 140)})`);
     }
   }
+  const gtagLoaders = html.split("googletagmanager.com/gtag/js?").length - 1;
+  if (gtagLoaders !== 1) failures.push(`${rel}: expected one gtag loader, found ${gtagLoaders}`);
+  if (!html.includes("https://www.googletagmanager.com/gtag/js?id=AW-18064652064")) {
+    failures.push(`${rel}: gtag is not loaded with AW-18064652064`);
+  }
+  const tracking = parseTracking(html, rel);
+  if (tracking) {
+    if (tracking.ga4Id !== "G-652RBNGMD2") failures.push(`${rel}: GA4 id is ${tracking.ga4Id}`);
+    if (tracking.googleAdsId !== "AW-18064652064") failures.push(`${rel}: Google Ads id is ${tracking.googleAdsId}`);
+    if (tracking.googleAdsConversionLabel !== "xw8jCPOQ8aMdEKDu8qVD") {
+      failures.push(`${rel}: conversion label is ${tracking.googleAdsConversionLabel}`);
+    }
+    if (tracking.googleAdsSendTo !== "AW-18064652064/xw8jCPOQ8aMdEKDu8qVD") {
+      failures.push(`${rel}: send_to is ${tracking.googleAdsSendTo}`);
+    }
+    if (tracking.googleAdsSendTo !== `${tracking.googleAdsId}/${tracking.googleAdsConversionLabel}`) {
+      failures.push(`${rel}: send_to does not match the Ads id and label`);
+    }
+    const domains = Array.isArray(tracking.linkerDomains) ? tracking.linkerDomains.join(",") : "";
+    if (domains !== "arsenalvault.com,app.arsenalvault.com") failures.push(`${rel}: linker domains are ${domains}`);
+  }
+  if (!html.includes("gtag('set', 'linker'")) failures.push(`${rel}: missing gtag linker`);
+  if (!html.includes("accept_incoming: true")) failures.push(`${rel}: linker does not accept incoming cross-domain hits`);
+  if (!html.includes("domains: tracking.linkerDomains")) failures.push(`${rel}: linker is not using the configured domains`);
+  if (!html.includes("gtag('config', tracking.ga4Id")) failures.push(`${rel}: missing GA4 config`);
+  if (!html.includes("gtag('config', tracking.googleAdsId")) failures.push(`${rel}: missing Google Ads config`);
+  if (html.includes("gtag('event', 'conversion'") || html.includes('gtag("event", "conversion"')) {
+    failures.push(`${rel}: site fires a Google Ads conversion; AV Sign-up is counted in the app`);
+  }
+  if (html.includes("AW-XXXXXXXXXX")) failures.push(`${rel}: still contains a Google Ads placeholder`);
 }
 
 const tailwindCss = await readFile(path.join(root, "css/tailwind.css"), "utf8");

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtagId }}"></script>
+    <!-- Google tag (gtag.js): GA4 plus Google Ads, with cross-domain linking. The AV Sign-up conversion is fired by the app, not this site. -->
+    <script type="application/json" id="av-tracking">{{ site.tracking | dump | safe }}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.tracking.googleAdsId }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.gtagId }}');
+        (function () {
+            var tracking = JSON.parse(document.getElementById('av-tracking').textContent);
+            var linker = { domains: tracking.linkerDomains, accept_incoming: true };
+            gtag('set', 'linker', linker);
+            gtag('js', new Date());
+            gtag('config', tracking.ga4Id, { linker: linker });
+            gtag('config', tracking.googleAdsId, { linker: linker });
+        })();
     </script>
     <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="{{ site.umamiId }}"></script>
     <script>
