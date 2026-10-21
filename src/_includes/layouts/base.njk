@@ -80,7 +80,7 @@
         .hs-form-dark .submitted-message { color: #D4AF37 !important; text-align: center !important; font-size: 1.125rem !important; }
         .hs-form-dark .hs-richtext { color: #9CA3AF !important; font-size: 0.75rem !important; }
     </style>
-    {% if headExtra %}{{ headExtra | safe }}{% endif %}
+    {% if headExtra %}{{ headExtra | safe }}{% endif %}{% if includeSoftwareApplication %}{% include "partials/software-application-jsonld.njk" %}{% endif %}
 </head>
 <body class="{{ bodyClass or 'bg-gray-50' }}">
     {% if chrome == "landing" %}
