@@ -50,15 +50,7 @@ module.exports = {
   publisher: {
     "@type": "Organization",
     name: "Arsenal Vault",
-    url: "https://arsenalvault.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "686 RD 660",
-      addressLocality: "Dayton",
-      addressRegion: "TX",
-      postalCode: "77535",
-      addressCountry: "US"
-    }
+    url: "https://arsenalvault.com"
   },
   offers: offersFromPricing(pricing)
 };
