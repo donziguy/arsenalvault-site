@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js): GA4 plus Google Ads. Ads ID and label are build-time env values. -->
+    <!-- Google tag (gtag.js): GA4 plus Google Ads, with cross-domain linking. The AV Sign-up conversion is fired by the app, not this site. -->
     <script type="application/json" id="av-tracking">{{ site.tracking | dump | safe }}</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtagId }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.tracking.googleAdsId }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -14,18 +14,6 @@
             gtag('js', new Date());
             gtag('config', tracking.ga4Id, { linker: linker });
             gtag('config', tracking.googleAdsId, { linker: linker });
-            document.addEventListener('click', function (event) {
-                var link = event.target && event.target.closest ? event.target.closest('a') : null;
-                if (!link || !link.href) return;
-                var url;
-                try { url = new URL(link.href, window.location.href); } catch (e) { return; }
-                if (url.origin !== 'https://app.arsenalvault.com') return;
-                if (url.pathname !== '/register' && url.pathname !== '/register/') return;
-                gtag('event', 'conversion', {
-                    send_to: tracking.googleAdsId + '/' + tracking.googleAdsConversionLabel,
-                    transport_type: 'beacon'
-                });
-            });
         })();
     </script>
     <script defer src="https://analytics.arsenalvault.com/script.js" data-website-id="{{ site.umamiId }}"></script>

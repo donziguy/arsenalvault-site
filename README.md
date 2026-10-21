@@ -16,7 +16,9 @@ Built with Eleventy and deployed as static HTML to Hostinger on every push to `m
 - `src/styles/tailwind.css` and `tailwind.config.js` - Tailwind source, compiled to `/css/tailwind.css` during the Eleventy build.
 
 ## Analytics
-GA4 `G-652RBNGMD2` is fixed in `src/_data/site.js`. The Google Ads tag id and conversion label are read at build time from `GOOGLE_ADS_ID` and `GOOGLE_ADS_CONVERSION_LABEL`. When those are unset, the build uses the placeholders `AW-XXXXXXXXXX` and `XXXXXXXXXX`. Set both as repository secrets before a production build so the deployed pages carry the real tag. The marketing site fires the Ads conversion on a click through to `app.arsenalvault.com/register`. A register-success conversion on the app is separate and is not configured here.
+GA4 `G-652RBNGMD2` and Google Ads `AW-18064652064` are set in `src/_data/site.js`. Every page loads gtag.js with that Ads id and configures both tags. Cross-domain linking covers `arsenalvault.com` and `app.arsenalvault.com`, so a Google click id on the marketing site can carry onto the app.
+
+The Ads conversion action "AV Sign-up" uses send_to `AW-18064652064/xw8jCPOQ8aMdEKDu8qVD`. The app fires that conversion after a completed registration. This site does not send it on page views or register clicks, so the same signup is not counted twice.
 
 ## Commands
 - `npm install` - Install dependencies.

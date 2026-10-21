@@ -1,11 +1,9 @@
-function fromEnv(name, fallback) {
-  const value = (process.env[name] || "").trim();
-  return value || fallback;
-}
-
 const ga4Id = "G-652RBNGMD2";
-const googleAdsId = fromEnv("GOOGLE_ADS_ID", "AW-XXXXXXXXXX");
-const googleAdsConversionLabel = fromEnv("GOOGLE_ADS_CONVERSION_LABEL", "XXXXXXXXXX");
+// Google Ads conversion action "AV Sign-up". The app sends this conversion
+// after registration. This site loads the tag and links the two domains.
+const googleAdsId = "AW-18064652064";
+const googleAdsConversionLabel = "xw8jCPOQ8aMdEKDu8qVD";
+const googleAdsSendTo = "AW-18064652064/xw8jCPOQ8aMdEKDu8qVD";
 const linkerDomains = ["arsenalvault.com", "app.arsenalvault.com"];
 
 module.exports = {
@@ -19,6 +17,7 @@ module.exports = {
     ga4Id,
     googleAdsId,
     googleAdsConversionLabel,
+    googleAdsSendTo,
     linkerDomains
   }
 };
